@@ -1,1 +1,1 @@
-⚠️PLEASE Try NOT to MAKE any changes in this repo⚠️
+⚠️PLEASE DO NOT MAKE any changes in this repo⚠️
