@@ -36,7 +36,7 @@ class ElementsKit_Widget_Progressbar extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'ekit_progressbar_content', [
                 'label' => esc_html__( 'Progress Bar', 'elementskit-lite' ),
@@ -488,11 +488,11 @@ class ElementsKit_Widget_Progressbar extends Widget_Base {
 
                                     <?php if ( 'tooltip-style' == $ekit_progressbar_style ): ?>
                                         <div class="svg-content">
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 116 79.6"> <g> <path d="M0,18.3v21.3C0,49.8,8.2,58,18.3,58h5.9c7.8,0,15.3,3.1,20.8,8.6l13,13l13-13c5.5-5.5,13-8.6,20.8-8.6h5.9 c10.1,0,18.3-8.2,18.3-18.3V18.3C116,8.2,107.8,0,97.7,0H18.3C8.2,0,0,8.2,0,18.3z"/></g></svg>
+                                            <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 116 79.6"> <g> <path d="M0,18.3v21.3C0,49.8,8.2,58,18.3,58h5.9c7.8,0,15.3,3.1,20.8,8.6l13,13l13-13c5.5-5.5,13-8.6,20.8-8.6h5.9 c10.1,0,18.3-8.2,18.3-18.3V18.3C116,8.2,107.8,0,97.7,0H18.3C8.2,0,0,8.2,0,18.3z"/></g></svg>
                                         </div>
                                     <?php elseif( 'style-stripe skill-medium tooltip-style' == $ekit_progressbar_style ): ?>
                                         <div class="svg-content">
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 116 79.6"> <g> <path d="M0,18.3v21.3C0,49.8,8.2,58,18.3,58h5.9c7.8,0,15.3,3.1,20.8,8.6l13,13l13-13c5.5-5.5,13-8.6,20.8-8.6h5.9 c10.1,0,18.3-8.2,18.3-18.3V18.3C116,8.2,107.8,0,97.7,0H18.3C8.2,0,0,8.2,0,18.3z"/></g></svg>
+                                            <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 116 79.6"> <g> <path d="M0,18.3v21.3C0,49.8,8.2,58,18.3,58h5.9c7.8,0,15.3,3.1,20.8,8.6l13,13l13-13c5.5-5.5,13-8.6,20.8-8.6h5.9 c10.1,0,18.3-8.2,18.3-18.3V18.3C116,8.2,107.8,0,97.7,0H18.3C8.2,0,0,8.2,0,18.3z"/></g></svg>
                                         </div>
                                     <?php endif; ?>
                                 </div>

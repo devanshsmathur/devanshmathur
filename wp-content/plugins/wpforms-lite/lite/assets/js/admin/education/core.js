@@ -100,8 +100,9 @@ WPFormsEducation.liteCore = window.WPFormsEducation.liteCore || ( function( docu
 				return;
 			}
 
-			var message    = wpforms_education.upgrade[type].message.replace( /%name%/g, feature ),
-				upgradeURL = wpforms_education.upgrade[type].url + '&utm_content=' + encodeURIComponent( feature.trim() );
+			var message = wpforms_education.upgrade[ type ].message.replace( /%name%/g, feature ),
+				appendChar = /(\?)/.test( wpforms_education.upgrade[ type ].url ) ? '&' : '?',
+				upgradeURL = wpforms_education.upgrade[ type ].url + appendChar + 'utm_content=' + encodeURIComponent( feature.trim() );
 
 			$.alert( {
 				title   : feature + ' ' + wpforms_education.upgrade[type].title,

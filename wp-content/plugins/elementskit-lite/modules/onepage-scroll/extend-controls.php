@@ -51,7 +51,7 @@ class ElementsKit_Extend_Onepage_Scroll {
                 'default'       => '1',
                 'toggle'        => false,
                 'separator'     => 'before',
-                'description'   => sprintf( __('%s Get the %s Pro version %s for more awesome elements and powerful modules. %s', 'elementskit-lite'), '<span class="ekit-widget-pro-feature">', '<a href="http://go.wpmet.com/ekit-pro-widget-message" target="_blank">', '</a>', '</span>' ),
+                'description'   => sprintf( __('%s Get the %s Pro version %s for more awesome elements and powerful modules. %s', 'elementskit-lite'), '<span class="ekit-widget-pro-feature">', '<a href="https://wpmet.com/elementskit-pricing" target="_blank">', '</a>', '</span>' ),
             ]
         );
     }

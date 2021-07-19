@@ -1,4 +1,4 @@
-/*! elementor - v3.1.4 - 10-03-2021 */
+/*! elementor - v3.3.0 - 11-07-2021 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -359,7 +359,7 @@ module.exports = _arrayLikeToArray;
 /*! CommonJS bailout: module.exports is used directly at 7:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Array$isArray = __webpack_require__(/*! ../core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+var _Array$isArray = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
 
 function _arrayWithHoles(arr) {
   if (_Array$isArray(arr)) return arr;
@@ -399,7 +399,7 @@ module.exports = _assertThisInitialized;
 /*! CommonJS bailout: module.exports is used directly at 39:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Promise = __webpack_require__(/*! ../core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js");
+var _Promise = __webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js");
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -471,7 +471,7 @@ module.exports = _classCallCheck;
 /*! CommonJS bailout: module.exports is used directly at 24:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Reflect$construct = __webpack_require__(/*! ../core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
+var _Reflect$construct = __webpack_require__(/*! @babel/runtime-corejs2/core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
 
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js");
 
@@ -507,7 +507,7 @@ module.exports = _construct;
 /*! CommonJS bailout: module.exports is used directly at 20:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
 function _defineProperties(target, props) {
   for (var i = 0; i < props.length; i++) {
@@ -539,7 +539,7 @@ module.exports = _createClass;
 /*! CommonJS bailout: module.exports is used directly at 26:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Reflect$construct = __webpack_require__(/*! ../core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
+var _Reflect$construct = __webpack_require__(/*! @babel/runtime-corejs2/core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
 
 var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js");
 
@@ -577,7 +577,7 @@ module.exports = _createSuper;
 /*! CommonJS bailout: module.exports is used directly at 18:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -609,9 +609,9 @@ module.exports = _defineProperty;
 /*! CommonJS bailout: module.exports is used directly at 28:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
 
-var _Reflect$get = __webpack_require__(/*! ../core-js/reflect/get */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/get.js");
+var _Reflect$get = __webpack_require__(/*! @babel/runtime-corejs2/core-js/reflect/get */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/get.js");
 
 var superPropBase = __webpack_require__(/*! ./superPropBase */ "../node_modules/@babel/runtime-corejs2/helpers/superPropBase.js");
 
@@ -650,9 +650,9 @@ module.exports = _get;
 /*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$getPrototypeOf = __webpack_require__(/*! ../core-js/object/get-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js");
+var _Object$getPrototypeOf = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js");
 
-var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
+var _Object$setPrototypeOf = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/set-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 
 function _getPrototypeOf(o) {
   module.exports = _getPrototypeOf = _Object$setPrototypeOf ? _Object$getPrototypeOf : function _getPrototypeOf(o) {
@@ -674,7 +674,7 @@ module.exports = _getPrototypeOf;
 /*! CommonJS bailout: module.exports is used directly at 20:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$create = __webpack_require__(/*! ../core-js/object/create */ "../node_modules/@babel/runtime-corejs2/core-js/object/create.js");
+var _Object$create = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/create */ "../node_modules/@babel/runtime-corejs2/core-js/object/create.js");
 
 var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js");
 
@@ -725,13 +725,13 @@ module.exports = _interopRequireDefault;
 /*! CommonJS bailout: module.exports is used directly at 61:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
 
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "../node_modules/@babel/runtime-corejs2/helpers/typeof.js");
+var _typeof = __webpack_require__(/*! @babel/runtime-corejs2/helpers/typeof */ "../node_modules/@babel/runtime-corejs2/helpers/typeof.js");
 
-var _WeakMap = __webpack_require__(/*! ../core-js/weak-map */ "../node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
+var _WeakMap = __webpack_require__(/*! @babel/runtime-corejs2/core-js/weak-map */ "../node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
 
 function _getRequireWildcardCache() {
   if (typeof _WeakMap !== "function") return null;
@@ -815,7 +815,7 @@ module.exports = _isNativeFunction;
 /*! CommonJS bailout: module.exports is used directly at 16:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Reflect$construct = __webpack_require__(/*! ../core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
+var _Reflect$construct = __webpack_require__(/*! @babel/runtime-corejs2/core-js/reflect/construct */ "../node_modules/@babel/runtime-corejs2/core-js/reflect/construct.js");
 
 function _isNativeReflectConstruct() {
   if (typeof Reflect === "undefined" || !_Reflect$construct) return false;
@@ -843,11 +843,11 @@ module.exports = _isNativeReflectConstruct;
 /*! CommonJS bailout: module.exports is used directly at 34:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _getIterator = __webpack_require__(/*! ../core-js/get-iterator */ "../node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
+var _getIterator = __webpack_require__(/*! @babel/runtime-corejs2/core-js/get-iterator */ "../node_modules/@babel/runtime-corejs2/core-js/get-iterator.js");
 
-var _isIterable = __webpack_require__(/*! ../core-js/is-iterable */ "../node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
+var _isIterable = __webpack_require__(/*! @babel/runtime-corejs2/core-js/is-iterable */ "../node_modules/@babel/runtime-corejs2/core-js/is-iterable.js");
 
-var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "../node_modules/@babel/runtime-corejs2/core-js/symbol.js");
+var _Symbol = __webpack_require__(/*! @babel/runtime-corejs2/core-js/symbol */ "../node_modules/@babel/runtime-corejs2/core-js/symbol.js");
 
 function _iterableToArrayLimit(arr, i) {
   if (typeof _Symbol === "undefined" || !_isIterable(Object(arr))) return;
@@ -906,17 +906,17 @@ module.exports = _nonIterableRest;
 /*! CommonJS bailout: module.exports is used directly at 50:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
-var _Object$defineProperties = __webpack_require__(/*! ../core-js/object/define-properties */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+var _Object$defineProperties = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
 
-var _Object$getOwnPropertyDescriptors = __webpack_require__(/*! ../core-js/object/get-own-property-descriptors */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+var _Object$getOwnPropertyDescriptors = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
 
-var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
 
-var _Object$getOwnPropertySymbols = __webpack_require__(/*! ../core-js/object/get-own-property-symbols */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+var _Object$getOwnPropertySymbols = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "../node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
 
-var _Object$keys = __webpack_require__(/*! ../core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+var _Object$keys = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 
 var defineProperty = __webpack_require__(/*! ./defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/defineProperty.js");
 
@@ -968,7 +968,7 @@ module.exports = _objectSpread2;
 /*! CommonJS bailout: module.exports is used directly at 13:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "../node_modules/@babel/runtime-corejs2/helpers/typeof.js");
+var _typeof = __webpack_require__(/*! @babel/runtime-corejs2/helpers/typeof */ "../node_modules/@babel/runtime-corejs2/helpers/typeof.js");
 
 var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "../node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js");
 
@@ -994,7 +994,7 @@ module.exports = _possibleConstructorReturn;
 /*! CommonJS bailout: module.exports is used directly at 12:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
+var _Object$setPrototypeOf = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/set-prototype-of */ "../node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
 
 function _setPrototypeOf(o, p) {
   module.exports = _setPrototypeOf = _Object$setPrototypeOf || function _setPrototypeOf(o, p) {
@@ -1069,9 +1069,9 @@ module.exports = _superPropBase;
 /*! CommonJS bailout: module.exports is used directly at 21:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Symbol$iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ "../node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
+var _Symbol$iterator = __webpack_require__(/*! @babel/runtime-corejs2/core-js/symbol/iterator */ "../node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
 
-var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "../node_modules/@babel/runtime-corejs2/core-js/symbol.js");
+var _Symbol = __webpack_require__(/*! @babel/runtime-corejs2/core-js/symbol */ "../node_modules/@babel/runtime-corejs2/core-js/symbol.js");
 
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -1102,7 +1102,7 @@ module.exports = _typeof;
 /*! CommonJS bailout: module.exports is used directly at 14:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Array$from = __webpack_require__(/*! ../core-js/array/from */ "../node_modules/@babel/runtime-corejs2/core-js/array/from.js");
+var _Array$from = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/from */ "../node_modules/@babel/runtime-corejs2/core-js/array/from.js");
 
 var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ "../node_modules/@babel/runtime-corejs2/helpers/arrayLikeToArray.js");
 
@@ -1129,9 +1129,9 @@ module.exports = _unsupportedIterableToArray;
 /*! CommonJS bailout: module.exports is used directly at 47:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var _Object$create = __webpack_require__(/*! ../core-js/object/create */ "../node_modules/@babel/runtime-corejs2/core-js/object/create.js");
+var _Object$create = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/create */ "../node_modules/@babel/runtime-corejs2/core-js/object/create.js");
 
-var _Map = __webpack_require__(/*! ../core-js/map */ "../node_modules/@babel/runtime-corejs2/core-js/map.js");
+var _Map = __webpack_require__(/*! @babel/runtime-corejs2/core-js/map */ "../node_modules/@babel/runtime-corejs2/core-js/map.js");
 
 var getPrototypeOf = __webpack_require__(/*! ./getPrototypeOf */ "../node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js");
 
@@ -6388,11 +6388,11 @@ exports.Create = void 0;
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
-__webpack_require__(/*! core-js/modules/es7.array.includes */ "../node_modules/core-js/modules/es7.array.includes.js");
+__webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
 
-__webpack_require__(/*! core-js/modules/es6.string.includes */ "../node_modules/core-js/modules/es6.string.includes.js");
+__webpack_require__(/*! core-js/modules/es6.string.includes.js */ "../node_modules/core-js/modules/es6.string.includes.js");
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/slicedToArray.js"));
 
@@ -9109,7 +9109,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.ResetSettings = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/slicedToArray.js"));
 
@@ -9666,13 +9666,13 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "../node_modules/core-js/modules/web.dom.iterable.js");
+__webpack_require__(/*! core-js/modules/web.dom.iterable.js */ "../node_modules/core-js/modules/web.dom.iterable.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.iterator */ "../node_modules/core-js/modules/es6.array.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.array.iterator.js */ "../node_modules/core-js/modules/es6.array.iterator.js");
 
-__webpack_require__(/*! core-js/modules/es6.object.to-string */ "../node_modules/core-js/modules/es6.object.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.object.to-string.js */ "../node_modules/core-js/modules/es6.object.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.string.iterator */ "../node_modules/core-js/modules/es6.string.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.string.iterator.js */ "../node_modules/core-js/modules/es6.string.iterator.js");
 
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 
@@ -9680,7 +9680,7 @@ var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runt
 
 var _entries = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/entries */ "../node_modules/@babel/runtime-corejs2/core-js/object/entries.js"));
 
-__webpack_require__(/*! regenerator-runtime/runtime */ "../node_modules/regenerator-runtime/runtime.js");
+__webpack_require__(/*! regenerator-runtime/runtime.js */ "../node_modules/regenerator-runtime/runtime.js");
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -9844,7 +9844,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.Enable = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
@@ -10127,7 +10127,7 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
 
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
 var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/slicedToArray.js"));
 
@@ -10135,15 +10135,15 @@ var _entries = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-cor
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "../node_modules/core-js/modules/web.dom.iterable.js");
+__webpack_require__(/*! core-js/modules/web.dom.iterable.js */ "../node_modules/core-js/modules/web.dom.iterable.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.iterator */ "../node_modules/core-js/modules/es6.array.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.array.iterator.js */ "../node_modules/core-js/modules/es6.array.iterator.js");
 
-__webpack_require__(/*! core-js/modules/es6.object.to-string */ "../node_modules/core-js/modules/es6.object.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.object.to-string.js */ "../node_modules/core-js/modules/es6.object.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.string.iterator */ "../node_modules/core-js/modules/es6.string.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.string.iterator.js */ "../node_modules/core-js/modules/es6.string.iterator.js");
 
-__webpack_require__(/*! regenerator-runtime/runtime */ "../node_modules/regenerator-runtime/runtime.js");
+__webpack_require__(/*! regenerator-runtime/runtime.js */ "../node_modules/regenerator-runtime/runtime.js");
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -11659,6 +11659,153 @@ exports.default = Component;
 
 /***/ }),
 
+/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/base/reset-layout-base.js":
+/*!***********************************************************************************************!*\
+  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/base/reset-layout-base.js ***!
+  \***********************************************************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: exports is used directly at 7:23-30 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _after = _interopRequireDefault(__webpack_require__(/*! elementor-api/modules/hooks/data/after */ "../core/common/assets/js/api/modules/hooks/data/after.js"));
+
+var ResetLayoutBase = /*#__PURE__*/function (_After) {
+  (0, _inherits2.default)(ResetLayoutBase, _After);
+
+  var _super = (0, _createSuper2.default)(ResetLayoutBase);
+
+  function ResetLayoutBase() {
+    (0, _classCallCheck2.default)(this, ResetLayoutBase);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(ResetLayoutBase, [{
+    key: "getConditions",
+    value: function getConditions() {
+      // On `document/elements/move` do not fire the hook!.
+      return !$e.commands.isCurrentFirstTrace('document/elements/move');
+    }
+    /**
+     * @inheritDoc
+     *
+     * @param {{}} args
+     * @param {Container||Container[]} containers
+     *
+     * @returns {boolean}
+     */
+
+  }, {
+    key: "apply",
+    value: function apply(args, containers) {
+      if (!(0, _isArray.default)(containers)) {
+        containers = [containers];
+      }
+
+      containers.forEach(function (
+      /**Container*/
+      container) {
+        return container.parent.view.resetLayout(false);
+      });
+    }
+  }]);
+  return ResetLayoutBase;
+}(_after.default);
+
+exports.default = ResetLayoutBase;
+
+/***/ }),
+
+/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/create/create-section-columns-reset-layout.js":
+/*!*******************************************************************************************************************!*\
+  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/create/create-section-columns-reset-layout.js ***!
+  \*******************************************************************************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: exports is used directly at 7:23-30 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = exports.CreateSectionColumnsResetLayout = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _resetLayoutBase = _interopRequireDefault(__webpack_require__(/*! ../base/reset-layout-base */ "../assets/dev/js/editor/document/hooks/data/document/elements/base/reset-layout-base.js"));
+
+var CreateSectionColumnsResetLayout = /*#__PURE__*/function (_ResetLayoutBase) {
+  (0, _inherits2.default)(CreateSectionColumnsResetLayout, _ResetLayoutBase);
+
+  var _super = (0, _createSuper2.default)(CreateSectionColumnsResetLayout);
+
+  function CreateSectionColumnsResetLayout() {
+    (0, _classCallCheck2.default)(this, CreateSectionColumnsResetLayout);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(CreateSectionColumnsResetLayout, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/elements/create';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'section-columns-reset-layout--document/elements/create';
+    }
+  }, {
+    key: "getContainerType",
+    value: function getContainerType() {
+      return 'section';
+    }
+  }]);
+  return CreateSectionColumnsResetLayout;
+}(_resetLayoutBase.default);
+
+exports.CreateSectionColumnsResetLayout = CreateSectionColumnsResetLayout;
+var _default = CreateSectionColumnsResetLayout;
+exports.default = _default;
+
+/***/ }),
+
 /***/ "../assets/dev/js/editor/document/hooks/data/document/elements/create/index.js":
 /*!*************************************************************************************!*\
   !*** ../assets/dev/js/editor/document/hooks/data/document/elements/create/index.js ***!
@@ -11680,6 +11827,13 @@ var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core
 
 _Object$defineProperty(exports, "__esModule", {
   value: true
+});
+
+_Object$defineProperty(exports, "CreateSectionColumnsResetLayout", {
+  enumerable: true,
+  get: function get() {
+    return _createSectionColumnsResetLayout.CreateSectionColumnsResetLayout;
+  }
 });
 
 _Object$defineProperty(exports, "InnerSectionColumns", {
@@ -11710,12 +11864,7 @@ _Object$defineProperty(exports, "SectionColumnsLimit", {
   }
 });
 
-_Object$defineProperty(exports, "SectionColumnsResetLayout", {
-  enumerable: true,
-  get: function get() {
-    return _sectionColumnsResetLayout.SectionColumnsResetLayout;
-  }
-});
+var _createSectionColumnsResetLayout = __webpack_require__(/*! ./create-section-columns-reset-layout */ "../assets/dev/js/editor/document/hooks/data/document/elements/create/create-section-columns-reset-layout.js");
 
 var _innerSectionColumns = __webpack_require__(/*! ./inner-section-columns */ "../assets/dev/js/editor/document/hooks/data/document/elements/create/inner-section-columns.js");
 
@@ -11724,8 +11873,6 @@ var _isValidChild = __webpack_require__(/*! ./is-valid-child */ "../assets/dev/j
 var _sectionColumns = __webpack_require__(/*! ./section-columns */ "../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns.js");
 
 var _sectionColumnsLimit = __webpack_require__(/*! ./section-columns-limit */ "../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns-limit.js");
-
-var _sectionColumnsResetLayout = __webpack_require__(/*! ./section-columns-reset-layout */ "../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns-reset-layout.js");
 
 /***/ }),
 
@@ -11987,103 +12134,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns-reset-layout.js":
-/*!************************************************************************************************************!*\
-  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns-reset-layout.js ***!
-  \************************************************************************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements: __webpack_exports__, __webpack_require__ */
-/*! CommonJS bailout: exports is used directly at 7:23-30 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = exports.SectionColumnsResetLayout = void 0;
-
-var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
-
-var _after = _interopRequireDefault(__webpack_require__(/*! elementor-api/modules/hooks/data/after */ "../core/common/assets/js/api/modules/hooks/data/after.js"));
-
-var SectionColumnsResetLayout = /*#__PURE__*/function (_After) {
-  (0, _inherits2.default)(SectionColumnsResetLayout, _After);
-
-  var _super = (0, _createSuper2.default)(SectionColumnsResetLayout);
-
-  function SectionColumnsResetLayout() {
-    (0, _classCallCheck2.default)(this, SectionColumnsResetLayout);
-    return _super.apply(this, arguments);
-  }
-
-  (0, _createClass2.default)(SectionColumnsResetLayout, [{
-    key: "getCommand",
-    value: function getCommand() {
-      return 'document/elements/create';
-    }
-  }, {
-    key: "getId",
-    value: function getId() {
-      return 'section-columns-reset-layout';
-    }
-  }, {
-    key: "getContainerType",
-    value: function getContainerType() {
-      return 'section';
-    }
-  }, {
-    key: "getConditions",
-    value: function getConditions() {
-      // On `document/elements/move` do not fire the hook!.
-      return !$e.commands.isCurrentFirstTrace('document/elements/move');
-    }
-    /**
-     * @inheritDoc
-     *
-     * @param {{}} args
-     * @param {Container||Container[]} containers
-     *
-     * @returns {boolean}
-     */
-
-  }, {
-    key: "apply",
-    value: function apply(args, containers) {
-      if (!(0, _isArray.default)(containers)) {
-        containers = [containers];
-      }
-
-      containers.forEach(function (
-      /**Container*/
-      container) {
-        return container.parent.view.resetLayout(false);
-      });
-    }
-  }]);
-  return SectionColumnsResetLayout;
-}(_after.default);
-
-exports.SectionColumnsResetLayout = SectionColumnsResetLayout;
-var _default = SectionColumnsResetLayout;
-exports.default = _default;
-
-/***/ }),
-
 /***/ "../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns.js":
 /*!***********************************************************************************************!*\
   !*** ../assets/dev/js/editor/document/hooks/data/document/elements/create/section-columns.js ***!
@@ -12192,40 +12242,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/index.js":
-/*!*************************************************************************************!*\
-  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/delete/index.js ***!
-  \*************************************************************************************/
-/*! unknown exports (runtime-defined) */
-/*! runtime requirements: __webpack_exports__, __webpack_require__ */
-/*! CommonJS bailout: exports is used directly at 5:23-30 */
-/*! CommonJS bailout: exports is used directly at 9:23-30 */
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-_Object$defineProperty(exports, "SectionsColumns", {
-  enumerable: true,
-  get: function get() {
-    return _sectionColumns.SectionsColumns;
-  }
-});
-
-var _sectionColumns = __webpack_require__(/*! ./section-columns */ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/section-columns.js");
-
-/***/ }),
-
-/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/section-columns.js":
-/*!***********************************************************************************************!*\
-  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/delete/section-columns.js ***!
-  \***********************************************************************************************/
+/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/create-column-for-empty-section.js":
+/*!***************************************************************************************************************!*\
+  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/delete/create-column-for-empty-section.js ***!
+  \***************************************************************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
@@ -12242,7 +12262,7 @@ _Object$defineProperty(exports, "__esModule", {
   value: true
 });
 
-exports.default = exports.SectionsColumns = void 0;
+exports.default = exports.CreateColumnForEmptySection = void 0;
 
 var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
 
@@ -12256,17 +12276,17 @@ var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtim
 
 var _after = _interopRequireDefault(__webpack_require__(/*! elementor-api/modules/hooks/data/after */ "../core/common/assets/js/api/modules/hooks/data/after.js"));
 
-var SectionsColumns = /*#__PURE__*/function (_After) {
-  (0, _inherits2.default)(SectionsColumns, _After);
+var CreateColumnForEmptySection = /*#__PURE__*/function (_After) {
+  (0, _inherits2.default)(CreateColumnForEmptySection, _After);
 
-  var _super = (0, _createSuper2.default)(SectionsColumns);
+  var _super = (0, _createSuper2.default)(CreateColumnForEmptySection);
 
-  function SectionsColumns() {
-    (0, _classCallCheck2.default)(this, SectionsColumns);
+  function CreateColumnForEmptySection() {
+    (0, _classCallCheck2.default)(this, CreateColumnForEmptySection);
     return _super.apply(this, arguments);
   }
 
-  (0, _createClass2.default)(SectionsColumns, [{
+  (0, _createClass2.default)(CreateColumnForEmptySection, [{
     key: "getCommand",
     value: function getCommand() {
       return 'document/elements/delete';
@@ -12274,7 +12294,7 @@ var SectionsColumns = /*#__PURE__*/function (_After) {
   }, {
     key: "getId",
     value: function getId() {
-      return 'delete-section-columns';
+      return 'create-column-for-empty-section--document/elements/delete';
     }
   }, {
     key: "getContainerType",
@@ -12283,14 +12303,13 @@ var SectionsColumns = /*#__PURE__*/function (_After) {
     }
   }, {
     key: "getConditions",
-    value: function getConditions(args) {
+    value: function getConditions() {
+      var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       var _args$containers = args.containers,
-          containers = _args$containers === void 0 ? [args.container] : _args$containers; // On `document/elements/move` do not fire the hook!.
+          containers = _args$containers === void 0 ? [args.container] : _args$containers; // Validate also that its a section, this is hook should not work with new flex container.
 
-      return !$e.commands.isCurrentFirstTrace('document/elements/move') && containers.some(function (container) {
-        return (// If one of the targets is column.
-          'column' === container.model.get('elType')
-        );
+      return containers.some(function (container) {
+        return 'section' === container.parent.type && 0 === container.parent.children.length;
       });
     }
     /**
@@ -12312,33 +12331,132 @@ var SectionsColumns = /*#__PURE__*/function (_After) {
       containers.forEach(function (
       /**Container*/
       container) {
-        var parent = container.parent; // If its not column, continue.
+        var parent = container.parent; // If deleted the last column, should recreate it.
 
-        if ('section' !== parent.model.get('elType')) {
-          return;
-        } // If deleted the last column, should recreate it.
-
-
-        if (0 === parent.view.collection.length) {
+        if (0 === parent.children.length) {
           $e.run('document/elements/create', {
             container: parent,
             model: {
               elType: 'column'
             }
           });
-        } else {
-          // Else, just reset section layout.
-          parent.view.resetLayout();
         }
       });
     }
   }]);
-  return SectionsColumns;
+  return CreateColumnForEmptySection;
 }(_after.default);
 
-exports.SectionsColumns = SectionsColumns;
-var _default = SectionsColumns;
+exports.CreateColumnForEmptySection = CreateColumnForEmptySection;
+var _default = CreateColumnForEmptySection;
 exports.default = _default;
+
+/***/ }),
+
+/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/delete-column-columns-reset-layout.js":
+/*!******************************************************************************************************************!*\
+  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/delete/delete-column-columns-reset-layout.js ***!
+  \******************************************************************************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: exports is used directly at 7:23-30 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = exports.DeleteColumnColumnsResetLayout = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
+
+var _resetLayoutBase = _interopRequireDefault(__webpack_require__(/*! ../base/reset-layout-base */ "../assets/dev/js/editor/document/hooks/data/document/elements/base/reset-layout-base.js"));
+
+var DeleteColumnColumnsResetLayout = /*#__PURE__*/function (_ResetLayoutBase) {
+  (0, _inherits2.default)(DeleteColumnColumnsResetLayout, _ResetLayoutBase);
+
+  var _super = (0, _createSuper2.default)(DeleteColumnColumnsResetLayout);
+
+  function DeleteColumnColumnsResetLayout() {
+    (0, _classCallCheck2.default)(this, DeleteColumnColumnsResetLayout);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(DeleteColumnColumnsResetLayout, [{
+    key: "getCommand",
+    value: function getCommand() {
+      return 'document/elements/delete';
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return 'section-columns-reset-layout--document/elements/delete';
+    }
+  }, {
+    key: "getContainerType",
+    value: function getContainerType() {
+      return 'column';
+    }
+  }]);
+  return DeleteColumnColumnsResetLayout;
+}(_resetLayoutBase.default);
+
+exports.DeleteColumnColumnsResetLayout = DeleteColumnColumnsResetLayout;
+var _default = DeleteColumnColumnsResetLayout;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/index.js":
+/*!*************************************************************************************!*\
+  !*** ../assets/dev/js/editor/document/hooks/data/document/elements/delete/index.js ***!
+  \*************************************************************************************/
+/*! unknown exports (runtime-defined) */
+/*! runtime requirements: __webpack_exports__, __webpack_require__ */
+/*! CommonJS bailout: exports is used directly at 5:23-30 */
+/*! CommonJS bailout: exports is used directly at 9:23-30 */
+/*! CommonJS bailout: exports is used directly at 16:23-30 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+_Object$defineProperty(exports, "CreateColumnForEmptySection", {
+  enumerable: true,
+  get: function get() {
+    return _createColumnForEmptySection.CreateColumnForEmptySection;
+  }
+});
+
+_Object$defineProperty(exports, "DeleteColumnColumnsResetLayout", {
+  enumerable: true,
+  get: function get() {
+    return _deleteColumnColumnsResetLayout.DeleteColumnColumnsResetLayout;
+  }
+});
+
+var _createColumnForEmptySection = __webpack_require__(/*! ./create-column-for-empty-section */ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/create-column-for-empty-section.js");
+
+var _deleteColumnColumnsResetLayout = __webpack_require__(/*! ./delete-column-columns-reset-layout */ "../assets/dev/js/editor/document/hooks/data/document/elements/delete/delete-column-columns-reset-layout.js");
 
 /***/ }),
 
@@ -12968,7 +13086,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.ResizeColumn = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -13173,11 +13291,21 @@ exports.default = _default;
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
-/*! CommonJS bailout: exports is used directly at 16:25-32 */
-/*! CommonJS bailout: exports is used directly at 29:25-32 */
-/*! CommonJS bailout: exports is used directly at 42:25-32 */
-/*! CommonJS bailout: exports is used directly at 55:25-32 */
-/*! CommonJS bailout: exports is used directly at 68:25-32 */
+/*! CommonJS bailout: exports is used directly at 15:13-20 */
+/*! CommonJS bailout: exports is used directly at 15:24-31 */
+/*! CommonJS bailout: exports is used directly at 17:25-32 */
+/*! CommonJS bailout: exports is used directly at 29:13-20 */
+/*! CommonJS bailout: exports is used directly at 29:24-31 */
+/*! CommonJS bailout: exports is used directly at 31:25-32 */
+/*! CommonJS bailout: exports is used directly at 43:13-20 */
+/*! CommonJS bailout: exports is used directly at 43:24-31 */
+/*! CommonJS bailout: exports is used directly at 45:25-32 */
+/*! CommonJS bailout: exports is used directly at 57:13-20 */
+/*! CommonJS bailout: exports is used directly at 57:24-31 */
+/*! CommonJS bailout: exports is used directly at 59:25-32 */
+/*! CommonJS bailout: exports is used directly at 71:13-20 */
+/*! CommonJS bailout: exports is used directly at 71:24-31 */
+/*! CommonJS bailout: exports is used directly at 73:25-32 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13195,6 +13323,7 @@ var _create = __webpack_require__(/*! ./document/elements/create/ */ "../assets/
 
 _Object$keys(_create).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _create[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13208,6 +13337,7 @@ var _delete = __webpack_require__(/*! ./document/elements/delete/ */ "../assets/
 
 _Object$keys(_delete).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _delete[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13221,6 +13351,7 @@ var _move = __webpack_require__(/*! ./document/elements/move/ */ "../assets/dev/
 
 _Object$keys(_move).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _move[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13234,6 +13365,7 @@ var _paste = __webpack_require__(/*! ./document/elements/paste/ */ "../assets/de
 
 _Object$keys(_paste).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _paste[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13247,6 +13379,7 @@ var _settings = __webpack_require__(/*! ./document/elements/settings/ */ "../ass
 
 _Object$keys(_settings).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _settings[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13265,8 +13398,12 @@ _Object$keys(_settings).forEach(function (key) {
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
-/*! CommonJS bailout: exports is used directly at 16:25-32 */
-/*! CommonJS bailout: exports is used directly at 29:25-32 */
+/*! CommonJS bailout: exports is used directly at 15:13-20 */
+/*! CommonJS bailout: exports is used directly at 15:24-31 */
+/*! CommonJS bailout: exports is used directly at 17:25-32 */
+/*! CommonJS bailout: exports is used directly at 29:13-20 */
+/*! CommonJS bailout: exports is used directly at 29:24-31 */
+/*! CommonJS bailout: exports is used directly at 31:25-32 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13284,6 +13421,7 @@ var _data = __webpack_require__(/*! ./data/ */ "../assets/dev/js/editor/document
 
 _Object$keys(_data).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _data[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13297,6 +13435,7 @@ var _ui = __webpack_require__(/*! ./ui/ */ "../assets/dev/js/editor/document/hoo
 
 _Object$keys(_ui).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _ui[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13741,9 +13880,15 @@ exports.default = _default;
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
-/*! CommonJS bailout: exports is used directly at 16:25-32 */
-/*! CommonJS bailout: exports is used directly at 29:25-32 */
-/*! CommonJS bailout: exports is used directly at 42:25-32 */
+/*! CommonJS bailout: exports is used directly at 15:13-20 */
+/*! CommonJS bailout: exports is used directly at 15:24-31 */
+/*! CommonJS bailout: exports is used directly at 17:25-32 */
+/*! CommonJS bailout: exports is used directly at 29:13-20 */
+/*! CommonJS bailout: exports is used directly at 29:24-31 */
+/*! CommonJS bailout: exports is used directly at 31:25-32 */
+/*! CommonJS bailout: exports is used directly at 43:13-20 */
+/*! CommonJS bailout: exports is used directly at 43:24-31 */
+/*! CommonJS bailout: exports is used directly at 45:25-32 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13761,6 +13906,7 @@ var _create = __webpack_require__(/*! ./create/ */ "../assets/dev/js/editor/docu
 
 _Object$keys(_create).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _create[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13774,6 +13920,7 @@ var _delete = __webpack_require__(/*! ./delete/ */ "../assets/dev/js/editor/docu
 
 _Object$keys(_delete).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _delete[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13787,6 +13934,7 @@ var _settings = __webpack_require__(/*! ./settings/ */ "../assets/dev/js/editor/
 
 _Object$keys(_settings).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _settings[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -13820,7 +13968,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.ChangePostTitle = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -14386,7 +14534,7 @@ exports.default = exports.Duplicate = void 0;
 
 var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "../node_modules/@babel/runtime-corejs2/core-js/object/assign.js"));
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -14554,7 +14702,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.Insert = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -14710,7 +14858,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.Move = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -14817,7 +14965,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = exports.Remove = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -16312,7 +16460,9 @@ exports.default = Component;
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
-/*! CommonJS bailout: exports is used directly at 16:25-32 */
+/*! CommonJS bailout: exports is used directly at 15:13-20 */
+/*! CommonJS bailout: exports is used directly at 15:24-31 */
+/*! CommonJS bailout: exports is used directly at 17:25-32 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -16330,6 +16480,7 @@ var _ui = __webpack_require__(/*! ./ui/ */ "../assets/dev/js/editor/document/sav
 
 _Object$keys(_ui).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _ui[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -16348,9 +16499,15 @@ _Object$keys(_ui).forEach(function (key) {
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_exports__, __webpack_require__ */
 /*! CommonJS bailout: exports is used directly at 7:23-30 */
-/*! CommonJS bailout: exports is used directly at 16:25-32 */
-/*! CommonJS bailout: exports is used directly at 29:25-32 */
-/*! CommonJS bailout: exports is used directly at 42:25-32 */
+/*! CommonJS bailout: exports is used directly at 15:13-20 */
+/*! CommonJS bailout: exports is used directly at 15:24-31 */
+/*! CommonJS bailout: exports is used directly at 17:25-32 */
+/*! CommonJS bailout: exports is used directly at 29:13-20 */
+/*! CommonJS bailout: exports is used directly at 29:24-31 */
+/*! CommonJS bailout: exports is used directly at 31:25-32 */
+/*! CommonJS bailout: exports is used directly at 43:13-20 */
+/*! CommonJS bailout: exports is used directly at 43:24-31 */
+/*! CommonJS bailout: exports is used directly at 45:25-32 */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -16368,6 +16525,7 @@ var _save = __webpack_require__(/*! ./save/ */ "../assets/dev/js/editor/document
 
 _Object$keys(_save).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _save[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -16381,6 +16539,7 @@ var _setIsModified = __webpack_require__(/*! ./set-is-modified/ */ "../assets/de
 
 _Object$keys(_setIsModified).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _setIsModified[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -16394,6 +16553,7 @@ var _settings = __webpack_require__(/*! ./settings */ "../assets/dev/js/editor/d
 
 _Object$keys(_settings).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _settings[key]) return;
 
   _Object$defineProperty(exports, key, {
     enumerable: true,
@@ -17231,7 +17391,7 @@ exports.default = exports.Paste = void 0;
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
-__webpack_require__(/*! core-js/modules/es6.array.find-index */ "../node_modules/core-js/modules/es6.array.find-index.js");
+__webpack_require__(/*! core-js/modules/es6.array.find-index.js */ "../node_modules/core-js/modules/es6.array.find-index.js");
 
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
 
@@ -17436,7 +17596,7 @@ exports.default = Component;
   \******************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: __webpack_require__, module */
-/*! CommonJS bailout: module.exports is used directly at 698:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 686:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -17446,9 +17606,9 @@ exports.default = Component;
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
 
@@ -17549,8 +17709,6 @@ BaseElementView = BaseContainer.extend({
     return this.model;
   },
   getContainer: function getContainer() {
-    var _this = this;
-
     if (!this.container) {
       var settingsModel = this.model.get('settings');
       this.container = new elementorModules.editor.Container({
@@ -17564,22 +17722,12 @@ BaseElementView = BaseContainer.extend({
         label: elementor.helpers.getModelLabel(this.model),
         controls: settingsModel.options.controls
       });
-
-      if ((0, _keys.default)(this.container.parent).length) {
-        this.container.parent.children[this._index] = this.container;
-        this.on('destroy', function () {
-          delete _this.container.parent.children[_this._index];
-          _this.container.parent.children = _this.container.parent.children.filter(function (child) {
-            return null !== child;
-          });
-        });
-      }
     }
 
     return this.container;
   },
   getContextMenuGroups: function getContextMenuGroups() {
-    var _this2 = this;
+    var _this = this;
 
     var controlSign = _environment.default.mac ? '⌘' : '^';
     return [{
@@ -17592,11 +17740,11 @@ BaseElementView = BaseContainer.extend({
         title: sprintf(__('Edit %s', 'elementor'), this.options.model.getTitle()),
         callback: function callback() {
           return $e.run('panel/editor/open', {
-            model: _this2.options.model,
+            model: _this.options.model,
             // Todo: remove on merge router
-            view: _this2,
+            view: _this,
             // Todo: remove on merge router
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }, {
@@ -17606,7 +17754,7 @@ BaseElementView = BaseContainer.extend({
         shortcut: controlSign + '+D',
         callback: function callback() {
           return $e.run('document/elements/duplicate', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }]
@@ -17618,7 +17766,7 @@ BaseElementView = BaseContainer.extend({
         shortcut: controlSign + '+C',
         callback: function callback() {
           return $e.run('document/elements/copy', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }, {
@@ -17626,11 +17774,11 @@ BaseElementView = BaseContainer.extend({
         title: __('Paste', 'elementor'),
         shortcut: controlSign + '+V',
         isEnabled: function isEnabled() {
-          return _helper.default.isPasteEnabled(_this2.getContainer());
+          return _helper.default.isPasteEnabled(_this.getContainer());
         },
         callback: function callback() {
           return $e.run('document/ui/paste', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }, {
@@ -17642,7 +17790,7 @@ BaseElementView = BaseContainer.extend({
         },
         callback: function callback() {
           return $e.run('document/elements/paste-style', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }, {
@@ -17650,7 +17798,7 @@ BaseElementView = BaseContainer.extend({
         title: __('Reset Style', 'elementor'),
         callback: function callback() {
           return $e.run('document/elements/reset-style', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }]
@@ -17663,7 +17811,7 @@ BaseElementView = BaseContainer.extend({
         shortcut: '⌦',
         callback: function callback() {
           return $e.run('document/elements/delete', {
-            container: _this2.getContainer()
+            container: _this.getContainer()
           });
         }
       }]
@@ -17673,7 +17821,7 @@ BaseElementView = BaseContainer.extend({
     return {};
   },
   initialize: function initialize() {
-    var _this3 = this;
+    var _this2 = this;
 
     BaseContainer.prototype.initialize.apply(this, arguments);
     var editModel = this.getEditModel();
@@ -17693,7 +17841,7 @@ BaseElementView = BaseContainer.extend({
 
     _.defer(function () {
       // Init container. Defer - in order to init the container after the element is fully initialized, and properties like `_parent` are available.
-      _this3.getContainer();
+      _this2.getContainer();
     });
   },
   getHandlesOverlay: function getHandlesOverlay() {
@@ -18354,7 +18502,7 @@ module.exports = Marionette.Behavior.extend({
   \********************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module */
-/*! CommonJS bailout: module.exports is used directly at 184:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 188:0-14 */
 /***/ ((module) => {
 
 "use strict";
@@ -18409,7 +18557,11 @@ SortableBehavior = Marionette.Behavior.extend({
         left: 25
       },
       helper: this._getSortableHelper.bind(this),
-      cancel: 'input, textarea, button, select, option, .elementor-inline-editing, .elementor-tab-title'
+      cancel: 'input, textarea, button, select, option, .elementor-inline-editing, .elementor-tab-title',
+      // Fix: Sortable - Unable to drag and drop sections with huge height.
+      start: function start() {
+        $childViewContainer.sortable('refreshPositions');
+      }
     },
         sortableOptions = _.extend(defaultSortableOptions, this.view.getSortableOptions());
 
@@ -18854,7 +19006,7 @@ module.exports = ColumnView;
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var _inline = _interopRequireDefault(__webpack_require__(/*! ../../views/add-section/inline */ "../assets/dev/js/editor/views/add-section/inline.js"));
 
@@ -19161,7 +19313,7 @@ module.exports.DEFAULT_MAX_COLUMNS = DEFAULT_MAX_COLUMNS;
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 module.exports = elementorModules.Module.extend({
   getDefaultSettings: function getDefaultSettings() {
@@ -19327,7 +19479,7 @@ module.exports = elementorModules.Module.extend({
   \************************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 334:0-14 */
+/*! CommonJS bailout: module.exports is used directly at 350:0-14 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -19337,15 +19489,19 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
 
-__webpack_require__(/*! core-js/modules/es6.regexp.constructor */ "../node_modules/core-js/modules/es6.regexp.constructor.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.constructor.js */ "../node_modules/core-js/modules/es6.regexp.constructor.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.match */ "../node_modules/core-js/modules/es6.regexp.match.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.match.js */ "../node_modules/core-js/modules/es6.regexp.match.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+var _slicedToArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/slicedToArray.js"));
+
+var _entries = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/entries */ "../node_modules/@babel/runtime-corejs2/core-js/object/entries.js"));
+
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var Stylesheet = __webpack_require__(/*! elementor-editor-utils/stylesheet */ "../assets/dev/js/editor/utils/stylesheet.js"),
     ControlsCSSParser;
@@ -19375,12 +19531,20 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
     };
   },
   initStylesheet: function initStylesheet() {
-    var breakpoints = elementorFrontend.config.breakpoints;
+    var _this = this;
+
+    var breakpoints = elementorFrontend.config.responsive.activeBreakpoints;
     this.stylesheet = new Stylesheet();
-    this.stylesheet.addDevice('mobile', 0).addDevice('tablet', breakpoints.md).addDevice('desktop', breakpoints.lg);
+    (0, _entries.default)(breakpoints).forEach(function (_ref) {
+      var _ref2 = (0, _slicedToArray2.default)(_ref, 2),
+          breakpointName = _ref2[0],
+          breakpointConfig = _ref2[1];
+
+      _this.stylesheet.addDevice(breakpointName, breakpointConfig.value);
+    });
   },
   addStyleRules: function addStyleRules(styleControls, values, controls, placeholders, replacements) {
-    var _this = this;
+    var _this2 = this;
 
     // If the current element contains dynamic values, parse these values
     var dynamicParsedValues = this.getSettings('settingsModel').parseDynamicSettings(values, this.getSettings('dynamicParsing'), styleControls);
@@ -19389,19 +19553,19 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
       var _control$dynamic, _values$__dynamic__;
 
       if (control.styleFields && control.styleFields.length) {
-        _this.addRepeaterControlsStyleRules(values[control.name], control.styleFields, control.fields, placeholders, replacements);
+        _this2.addRepeaterControlsStyleRules(values[control.name], control.styleFields, control.fields, placeholders, replacements);
       } // If a dynamic tag includes controls with CSS implementations, Take their CSS and apply it.
 
 
-      if (((_control$dynamic = control.dynamic) === null || _control$dynamic === void 0 ? void 0 : _control$dynamic.active) && ((_values$__dynamic__ = values.__dynamic__) === null || _values$__dynamic__ === void 0 ? void 0 : _values$__dynamic__[control.name])) {
-        _this.addDynamicControlStyleRules(values.__dynamic__[control.name], control);
+      if ((_control$dynamic = control.dynamic) !== null && _control$dynamic !== void 0 && _control$dynamic.active && (_values$__dynamic__ = values.__dynamic__) !== null && _values$__dynamic__ !== void 0 && _values$__dynamic__[control.name]) {
+        _this2.addDynamicControlStyleRules(values.__dynamic__[control.name], control);
       }
 
       if (!control.selectors) {
         return;
       }
 
-      var context = _this.getSettings('context');
+      var context = _this2.getSettings('context');
 
       var globalKeys;
 
@@ -19409,11 +19573,11 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
         globalKeys = context.model.get('settings').get('__globals__');
       }
 
-      _this.addControlStyleRules(control, dynamicParsedValues, controls, placeholders, replacements, globalKeys);
+      _this2.addControlStyleRules(control, dynamicParsedValues, controls, placeholders, replacements, globalKeys);
     });
   },
   addControlStyleRules: function addControlStyleRules(control, values, controls, placeholders, replacements, globalKeys) {
-    var _this2 = this;
+    var _this3 = this;
 
     var globalKey;
 
@@ -19441,7 +19605,7 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
       var outputCssProperty;
 
       if (globalKey) {
-        var selectorGlobalValue = _this2.getSelectorGlobalValue(control, globalKey);
+        var selectorGlobalValue = _this3.getSelectorGlobalValue(control, globalKey);
 
         if (selectorGlobalValue) {
           if ('font' === control.type) {
@@ -19461,7 +19625,7 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
             var parsedValue = '';
 
             if (!externalControlMissing) {
-              parsedValue = _this2.parsePropertyPlaceholder(control, value, controls, values, placeholder, controlName);
+              parsedValue = _this3.parsePropertyPlaceholder(control, value, controls, values, placeholder, controlName);
             }
 
             if (!parsedValue && 0 !== parsedValue) {
@@ -19476,7 +19640,7 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
                     return '';
                   }
 
-                  parsedValue = _this2.parsePropertyPlaceholder(control, value, controls, values, fallbackValue, fallbackControlName);
+                  parsedValue = _this3.parsePropertyPlaceholder(control, value, controls, values, fallbackValue, fallbackControlName);
                 }
               }
 
@@ -19547,7 +19711,7 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
         }
       }
 
-      _this2.stylesheet.addRules(selector, outputCssProperty, query);
+      _this3.stylesheet.addRules(selector, outputCssProperty, query);
     });
   },
   parsePropertyPlaceholder: function parsePropertyPlaceholder(control, value, controls, values, placeholder, parserControlName) {
@@ -19561,11 +19725,15 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
     return elementor.getControlView(control.type).getStyleValue(placeholder, value, control);
   },
   getStyleControlValue: function getStyleControlValue(control, values) {
-    var _values$__globals__;
+    var _this$getSettings, _this$getSettings$con, _values$__globals__, _control$global;
 
-    if ((_values$__globals__ = values.__globals__) === null || _values$__globals__ === void 0 ? void 0 : _values$__globals__[control.name]) {
+    var container = (_this$getSettings = this.getSettings()) === null || _this$getSettings === void 0 ? void 0 : (_this$getSettings$con = _this$getSettings.context) === null || _this$getSettings$con === void 0 ? void 0 : _this$getSettings$con.container,
+        isGlobalApplied = container === null || container === void 0 ? void 0 : container.isGlobalApplied(control.name),
+        globalKey = ((_values$__globals__ = values.__globals__) === null || _values$__globals__ === void 0 ? void 0 : _values$__globals__[control.name]) || ((_control$global = control.global) === null || _control$global === void 0 ? void 0 : _control$global.default); // Set a global value only if it's is applied.
+
+    if (isGlobalApplied && globalKey) {
       // When the control itself has no global value, but it refers to another control global value
-      return this.getSelectorGlobalValue(control, values.__globals__[control.name]);
+      return this.getSelectorGlobalValue(control, globalKey);
     }
 
     var value = values[control.name];
@@ -19584,7 +19752,7 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
     var globalArgs = $e.data.commandExtractArgs(globalKey),
         data = $e.data.getCache($e.components.get('globals'), globalArgs.command, globalArgs.args.query);
 
-    if (!(data === null || data === void 0 ? void 0 : data.value)) {
+    if (!(data !== null && data !== void 0 && data.value)) {
       return;
     }
 
@@ -19611,12 +19779,12 @@ ControlsCSSParser = elementorModules.ViewModule.extend({
     return value;
   },
   addRepeaterControlsStyleRules: function addRepeaterControlsStyleRules(repeaterValues, repeaterControlsItems, controls, placeholders, replacements) {
-    var _this3 = this;
+    var _this4 = this;
 
     repeaterControlsItems.forEach(function (item, index) {
       var itemModel = repeaterValues.models[index];
 
-      _this3.addStyleRules(item, itemModel.attributes, controls, placeholders.concat(['{{CURRENT_ITEM}}']), replacements.concat(['.elementor-repeater-item-' + itemModel.get('_id')]));
+      _this4.addStyleRules(item, itemModel.attributes, controls, placeholders.concat(['{{CURRENT_ITEM}}']), replacements.concat(['.elementor-repeater-item-' + itemModel.get('_id')]));
     });
   },
   addDynamicControlStyleRules: function addDynamicControlStyleRules(value, control) {
@@ -19674,7 +19842,7 @@ module.exports = ControlsCSSParser;
   \***************************************************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements: module, __webpack_require__ */
-/*! CommonJS bailout: module.exports is used directly at 215:2-16 */
+/*! CommonJS bailout: module.exports is used directly at 252:2-16 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -19682,17 +19850,17 @@ module.exports = ControlsCSSParser;
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "../node_modules/core-js/modules/es6.regexp.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.to-string.js */ "../node_modules/core-js/modules/es6.regexp.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.object.to-string */ "../node_modules/core-js/modules/es6.object.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.object.to-string.js */ "../node_modules/core-js/modules/es6.object.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
-__webpack_require__(/*! core-js/modules/es6.regexp.match */ "../node_modules/core-js/modules/es6.regexp.match.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.split */ "../node_modules/core-js/modules/es6.regexp.split.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.match.js */ "../node_modules/core-js/modules/es6.regexp.match.js");
 
 var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
+
+__webpack_require__(/*! core-js/modules/es6.regexp.split.js */ "../node_modules/core-js/modules/es6.regexp.split.js");
 
 (function ($) {
   var Stylesheet = function Stylesheet() {
@@ -19700,18 +19868,6 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
         rules = {},
         rawCSS = {},
         devices = {};
-
-    var getDeviceMaxValue = function getDeviceMaxValue(deviceName) {
-      var deviceNames = (0, _keys.default)(devices),
-          deviceNameIndex = deviceNames.indexOf(deviceName),
-          nextIndex = deviceNameIndex + 1;
-
-      if (nextIndex >= deviceNames.length) {
-        throw new RangeError('Max value for this device is out of range.');
-      }
-
-      return devices[deviceNames[nextIndex]] - 1;
-    };
 
     var queryToHash = function queryToHash(query) {
       var hash = [];
@@ -19728,7 +19884,7 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
         var queryParts = singleQuery.split('_'),
             endPoint = queryParts[0],
             deviceName = queryParts[1];
-        query[endPoint] = 'max' === endPoint ? getDeviceMaxValue(deviceName) : devices[deviceName];
+        query[endPoint] = 'max' === endPoint ? devices[deviceName] : Stylesheet.getDeviceMinBreakpoint(deviceName);
       });
       return query;
     };
@@ -19890,6 +20046,55 @@ var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs
       }
     });
     return parsedProperties;
+  };
+
+  Stylesheet.getDesktopPreviousDeviceKey = function () {
+    var desktopPreviousDevice = '';
+    var activeBreakpoints = elementorFrontend.config.responsive.activeBreakpoints,
+        breakpointKeys = (0, _keys.default)(activeBreakpoints),
+        numOfDevices = breakpointKeys.length;
+
+    if ('min' === activeBreakpoints[breakpointKeys[numOfDevices - 1]].direction) {
+      // If the widescreen breakpoint is active, the device that's previous to desktop is the last one before
+      // widescreen.
+      desktopPreviousDevice = breakpointKeys[numOfDevices - 2];
+    } else {
+      // If the widescreen breakpoint isn't active, we just take the last device returned by the config.
+      desktopPreviousDevice = breakpointKeys[numOfDevices - 1];
+    }
+
+    return desktopPreviousDevice;
+  };
+
+  Stylesheet.getDesktopMinPoint = function () {
+    var activeBreakpoints = elementorFrontend.config.responsive.activeBreakpoints,
+        desktopPreviousDevice = Stylesheet.getDesktopPreviousDeviceKey();
+    return activeBreakpoints[desktopPreviousDevice].value + 1;
+  };
+
+  Stylesheet.getDeviceMinBreakpoint = function (deviceName) {
+    if ('desktop' === deviceName) {
+      return Stylesheet.getDesktopMinPoint();
+    }
+
+    var activeBreakpoints = elementorFrontend.config.responsive.activeBreakpoints,
+        breakpointNames = (0, _keys.default)(activeBreakpoints);
+    var minBreakpoint;
+
+    if (breakpointNames[0] === deviceName) {
+      // For the lowest breakpoint, the min point is always 320.
+      minBreakpoint = 320;
+    } else if ('min' === activeBreakpoints[deviceName].direction) {
+      // Widescreen only has a minimum point. In this case, the breakpoint
+      // value in the Breakpoints config is itself the device min point.
+      minBreakpoint = activeBreakpoints[deviceName].value;
+    } else {
+      var deviceNameIndex = breakpointNames.indexOf(deviceName),
+          previousIndex = deviceNameIndex - 1;
+      minBreakpoint = activeBreakpoints[breakpointNames[previousIndex]].value + 1;
+    }
+
+    return minBreakpoint;
   };
 
   module.exports = Stylesheet;
@@ -20573,7 +20778,7 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.function.name */ "../node_modules/core-js/modules/es6.function.name.js");
+__webpack_require__(/*! core-js/modules/es6.function.name.js */ "../node_modules/core-js/modules/es6.function.name.js");
 
 var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
 
@@ -20688,19 +20893,19 @@ var _typeof2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-cor
 
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ "../node_modules/@babel/runtime/regenerator/index.js"));
 
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "../node_modules/core-js/modules/web.dom.iterable.js");
+__webpack_require__(/*! core-js/modules/web.dom.iterable.js */ "../node_modules/core-js/modules/web.dom.iterable.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.iterator */ "../node_modules/core-js/modules/es6.array.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.array.iterator.js */ "../node_modules/core-js/modules/es6.array.iterator.js");
 
-__webpack_require__(/*! core-js/modules/es6.object.to-string */ "../node_modules/core-js/modules/es6.object.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.object.to-string.js */ "../node_modules/core-js/modules/es6.object.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.string.iterator */ "../node_modules/core-js/modules/es6.string.iterator.js");
+__webpack_require__(/*! core-js/modules/es6.string.iterator.js */ "../node_modules/core-js/modules/es6.string.iterator.js");
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
 var _isArray = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "../node_modules/@babel/runtime-corejs2/core-js/array/is-array.js"));
 
-__webpack_require__(/*! regenerator-runtime/runtime */ "../node_modules/regenerator-runtime/runtime.js");
+__webpack_require__(/*! regenerator-runtime/runtime.js */ "../node_modules/regenerator-runtime/runtime.js");
 
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "../node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js"));
 
@@ -20727,6 +20932,19 @@ var CommandBase = /*#__PURE__*/function (_ArgsObject) {
     key: "getInstanceType",
     value: function getInstanceType() {
       return 'CommandBase';
+    }
+    /**
+     * Get info of command.
+     *
+     * Use to provide 'extra' information about the command.
+     *
+     * @returns {Object}
+     */
+
+  }, {
+    key: "getInfo",
+    value: function getInfo() {
+      return {};
     }
     /**
      * Current component.
@@ -21105,7 +21323,7 @@ exports.default = void 0;
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
-__webpack_require__(/*! core-js/modules/es6.array.find */ "../node_modules/core-js/modules/es6.array.find.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 var _assign = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/assign */ "../node_modules/@babel/runtime-corejs2/core-js/object/assign.js"));
 
@@ -21160,7 +21378,7 @@ var CommandData = /*#__PURE__*/function (_CommandBase) {
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "data", void 0);
     (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "type", void 0);
 
-    if ((_this$args$options = _this.args.options) === null || _this$args$options === void 0 ? void 0 : _this$args$options.type) {
+    if ((_this$args$options = _this.args.options) !== null && _this$args$options !== void 0 && _this$args$options.type) {
       _this.type = _this.args.options.type;
     }
 
@@ -21498,11 +21716,11 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "../node_modules/core-js/modules/es6.regexp.replace.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.replace.js */ "../node_modules/core-js/modules/es6.regexp.replace.js");
 
 var _keys = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "../node_modules/@babel/runtime-corejs2/core-js/object/keys.js"));
 
-__webpack_require__(/*! core-js/modules/es6.regexp.split */ "../node_modules/core-js/modules/es6.regexp.split.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.split.js */ "../node_modules/core-js/modules/es6.regexp.split.js");
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
@@ -22841,9 +23059,9 @@ _Object$defineProperty(exports, "__esModule", {
 
 exports.default = void 0;
 
-__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "../node_modules/core-js/modules/es6.regexp.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.regexp.to-string.js */ "../node_modules/core-js/modules/es6.regexp.to-string.js");
 
-__webpack_require__(/*! core-js/modules/es6.object.to-string */ "../node_modules/core-js/modules/es6.object.to-string.js");
+__webpack_require__(/*! core-js/modules/es6.object.to-string.js */ "../node_modules/core-js/modules/es6.object.to-string.js");
 
 var matchUserAgent = function matchUserAgent(UserAgentStr) {
   return userAgent.indexOf(UserAgentStr) >= 0;
@@ -23169,7 +23387,7 @@ module.exports = function (it) {
 /*! CommonJS bailout: module.exports is used directly at 1:11-25 */
 /***/ ((module) => {
 
-var core = module.exports = { version: '2.6.11' };
+var core = module.exports = { version: '2.6.12' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -24416,7 +24634,7 @@ var store = global[SHARED] || (global[SHARED] = {});
 })('versions', []).push({
   version: core.version,
   mode: __webpack_require__(/*! ./_library */ "../node_modules/core-js/modules/_library.js") ? 'pure' : 'global',
-  copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
+  copyright: '© 2020 Denis Pushkarev (zloirock.ru)'
 });
 
 

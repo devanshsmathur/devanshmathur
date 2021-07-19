@@ -32,7 +32,7 @@ class ElementsKit_Widget_Image_Box extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         // start content section for set Image
         $this->start_controls_section(
@@ -53,6 +53,7 @@ class ElementsKit_Widget_Image_Box extends Widget_Base {
                 ],
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
             ]
         );

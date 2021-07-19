@@ -12,7 +12,7 @@ class Notice{
      *
      * @var string
      */
-    protected $script_version = '2.0.5';
+    protected $script_version = '2.1.0';
 
     /**
      * Unique ID to identify each notice
@@ -316,23 +316,22 @@ class Notice{
             dismissible="<?php echo ($this->dismissible); ?>"
         >
             <?php if(!empty($this->logo)):?>
-                <div class="notice-left-container alignleft">
-                    <p><img style="margin-right:15px; <?php echo esc_attr($this->logo_style); ?>" src="<?php echo esc_url($this->logo);?>" /></p>
-                </div>
+                <img class="notice-logo" style="<?php echo esc_attr($this->logo_style); ?>" src="<?php echo esc_url($this->logo);?>" />
             <?php endif; ?>
 
-            <div class="notice-right-container">
+            <div class="notice-right-container <?php echo (empty($this->logo) ? 'notice-container-full-width' : ''); ?>">
 
                 <?php if(empty($this->html)): ?>
-                    <div class="main-message">
-                        <?php echo (empty($this->title) ? '' : sprintf('<h3>%s</h3>', $this->title)); ?>
+                    <?php echo (empty($this->title) ? '' : sprintf('<div class="notice-main-title notice-vert-space">%s</div>', $this->title)); ?>
+
+                    <div class="notice-message notice-vert-space">
                         <?php echo ( $this->message );?>
                     </div>
 
                     <?php if(!empty($this->buttons)): ?>
-                        <div class="submit">
+                        <div class="button-container notice-vert-space">
                             <?php foreach($this->buttons as $button): ?>
-                                <a id="<?php echo (!isset($button['id']) ? '' : $button['id']); ?>" href="<?php echo esc_url($button['url']); ?>" class="wpmet-notice-buttons <?php echo esc_attr($button['class']); ?>">
+                                <a id="<?php echo (!isset($button['id']) ? '' : $button['id']); ?>" href="<?php echo esc_url($button['url']); ?>" class="wpmet-notice-button <?php echo esc_attr($button['class']); ?>">
                                     <?php if(!empty($button['icon'])) :?>
                                         <i class="notice-icon <?php echo esc_attr($button['icon']); ?>"></i>
                                     <?php endif; ?>
@@ -347,13 +346,13 @@ class Notice{
                     <?php echo $this->html; ?>
                 <?php endif;?>
 
-                <?php if(false !== $this->dismissible): ?>
-                    <button type="button" class="notice-dismiss">
-                        <span class="screen-reader-text">x</span>
-                    </button>
-                <?php endif;?>
-
             </div>
+
+            <?php if(false !== $this->dismissible): ?>
+                <button type="button" class="notice-dismiss">
+                    <span class="screen-reader-text">x</span>
+                </button>
+            <?php endif;?>
 
             <div style="clear:both"></div>
 
@@ -401,7 +400,7 @@ class Notice{
                         // });
                         // return;
 
-                        _this.addClass('hidden');
+                        _this.hide();
 
                         $.ajax({
                             url: ajaxurl,
@@ -417,50 +416,63 @@ class Notice{
                 });
             </script>
             <style>
-                .wpmet-notice .notice-icon{
+                .wpmet-notice{
+                    margin: 5px 0 15px;
+                    padding: 0!important;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .wpmet-notice .notice-right-container{
+                    margin: .7rem .8rem .8rem;
+                }
+
+                .notice-container-full-width{
+                    width:100%!important;
+                }
+                
+                .wpmet-notice.no-gutter, .wpmet-notice.no-gutter .notice-right-container{
+                    padding: 0!important;
+                    margin: 0!important;
+                }
+
+                .notice-right-container .notice-vert-space{
+                    margin-bottom: .8rem;
+                }
+
+                .notice-right-container .notice-vert-space:last-child,
+                .notice-right-container .notice-vert-space:only-child{
+                    margin-bottom: 0;
+                }
+
+                .wpmet-notice .notice-logo{
+                    padding: .8rem;
+                    max-width: 110px;
+                    max-height: 110px;
+                }
+                
+                .wpmet-notice-button {
+                    text-decoration:none;
+                }
+                
+                .wpmet-notice-button > i{
+                    margin-right: 3px;
+                }
+                
+                .wpmet-notice-button .notice-icon{
                     display:inline-block;
                 }
 
-                .wpmet-notice .notice-icon:before{
+                .wpmet-notice-button .notice-icon:before{
                     vertical-align: middle!important;
                     margin-top: -1px;
                 }
 
-                .wpmet-notice .main-message{
-                    margin-bottom: 10px;
-                }
-
-                .wpmet-notice-buttons {
-                    text-decoration:none;
-                }
-
-                .wpmet-notice-buttons > i{
-                    margin-right: 3px;
-                }
-
-                .wpmet-notice .notice-right-container{
-                    /* padding-top: 10px; */
-                }
-                .wpmet-notice .notice-right-container .submit {
-                    padding-top: 0;
-                    margin-top: 0;
-                    margin-bottom: 15px;
-                    padding-bottom: 0;
-                }
-
-                .wpmet-notice img{
-                    max-width: 100%!important;
-                    max-height: 100%!important;
-                }
-
-                .wpmet-notice.no-gutter{
-                    padding: 0!important;
-                    border: 0!important;
-                }
-
-                .wpmet-notice.no-gutter .notice-right-container{
-                    padding: 0!important;
-                    margin: 0!important;
+                .wpmet-notice .notice-main-title{
+                    color: #1d2327;
+                    font-size: 1.2rem;
                 }
              
             </style>

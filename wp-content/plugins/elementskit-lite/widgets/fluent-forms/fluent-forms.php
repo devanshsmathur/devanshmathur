@@ -58,7 +58,7 @@ class ElementsKit_Widget_Fluent_Forms extends Widget_Base {
 
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         // General Controls
         $this->start_controls_section(

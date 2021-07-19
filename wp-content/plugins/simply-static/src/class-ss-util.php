@@ -481,5 +481,4 @@ class Util {
 		);
 		return esc_url_raw( $url );
 	}
-
 }

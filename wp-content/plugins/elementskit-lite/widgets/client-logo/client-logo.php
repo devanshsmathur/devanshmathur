@@ -37,7 +37,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'ekit_client_logo_section_client',
@@ -77,6 +77,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
             ]
         );
@@ -100,6 +101,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
                 'condition' => [
                     'ekit_client_logo_enable_hover_logo' => 'yes'
@@ -237,7 +239,8 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 					'unit' => 'px',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .elementskit-clients-slider .slick-slide > div:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementskit-clients-slider .slick-slide > div' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementskit-clients-slider .slick-list' => 'margin-bottom: -{{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -329,7 +332,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
                 'min' => 1000,
                 'max' => 15000,
                 'step' => 100,
-                'default' => 8000,
+                'default' => 1000,
                 'condition' => [
                     'ekit_client_logo_autoplay' => 'yes',
                 ]
@@ -589,7 +592,7 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
         $this->add_control(
             'ekit_client_logo_hover_animation_driction',
             [
-                'label' => esc_html__( 'Direction', 'elementskit-lite' ),
+                'label' => esc_html__( 'Overlay Direction', 'elementskit-lite' ),
                 'type' =>   Controls_Manager::CHOOSE,
                 'options' => [
                     'hover_from_left' => [
@@ -1457,35 +1460,30 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
             'arrows'			=> !empty($settings['ekit_client_logo_show_arrow']),
             'dots'				=> !empty($settings['ekit_client_logo_show_dot']),
             'pauseOnHover'		=> !empty($settings['ekit_client_logo_pause_on_hover']),
-			'prevArrow'			=> $prevArrowIcon,
-			'nextArrow'			=> $nextArrowIcon,
             'autoplay'			=> !empty($settings['ekit_client_logo_autoplay']),
-            'autoplaySpeed'		=> !empty($settings['ekit_client_logo_speed']) ? $settings['ekit_client_logo_speed'] : 1000,
-            'infinite'			=> !empty($settings['ekit_client_logo_autoplay']),
-            'slidesToShow'		=> !empty($settings['ekit_client_logo_slidetosho']['size']) ? $settings['ekit_client_logo_slidetosho']['size'] : 4,
-            'slidesToScroll'	=> !empty($settings['ekit_client_logo_slidesToScroll']['size']) ? $settings['ekit_client_logo_slidesToScroll']['size'] : 1,
+            'speed'		=> !empty($settings['ekit_client_logo_speed']) ? $settings['ekit_client_logo_speed'] : 1000,
+            'slidesPerView'		=> !empty($settings['ekit_client_logo_slidetosho']['size']) ? $settings['ekit_client_logo_slidetosho']['size'] : 4,
+            'slidesPerGroup'	=> !empty($settings['ekit_client_logo_slidesToScroll']['size']) ? $settings['ekit_client_logo_slidesToScroll']['size'] : 1,
             'pauseOnHover'	    => !empty($settings['ekit_client_logo_pause_on_hover']),
-            'rows'	            => (int) $settings['ekit_client_logo_rows'],
-            'responsive'		=> [
-                [
-                    'breakpoint'    => 1024,
-                    'settings'      => [
-                        'slidesToShow'      => !empty($settings['ekit_client_logo_slidetosho_tablet']['size']) ? $settings['ekit_client_logo_slidetosho_tablet']['size'] : 2,
-                        'slidesToScroll'    => !empty($settings['ekit_client_logo_slidesToScroll_tablet']['size']) ? $settings['ekit_client_logo_slidesToScroll_tablet']['size'] : 1,
-                    ],
+            'slidesPerColumn'	            => (int) $settings['ekit_client_logo_rows'],
+            'breakpoints'		=> [
+                320 => [
+                    'slidesPerView'      => !empty($settings['ekit_client_logo_slidetosho_mobile']['size']) ? $settings['ekit_client_logo_slidetosho_mobile']['size'] : 1,
+                    'slidesPerGroup'    => !empty($settings['ekit_client_logo_slidesToScroll_mobile']['size']) ? $settings['ekit_client_logo_slidesToScroll_mobile']['size'] : 1
                 ],
-                [
-                    'breakpoint'    => 480,
-                    'settings'      => [
-                        'slidesToShow'      => !empty($settings['ekit_client_logo_slidetosho_mobile']['size']) ? $settings['ekit_client_logo_slidetosho_mobile']['size'] : 1,
-                        'slidesToScroll'    => !empty($settings['ekit_client_logo_slidesToScroll_mobile']['size']) ? $settings['ekit_client_logo_slidesToScroll_mobile']['size'] : 1,
-                    ],
-                    'arrows'		=> false,
+                768 => [
+                    'slidesPerView'      => !empty($settings['ekit_client_logo_slidetosho_tablet']['size']) ? $settings['ekit_client_logo_slidetosho_tablet']['size'] : 2,
+                    'slidesPerGroup'    => !empty($settings['ekit_client_logo_slidesToScroll_tablet']['size']) ? $settings['ekit_client_logo_slidesToScroll_tablet']['size'] : 1,
+                ],
+                1024 => [
+                    'slidesPerView'      => !empty($settings['ekit_client_logo_slidetosho']['size']) ? $settings['ekit_client_logo_slidetosho']['size'] : 2,
+                    'slidesPerGroup'    => !empty($settings['ekit_client_logo_slidesToScroll']['size']) ? $settings['ekit_client_logo_slidesToScroll']['size'] : 1,
                 ]
             ],
         ];
 
-        $this->add_render_attribute( 'wrapper', 'class', 'elementskit-clients-slider');
+        $this->add_render_attribute( 'wrapper', 'class', 'elementskit-clients-slider slick-slider');
+        $this->add_render_attribute( 'wrapper', 'class', !empty($settings['ekit_client_logo_show_dot']) ? 'slick-dotted' : '');
         $this->add_render_attribute( 'wrapper', 'class', $settings['ekit_client_logo_arrow_pos']);
         $this->add_render_attribute( 'wrapper', 'class', $settings['ekit_client_logo_client_logo_dot_style']);
 		$this->add_render_attribute( 'wrapper', 'class', $settings['ekit_client_logo_hover_animation_driction']);
@@ -1497,52 +1495,72 @@ class ElementsKit_Widget_Client_Logo extends Widget_Base {
 
         $seperotor_enable = $settings['ekit_client_logo_separator'] == 'yes' ? 'log-separator' : '';
         ?>
-        
         <div <?php echo \ElementsKit_Lite\Utils::render($this->get_render_attribute_string( 'wrapper' )); ?>>
+            <div class="swiper-container">
+                <div class="slick-list swiper-wrapper">
+                    <?php
 
-            <?php
+                        $count = 1;
 
-                $count = 1;
+                        foreach ($logos as $logo) :
+                        if ( ! empty( $logo['ekit_client_logo_website_link']['url'] ) ) {
+                            $this->add_link_attributes( 'button-' . $count, $logo['ekit_client_logo_website_link'] );
+                        }
+                        ?>
+                        <div class="elementskit-client-slider-item swiper-slide <?php echo esc_attr($seperotor_enable);?>">
+                            <div class="slick-slide">
+                                <div class="single-client image-switcher" title="<?php echo esc_attr( $logo['ekit_client_logo_list_title'] ); ?>">
+                                    <?php if($logo['ekit_client_logo_enable_link'] == 'yes') :  ?>
 
-                foreach ($logos as $logo) :
-                if ( ! empty( $logo['ekit_client_logo_website_link']['url'] ) ) {
-                    $this->add_link_attributes( 'button-' . $count, $logo['ekit_client_logo_website_link'] );
-                }
-                ?>
-                <div class="elementskit-client-slider-item <?php echo esc_attr($seperotor_enable);?>">
-                    <div class="single-client image-switcher" title="<?php echo esc_attr( $logo['ekit_client_logo_list_title'] ); ?>">
-                        <?php if($logo['ekit_client_logo_enable_link'] == 'yes') :  ?>
 
+                                        <a <?php echo $this->get_render_attribute_string( 'button-' . $count ); ?> <?php echo \ElementsKit_Lite\Utils::render($this->get_render_attribute_string( 'link_'.$count )); ?>>
+                                            <span class="content-image">
 
-                            <a <?php echo $this->get_render_attribute_string( 'button-' . $count ); ?> <?php echo \ElementsKit_Lite\Utils::render($this->get_render_attribute_string( 'link_'.$count )); ?>>
-                                <span class="content-image">
+                                                <?php echo \Elementskit_Lite\Utils::get_attachment_image_html($logo, 'ekit_client_logo_image_normal', null, [
+                                                    'class' => $logo['ekit_client_logo_enable_hover_logo'] == 'yes' ? 'main-image' :  ''
+                                                ]); ?>
 
-                                    <img src="<?php echo esc_url($logo['ekit_client_logo_image_normal']['url']); ?>" alt="<?php echo esc_attr(Control_Media::get_image_alt($logo['ekit_client_logo_image_normal'])); ?>" class="<?php echo esc_attr(($logo['ekit_client_logo_enable_hover_logo'] == 'yes') ? 'main-image' :  ''); ?>">
+                                                <?php if($logo['ekit_client_logo_enable_hover_logo']) : ?>
+                                                    <?php echo \Elementskit_Lite\Utils::get_attachment_image_html($logo, 'ekit_client_logo_image_hover', 'full', [
+                                                        'class' => 'hover-image'
+                                                    ]); ?>
+                                                <?php endif; ?>
+                                            </span>
+                                        </a>
 
-                                    <?php if($logo['ekit_client_logo_enable_hover_logo']) : ?>
-                                        <img src="<?php echo esc_url($logo['ekit_client_logo_image_hover']['url']); ?>" alt="<?php echo esc_attr(Control_Media::get_image_alt($logo['ekit_client_logo_image_hover'])); ?>" class="hover-image">
+                                    <?php else:  ?>
+
+                                        <div class="content-image">
+
+                                            <?php echo \Elementskit_Lite\Utils::get_attachment_image_html($logo, 'ekit_client_logo_image_normal', 'full', [
+                                                'class' => $logo['ekit_client_logo_enable_hover_logo'] == 'yes' ? 'main-image' :  ''
+                                            ]); 
+                                            ?>
+
+                                            <?php if($logo['ekit_client_logo_enable_hover_logo']) : ?>
+                                                <?php echo \Elementskit_Lite\Utils::get_attachment_image_html($logo, 'ekit_client_logo_image_hover', 'full', [
+                                                    'class' => 'hover-image'
+                                                ]); ?>
+                                            <?php endif; ?>
+                                        </div>
+
                                     <?php endif; ?>
-                                </span>
-                            </a>
 
-                        <?php else:  ?>
-
-                            <div class="content-image">
-
-                                <img src="<?php echo esc_url($logo['ekit_client_logo_image_normal']['url']); ?>" alt="<?php echo esc_attr(Control_Media::get_image_alt($logo['ekit_client_logo_image_normal'])); ?>" class="<?php echo esc_attr(($logo['ekit_client_logo_enable_hover_logo'] == 'yes') ? 'main-image' :  '' ); ?>">
-                                <?php if($logo['ekit_client_logo_enable_hover_logo']) : ?>
-                                    <img src="<?php echo esc_url($logo['ekit_client_logo_image_hover']['url']); ?>" alt="<?php echo esc_attr(Control_Media::get_image_alt($logo['ekit_client_logo_image_hover'])); ?>" class="hover-image">
-                                <?php endif; ?>
+                                </div>
                             </div>
+                        </div>
 
-                        <?php endif; ?>
-
-                    </div>
+                    <?php  $count++; endforeach; ?>
                 </div>
 
-            <?php  $count++; endforeach; ?>
-
-        </div><!-- .elementskit-clients-slider END -->
+            </div><!-- .elementskit-clients-slider END -->
+           
+            <ul class="slick-dots swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></ul>
+            <?php if(!empty($settings['ekit_client_logo_show_arrow'])) : ?>
+                <button type="button" class="slick-prev slick-arrow"><i class="<?php echo esc_attr($prevArrowIcon); ?>"></i></button>
+                <button type="button" class="slick-next slick-arrow"><i class="<?php echo esc_attr($nextArrowIcon); ?>"></i></button>
+            <?php endif; ?>
+        </div>
 
    <?php
 

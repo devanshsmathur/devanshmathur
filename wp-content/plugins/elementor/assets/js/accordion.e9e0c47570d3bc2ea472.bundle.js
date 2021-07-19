@@ -1,4 +1,4 @@
-/*! elementor - v3.1.4 - 10-03-2021 */
+/*! elementor - v3.3.0 - 11-07-2021 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["accordion"],{
 
 /***/ "../assets/dev/js/frontend/handlers/accordion.js":

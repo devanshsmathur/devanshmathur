@@ -16,11 +16,18 @@ function wpforms_display( $form_id = false, $title = false, $desc = false ) {
 /**
  * Perform json_decode and unslash.
  *
+ * IMPORTANT: This function decodes the result of wpforms_encode() properly only if
+ * wp_insert_post() or wp_update_post() were used after the data is encoded.
+ * Both wp_insert_post() and wp_update_post() remove excessive slashes added by wpforms_encode().
+ *
+ * Using wpforms_decode() on wpforms_encode() result directly
+ * (without using wp_insert_post() or wp_update_post() first) always returns null or false.
+ *
  * @since 1.0.0
  *
  * @param string $data Data to decode.
  *
- * @return array|bool
+ * @return array|false|null
  */
 function wpforms_decode( $data ) {
 
@@ -34,11 +41,17 @@ function wpforms_decode( $data ) {
 /**
  * Perform json_encode and wp_slash.
  *
+ * IMPORTANT: This function adds excessive slashes to prevent data damage
+ * by wp_insert_post() or wp_update_post() that use wp_unslash() on all the incoming data.
+ *
+ * Decoding the result of this function by wpforms_decode() directly
+ * (without using wp_insert_post() or wp_update_post() first) always returns null or false.
+ *
  * @since 1.3.1.3
  *
  * @param mixed $data Data to encode.
  *
- * @return string
+ * @return string|false
  */
 function wpforms_encode( $data = false ) {
 
@@ -1639,6 +1652,16 @@ function wpforms_debug() {
  */
 function wpforms_debug_data( $data, $echo = true ) {
 
+	/**
+	 * Allow developers to determine whether the debug data should be displayed.
+	 * Works only in debug mode (`WPFORMS_DEBUG` constant is `true`).
+	 *
+	 * @since 1.6.8
+	 *
+	 * @param bool $allow_display True by default.
+	 */
+	$allow_display = apply_filters( 'wpforms_debug_data_allow_display', true );
+
 	if ( wpforms_debug() ) {
 
 		$output = '<div><textarea style="background:#fff;margin: 20px 0;width:100%;height:500px;font-size:12px;font-family: Consolas,Monaco,monospace;direction: ltr;unicode-bidi: embed;line-height: 1.4;padding: 4px 6px 1px;" readonly>';
@@ -1653,8 +1676,8 @@ function wpforms_debug_data( $data, $echo = true ) {
 
 		$output .= '</textarea></div>';
 
-		if ( $echo ) {
-			echo $output; // phpcs:ignore
+		if ( $echo && $allow_display ) {
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} else {
 			return $output;
 		}
@@ -2077,7 +2100,7 @@ function wpforms_get_providers_available() {
  */
 function wpforms_get_providers_options( $provider = '' ) {
 
-	$options  = get_option( 'wpforms_providers', array() );
+	$options  = get_option( 'wpforms_providers', [] );
 	$provider = sanitize_key( $provider );
 	$data     = $options;
 
@@ -2342,30 +2365,27 @@ function wpforms_get_activated_timestamp( $type = '' ) {
  *
  * @since 1.5.8.2
  * @since 1.6.5 Added filterable frontend ajax actions list as a fallback to missing referer cases.
+ * @since 1.6.7.1 Removed a requirement for an AJAX action to be a WPForms action if referer is not missing.
  *
  * @return bool
  */
 function wpforms_is_frontend_ajax() {
 
-	// It's an AJAX request.
 	if ( ! wp_doing_ajax() ) {
 		return false;
 	}
 
-	// It targets admin-ajax.php.
-	if (
-		isset( $_SERVER['SCRIPT_FILENAME'] ) &&
-		basename( sanitize_text_field( wp_unslash( $_SERVER['SCRIPT_FILENAME'] ) ) ) !== 'admin-ajax.php'
-	) {
+	// Additional check to make sure the request targets admin-ajax.php.
+	if ( isset( $_SERVER['SCRIPT_FILENAME'] ) && basename( sanitize_text_field( wp_unslash( $_SERVER['SCRIPT_FILENAME'] ) ) ) !== 'admin-ajax.php' ) {
 		return false;
 	}
 
-	$ref    = wp_get_raw_referer();
-	$action = isset( $_POST['action'] ) ? sanitize_key( $_POST['action'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+	$ref = wp_get_raw_referer();
 
-	// It has a frontend AJAX action name if there's no referer.
 	if ( ! $ref ) {
 
+		// Try to detect a frontend AJAX call indirectly by comparing the current action
+		// with a known frontend actions list in case there's no HTTP referer.
 		$frontend_actions = [
 			'wpforms_submit',
 			'wpforms_file_upload_speed_test',
@@ -2378,7 +2398,9 @@ function wpforms_is_frontend_ajax() {
 			'wpforms_form_abandonment',
 		];
 
-		// This hook is running on "plugins_loaded", mind the hooks order when using it.
+		$action = isset( $_REQUEST['action'] ) ? sanitize_key( $_REQUEST['action'] ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		// This filter may be running as early as "plugins_loaded" hook. Please mind the hooks order when using it.
 		$frontend_actions = (array) apply_filters( 'wpforms_is_frontend_ajax_frontend_actions', $frontend_actions );
 
 		return in_array( $action, $frontend_actions, true );
@@ -2387,17 +2409,8 @@ function wpforms_is_frontend_ajax() {
 	$path       = wp_parse_url( $ref, PHP_URL_PATH );
 	$admin_path = wp_parse_url( admin_url(), PHP_URL_PATH );
 
-	// It does not contain an admin path.
-	if ( strpos( $path, $admin_path ) !== false ) {
-		return false;
-	}
-
-	// It's a WPForms request.
-	if ( strpos( $action, 'wpforms' ) !== 0 ) {
-		return false;
-	}
-
-	return true;
+	// It's a frontend AJAX call if HTTP referer doesn't contain an admin path.
+	return strpos( $path, $admin_path ) === false;
 }
 
 /**

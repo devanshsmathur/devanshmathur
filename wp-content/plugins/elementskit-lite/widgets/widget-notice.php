@@ -31,7 +31,7 @@ trait Widget_Notice{
                     ],
                     'default' => '1',
                     'toggle'    => false,
-                    'description' => '<span class="ekit-widget-pro-feature"> Get the  <a href="http://go.wpmet.com/ekit-pro-widget-message" target="_blank">Pro version</a> for more awesome elements and powerful modules.</span>',
+                    'description' => '<span class="ekit-widget-pro-feature"> Get the  <a href="https://wpmet.com/elementskit-pricing" target="_blank">Pro version</a> for more awesome elements and powerful modules.</span>',
                 ]
             );
 

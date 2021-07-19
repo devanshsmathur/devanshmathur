@@ -49,7 +49,7 @@ class ElementsKit_Widget_Caldera_Forms extends Widget_Base {
 		return $form_options;
 	}
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'ekit_caldera_form_section_tab', [
                 'label' =>esc_html__( 'Caldera Forms', 'elementskit-lite' ),

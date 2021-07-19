@@ -36,7 +36,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'ekit_testimonial_layout_section_tab_style',
@@ -182,9 +182,10 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				'label_off' => esc_html__( 'Hide', 'elementskit-lite' ),
 				'return_value' => 'yes',
 				'default' => 'no',
-				'separator'    => 'before',
+				'separator'	=> 'before',
 				'condition' => [
 					'ekit_testimonial_wartermark_enable' => 'yes',
+					'ekit_testimonial_style'			 => 'style2',
 				],
 			]
 		);
@@ -214,8 +215,9 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}} .ekit_watermark_icon_custom_position' => 'left: {{SIZE}}{{UNIT}} !important;',
 				],
 				'condition' => [
-					'ekit_testimonial_wartermark_enable' => 'yes',
+					'ekit_testimonial_wartermark_enable'		  => 'yes',
 					'ekit_testimonial_wartermark_custom_position' => 'yes',
+					'ekit_testimonial_style'			 		  => 'style2',
 				]
 			]
 		);
@@ -245,9 +247,20 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}} .ekit_watermark_icon_custom_position' => 'top: {{SIZE}}{{UNIT}} !important;',
 				],
 				'condition' => [
-					'ekit_testimonial_wartermark_enable' => 'yes',
+					'ekit_testimonial_wartermark_enable' 		  => 'yes',
 					'ekit_testimonial_wartermark_custom_position' => 'yes',
+					'ekit_testimonial_style'			 		  => 'style2',
 				]
+			]
+		);
+
+		$this->add_control(
+			'ekit_testimonial_before_rating',
+			[
+				'type' 		=> Controls_Manager::DIVIDER,
+				'condition'	=> [
+					'ekit_testimonial_style!' => ['style1', 'style3'],
+				],
 			]
 		);
 
@@ -261,7 +274,6 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
                 'label_off' => esc_html__( 'No', 'elementskit-lite' ),
                 'return_value' => 'yes',
 				'default' => 'yes',
-				'separetor' => 'before',
 				'condition' => [
 					'ekit_testimonial_style' => ['style3', 'style4', 'style5', 'style6']
 				]
@@ -277,7 +289,6 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
                 'label_on'  => esc_html__( 'Yes', 'elementskit-lite' ),
                 'label_off' => esc_html__( 'No', 'elementskit-lite' ),
 				'default'   => 'yes',
-				'separator'    => 'before',
 				'condition' => [
 					'ekit_testimonial_style' => ['style1', 'style2'],
 				]
@@ -330,6 +341,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
 				],
             ]
         );
@@ -339,6 +351,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
 				],
             ]
         );
@@ -358,6 +371,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				'type' => Controls_Manager::MEDIA,
 				'default' => [
 					'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
 				],
 				'condition' => ['use_hover_logo' => 'yes'],
             ]
@@ -499,7 +513,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
         $this->add_control(
 			'ekit_testimonial_show_arrow',
 			[
-				'label' => esc_html__( 'Show arrow', 'elementskit-lite' ),
+				'label' => esc_html__( 'Show Arrow', 'elementskit-lite' ),
 				'type' =>   Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'elementskit-lite' ),
 				'label_off' => esc_html__( 'No', 'elementskit-lite' ),
@@ -511,7 +525,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
         $this->add_control(
 			'ekit_testimonial_show_dot',
 			[
-				'label' => esc_html__( 'Show dots', 'elementskit-lite' ),
+				'label' => esc_html__( 'Show Dots', 'elementskit-lite' ),
 				'type' =>   Controls_Manager::SWITCHER,
 				'label_on' => esc_html__( 'Yes', 'elementskit-lite' ),
 				'label_off' => esc_html__( 'No', 'elementskit-lite' ),
@@ -523,7 +537,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
         $this->add_control(
 			'ekit_testimonial_left_arrows',
 			[
-				'label' => esc_html__( 'Left arrow Icon', 'elementskit-lite' ),
+				'label' => esc_html__( 'Left Arrow Icon', 'elementskit-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'ekit_testimonial_left_arrow',
                 'default' => [
@@ -539,7 +553,7 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
         $this->add_control(
 			'ekit_testimonial_right_arrows',
 			[
-				'label' => esc_html__( 'Right arrow Icon', 'elementskit-lite' ),
+				'label' => esc_html__( 'Right Arrow Icon', 'elementskit-lite' ),
 				'type' => Controls_Manager::ICONS,
 				'fa4compatibility' => 'ekit_testimonial_right_arrow',
                 'default' => [
@@ -573,140 +587,150 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			    'tab'	 => Controls_Manager::TAB_STYLE,
 		    ]
 	    );
-
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'ekit_testimonial_layout_background',
-				'label' => esc_html__( 'Background', 'elementskit-lite' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}} .elementskit-testimonial_card, {{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content::before',
-			]
-		);
-
-		 $this->add_responsive_control(
-            'ekit_testimonial_layout_margin',
-            [
-                'label'         => esc_html__('Column Gap', 'elementskit-lite'),
-                'type'          => Controls_Manager::SLIDER,
-                'size_units'    => ['px', 'em'],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-
-		 $this->add_responsive_control(
-			'ekit_testimonial_layout_padding',
-			[
-				'label' =>esc_html__( 'Padding', 'elementskit-lite' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', 'em', '%' ],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			'ekit_testimonial_client_parent_container_margin',
-			[
-				'label' => esc_html__( 'Margin', 'elementskit-lite' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-testimonial-slider-block-style' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style4']
+			$this->add_responsive_control(
+				'ekit_testimonial_layout_margin',
+				[
+					'label'         => esc_html__('Column Gap', 'elementskit-lite'),
+					'type'          => Controls_Manager::SLIDER,
+					'size_units'    => ['px', 'em'],
+					'selectors' => [
+						'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
+					],
 				]
-			]
-		);
+			);
 
 
-		//  $this->add_responsive_control(
-		// 	'ekit_testimonial_layout_border_radius',
-		// 	[
-		// 		'label' =>esc_html__( 'Border Radius', 'elementskit-lite' ),
-		// 		'type' => Controls_Manager::DIMENSIONS,
-		// 		'size_units' => [ 'px'],
-		// 		'default' => [
-		// 			'top' => '',
-		// 			'right' => '',
-		// 			'bottom' => '' ,
-		// 			'left' => '',
-		// 		],
-		// 		'selectors' => [
-		// 			'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}} .elementskit-testimonial_card' =>  'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-		// 		],
-		// 	]
-		// );
+			$this->add_responsive_control(
+				'ekit_testimonial_layout_padding',
+				[
+					'label' =>esc_html__( 'Padding', 'elementskit-lite' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', 'em', '%' ],
+					'selectors' => [
+						'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
 
-		$this->add_responsive_control(
-			'ekit_testimonial_layout_border_radius',
-			[
-				'label' => esc_html__( 'Border Radius', 'elementskit-lite' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}} .elementskit-testimonial_card' =>  'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
+			$this->add_responsive_control(
+				'ekit_testimonial_client_parent_container_margin',
+				[
+					'label' => esc_html__( 'Margin', 'elementskit-lite' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%', 'em' ],
+					'selectors' => [
+						'{{WRAPPER}} .elementskit-testimonial-slider-block-style' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+					'condition' => [
+						'ekit_testimonial_style' => ['style4']
+					]
+				]
+			);
 
-		$this->add_group_control(
-            Group_Control_Box_Shadow::get_type(), [
-                'name'      => 'ekit_testimonial_layout_shadow',
-                'selector'  => '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card',
-            ]
-		);
+			$this->add_responsive_control(
+				'ekit_testimonial_layout_border_radius',
+				[
+					'label' => esc_html__( 'Border Radius', 'elementskit-lite' ),
+					'type' => Controls_Manager::DIMENSIONS,
+					'size_units' => [ 'px', '%', 'em' ],
+					'selectors' => [
+						'{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}} .elementskit-testimonial_card' =>  'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+				]
+			);
 
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'ekit_testimonial_layout_border',
-				'label' => esc_html__( 'Border', 'elementskit-lite' ),
-				'selector' => '{{WRAPPER}} .elementskit-single-testimonial-slider',
-			]
-		);
+			$this->start_controls_tabs( 'ekit_testimonial_wrapper_tabs' );
+				$this->start_controls_tab(
+					'ekit_testimonial_wrapper_tab_normal',
+					[
+						'label' => esc_html__( 'Normal', 'elementskit-lite' ),
+					]
+				);
+					$this->add_group_control(
+						Group_Control_Background::get_type(),
+						[
+							'name' => 'ekit_testimonial_layout_background',
+							'label' => esc_html__( 'Background', 'elementskit-lite' ),
+							'types' => [ 'classic', 'gradient' ],
+							'selector' => '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}} .elementskit-testimonial_card, {{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content::before',
+						]
+					);
 
-		$this->add_control(
-			'ekit_testimonial_layout_active_hedaing',
-			[
-				'label' => esc_html__( 'Active', 'elementskit-lite' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
+					$this->add_group_control(
+						Group_Control_Border::get_type(),
+						[
+							'name' => 'ekit_testimonial_layout_border',
+							'label' => esc_html__( 'Border', 'elementskit-lite' ),
+							'selector' => '{{WRAPPER}} .elementskit-single-testimonial-slider',
+						]
+					);
 
-		$this->add_control(
-			'ekit_testimonial_layout_active_border_color',
-			[
-				'label' => esc_html__( 'Border Color', 'elementskit-lite' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-single-testimonial-slider:hover' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
+					$this->add_group_control(
+						Group_Control_Box_Shadow::get_type(), [
+							'name'      => 'ekit_testimonial_layout_shadow',
+							'selector'  => '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content, {{WRAPPER}} .elementskit-single-testimonial-slider, {{WRAPPER}}  .elementskit-testimonial_card',
+						]
+					);
+				$this->end_controls_tab();
+				
+				$this->start_controls_tab(
+					'ekit_testimonial_wrapper_tab_hover',
+					[
+						'label' => esc_html__( 'Hover', 'elementskit-lite' ),
+					]
+				);
+					$this->add_group_control(
+						Group_Control_Background::get_type(),
+						[
+							'name' => 'ekit_testimonial_layout_active_background',
+							'label' => esc_html__( 'Background', 'elementskit-lite' ),
+							'types' => [ 'classic', 'gradient' ],
+							'selector' => '{{WRAPPER}} .elementskit-single-testimonial-slider:before',
+						]
+					);
 
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'ekit_testimonial_layout_active_background',
-				'label' => esc_html__( 'Background', 'elementskit-lite' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .elementskit-single-testimonial-slider:before',
-			]
-		);
+					$this->add_control(
+						'ekit_testimonial_layout_active_border_color',
+						[
+							'label' => esc_html__( 'Border Color', 'elementskit-lite' ),
+							'type' => Controls_Manager::COLOR,
+							'selectors' => [
+								'{{WRAPPER}} .elementskit-single-testimonial-slider:hover' => 'border-color: {{VALUE}}',
+							],
+						]
+					);
 
+					$this->add_group_control(
+						Group_Control_Box_Shadow::get_type(), [
+							'name'      => 'ekit_testimonial_layout_hover_shadow',
+							'selector'  => '{{WRAPPER}} .elementskit-tootltip-testimonial .elementskit-commentor-content:hover, {{WRAPPER}} .elementskit-single-testimonial-slider:hover, {{WRAPPER}}  .elementskit-testimonial_card:hover',
+						]
+					);
 
+					$this->add_control(
+						'ekit_testimonial_hover_effect',
+						[
+							'label'		=> esc_html__( 'Hover Effect', 'elementskit-lite' ),
+							'type'		=> Controls_Manager::SELECT,
+							'options'	=> [
+								'slide'		=> esc_html__( 'Slide', 'elementskit-lite' ),
+								'fade' 		=> esc_html__( 'Fade', 'elementskit-lite' ),
+							],
+							'default'	=> 'slide',
+							'prefix_class'	=> 'ekit-testimonial-',
+							'condition'	=> [
+								'ekit_testimonial_style!'								=> 'style3',
+								'ekit_testimonial_layout_active_background_background!' => '',
+							],
+						]
+					);
+				$this->end_controls_tab();
+			$this->end_controls_tabs();
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 		    'ekit_testimonial_section_wraper_style', [
-			    'label'	 => esc_html__( 'Wraper content style', 'elementskit-lite' ),
+			    'label'	 => esc_html__( 'Wraper Content Style', 'elementskit-lite' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 		    ]
 		);
@@ -831,6 +855,29 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'ekit_testimonial_description_color',
+			[
+				'label' => esc_html__( 'Color', 'elementskit-lite' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .elementskit-single-testimonial-slider  .elementskit-commentor-content > p' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .elementskit-testimonial_card .elementskit-commentor-coment' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'ekit_testimonial_description_active_color',
+			[
+				'label' => esc_html__( 'Hover Color', 'elementskit-lite' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .elementskit-single-testimonial-slider:hover  .elementskit-commentor-content > p' => 'color: {{VALUE}}',
+				],
+			]
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			[
@@ -853,38 +900,6 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'ekit_testimonial_description_color',
-			[
-				'label' => esc_html__( 'Color', 'elementskit-lite' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-single-testimonial-slider  .elementskit-commentor-content > p' => 'color: {{VALUE}}',
-					'{{WRAPPER}} .elementskit-testimonial_card .elementskit-commentor-coment' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
-		$this->add_control(
-			'ekit_testimonial_description_active_option',
-			[
-				'label' => esc_html__( 'Active', 'elementskit-lite' ),
-				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
-			]
-		);
-
-		$this->add_control(
-			'ekit_testimonial_description_active_color',
-			[
-				'label' => esc_html__( 'Color', 'elementskit-lite' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-single-testimonial-slider:hover  .elementskit-commentor-content > p' => 'color: {{VALUE}}',
-				],
-			]
-		);
-
 		$this->end_controls_section();
 
 		// Testimonial Review Rating
@@ -901,18 +916,29 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 	    );
 
 	    // Testimonial Review ratting Color
-	    $this->add_responsive_control(
+	    $this->add_control(
 		    'ekit_testimonial_review_ratting_color', [
-			    'label'		 =>esc_html__( 'Color', 'elementskit-lite' ),
+			    'label'		 => esc_html__( 'Color', 'elementskit-lite' ),
 				'type'		 => Controls_Manager::COLOR,
-				'default' => '#fec42d',
+				'default'	 => '#fec42d',
 			    'selectors'	 => [
 				    '{{WRAPPER}} .elementskit-stars > li > a' => 'color: {{VALUE}};'
 			    ],
 		    ]
 	    );
 
-		 $this->add_responsive_control(
+		$this->add_control(
+			'ekit_testimonial_rating_hover_color',
+			[
+				'label'		=> esc_html__( 'Active Color', 'elementskit-lite' ),
+				'type'		=> Controls_Manager::COLOR,
+				'selectors'	=> [
+					'{{WRAPPER}} .elementskit-single-testimonial-slider:hover .elementskit-stars > li > a' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
             'ekit_testimonial_review_ratting_font_size',
             [
                 'label'         => esc_html__('Font Size', 'elementskit-lite'),
@@ -963,10 +989,11 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 
 		$this->start_controls_section(
 		    'ekit_testimonial_section_wathermark_style', [
-			    'label'	 => esc_html__( 'Quote icon', 'elementskit-lite' ),
+			    'label'	 => esc_html__( 'Quote Icon', 'elementskit-lite' ),
 				'tab'	 => Controls_Manager::TAB_STYLE,
 				'condition' => [
 					'ekit_testimonial_wartermark_enable' => 'yes',
+					'ekit_testimonial_style!'			 => ['style1', 'style3'],
 				]
 		    ]
 		);
@@ -1033,11 +1060,11 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			]
 		);
 
-	    // Testimonial wathermark font size
+	    // Testimonial wathermark icon size
 		$this->add_responsive_control(
 			'ekit_testimonial_section_wathermark_typography',
 			[
-				'label' => esc_html__( 'Font Size', 'elementskit-lite' ),
+				'label' => esc_html__( 'Icon Size', 'elementskit-lite' ),
 				'type' => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
 				'range' => [
@@ -1047,16 +1074,9 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 						'step' => 1,
 					],
 				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 48,
-				],
 				'selectors' => [
 					'{{WRAPPER}} .elementskit-watermark-icon > i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementskit-testimonial-slider-block-style .elementskit-commentor-content > i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementskit-testimonial-slider-block-style-two .elementskit-icon-content > i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementskit-testimonial-slider-block-style-three .elementskit-icon-content > i' => 'font-size: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .elementskit-watermark-icon svg'	=> 'max-width: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementskit-watermark-icon > svg'	=> 'width: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -1320,67 +1340,32 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			[
 				'label' => esc_html__( 'Client Name', 'elementskit-lite' ),
 				'type' => Controls_Manager::HEADING,
-				'separator' => 'before',
 			]
-		);
-
-
-		$this->start_controls_tabs(
-            'ekit_testimonial_client_name_color_tabs'
-        );
-
-        $this->start_controls_tab(
-            'ekit_testimonial_client_name_normal_color_tab',
-            [
-                'label' => esc_html__( 'Normal', 'elementskit-lite' ),
-            ]
 		);
 
 		// Client Name Color
 		$this->add_control(
-		    'ekit_testimonial_client_name_normal_color', [
-			    'label'		 =>esc_html__( 'Color', 'elementskit-lite' ),
-			    'type'		 => Controls_Manager::COLOR,
-			    'selectors'	 => [
-				    '{{WRAPPER}} .elementskit-profile-info .elementskit-author-name' => 'color: {{VALUE}};'
-			    ],
-		    ]
-	    );
-
-		$this->end_controls_tab();
-
-        $this->start_controls_tab(
-            'ekit_testimonial_client_name_active_color_tab',
-            [
-                'label' => esc_html__( 'Hover', 'elementskit-lite' ),
-            ]
-		);
-
-		// Client Name Color
-		$this->add_control(
-		    'ekit_testimonial_client_name_active_color', [
-			    'label'		 =>esc_html__( 'Color', 'elementskit-lite' ),
-			    'type'		 => Controls_Manager::COLOR,
-			    'selectors'	 => [
-				    '{{WRAPPER}} .elementskit-single-testimonial-slider:hover .elementskit-author-name' => 'color: {{VALUE}};'
-			    ],
-		    ]
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_control(
-			'ekit_testimonial_client_name_color_tab_end',
-			[
-				'type' => Controls_Manager::DIVIDER,
-				'style' => 'thick',
+			'ekit_testimonial_client_name_normal_color', [
+				'label'		 =>esc_html__( 'Color', 'elementskit-lite' ),
+				'type'		 => Controls_Manager::COLOR,
+				'selectors'	 => [
+					'{{WRAPPER}} .elementskit-profile-info .elementskit-author-name' => 'color: {{VALUE}};'
+				],
 			]
 		);
-
-        // Client name typography
-	    $this->add_group_control(
+		
+		// Client Name Color
+		$this->add_control(
+			'ekit_testimonial_client_name_active_color', [
+				'label'		 =>esc_html__( 'Hover Color', 'elementskit-lite' ),
+				'type'		 => Controls_Manager::COLOR,
+				'selectors'	 => [
+					'{{WRAPPER}} .elementskit-single-testimonial-slider:hover .elementskit-author-name' => 'color: {{VALUE}};'
+				],
+			]
+		);
+		
+		$this->add_group_control(
 		    Group_Control_Typography::get_type(), [
 			    'name'		 => 'ekit_testimonial_client_name_typography',
 			    'selector'	 => '{{WRAPPER}} .elementskit-profile-info .elementskit-author-name',
@@ -1421,17 +1406,6 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			]
 		);
 
-		$this->start_controls_tabs(
-            'ekit_testimonial_client_designation_color_tabs'
-        );
-
-        $this->start_controls_tab(
-            'ekit_testimonial_client_designation_normal_color_tab',
-            [
-                'label' => esc_html__( 'Normal', 'elementskit-lite' ),
-            ]
-		);
-
 		// Designation Color
 	    $this->add_control(
 		    'ekit_testimonial_designation_normal_color', [
@@ -1443,19 +1417,10 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 		    ]
 	    );
 
-		$this->end_controls_tab();
-
-        $this->start_controls_tab(
-            'ekit_testimonial_client_designation_active_color_tab',
-            [
-                'label' => esc_html__( 'Hover', 'elementskit-lite' ),
-            ]
-		);
-
 		// Designation Color
 	    $this->add_control(
 		    'ekit_testimonial_designation_active_color', [
-			    'label'		 =>esc_html__( 'Color', 'elementskit-lite' ),
+			    'label'		 =>esc_html__( 'Hover Color', 'elementskit-lite' ),
 			    'type'		 => Controls_Manager::COLOR,
 			    'selectors'	 => [
 				    '{{WRAPPER}} .elementskit-single-testimonial-slider:hover .elementskit-author-des' => 'color: {{VALUE}};'
@@ -1463,16 +1428,12 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 		    ]
 	    );
 
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
-
-		$this->add_control(
-			'ekit_testimonial_client_designation_color_tab_end',
-			[
-				'type' => Controls_Manager::DIVIDER,
-				'style' => 'thick',
-			]
+	    // Designation typography
+	    $this->add_group_control(
+		    Group_Control_Typography::get_type(), [
+			    'name'		 => 'ekit_testimonial_designation_typography',
+			    'selector'	 => '{{WRAPPER}} .elementskit-single-testimonial-slider .elementskit-author-des',
+		    ]
 		);
 
 		$this->add_responsive_control(
@@ -1485,14 +1446,6 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}} .elementskit-commentor-bio' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
-		);
-
-	    // Designation typography
-	    $this->add_group_control(
-		    Group_Control_Typography::get_type(), [
-			    'name'		 => 'ekit_testimonial_designation_typography',
-			    'selector'	 => '{{WRAPPER}} .elementskit-single-testimonial-slider .elementskit-author-des',
-		    ]
 		);
 
 		// client logo heading
@@ -1534,8 +1487,10 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				]
 			]
 		);
-
-		// client image heading
+		
+		/**
+		 * Heading: Client Image
+		 */
 		$this->add_control(
 			'ekit_testimonial_client_image_heading',
 			[
@@ -1547,183 +1502,168 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 				]
 			]
 		);
-
-		// client image overlay
-		$this->add_group_control(
-			Group_Control_Background::get_type(),
-			[
-				'name' => 'ekit_testimonial_client_image_background',
-				'label' => esc_html__( 'Background', 'elementskit-lite' ),
-				'types' => [ 'classic', 'gradient' ],
-				'selector' => '{{WRAPPER}} .elementskit-profile-image-card::before',
-				'condition' => [
-					'ekit_testimonial_style' => ['style1']
+			$this->add_group_control(
+				Group_Control_Background::get_type(),
+				[
+					'name' => 'ekit_testimonial_client_image_background',
+					'label' => esc_html__( 'Background', 'elementskit-lite' ),
+					'types' => [ 'classic', 'gradient' ],
+					'selector' => '{{WRAPPER}} .elementskit-profile-image-card::before',
+					'condition' => [
+						'ekit_testimonial_style' => ['style1']
+					]
 				]
-			]
-		);
+			);
 
-		$this->add_control(
-			'ekit_testimonial_client_area_alignment',
-			[
-				'label' =>esc_html__( 'Alignment', 'elementskit-lite' ),
-				'type' => Controls_Manager::CHOOSE,
-				'options' => [
-					'client_left'    => [
-						'title' =>esc_html__( 'Left', 'elementskit-lite' ),
-						'icon' => 'fa fa-align-left',
+			$this->add_responsive_control(
+				'ekit_testimonial_client_img_pos',
+				[
+					'label'		=> esc_html__( 'Image Position', 'elementskit-lite' ),
+					'type'		=> Controls_Manager::CHOOSE,
+					'options'	=> [
+						'left' => [
+							'title'	=> esc_html__( 'Left', 'elementskit-lite' ),
+							'icon'	=> 'eicon-caret-left',
+						],
+						'top' => [
+							'title'	=> esc_html__( 'Top', 'elementskit-lite' ),
+							'icon'	=> 'eicon-caret-up',
+						],
+						'bottom' => [
+							'title'	=> esc_html__( 'Bottom', 'elementskit-lite' ),
+							'icon'	=> 'eicon-caret-down',
+						],
+						'right' => [
+							'title'	=> esc_html__( 'Right', 'elementskit-lite' ),
+							'icon'	=> 'eicon-caret-right',
+						],
 					],
-					'client_center' => [
-						'title' =>esc_html__( 'Center', 'elementskit-lite' ),
-						'icon' => 'fa fa-align-center',
+					'selectors_dictionary' => [
+						'left'   => '-webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row;',
+						'top'    => '-webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;',
+						'bottom' => '-webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse;',
+						'right'  => '-webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse;',
 					],
-					'client_right' => [
-						'title' =>esc_html__( 'Right', 'elementskit-lite' ),
-						'icon' => 'fa fa-align-right',
+					'selectors'	=> [
+						'{{WRAPPER}} .elementkit-commentor-details' => '{{VALUE}}',
 					],
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style4', 'style5', 'style6']
-				]
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'ekit_testimonial_client_image_border',
-				'label' => esc_html__( 'Border', 'elementskit-lite' ),
-				'selector' => '{{WRAPPER}} .elementskit-commentor-image > img',
-				'condition' => [
-					'ekit_testimonial_style' => ['style4', 'style5', 'style6']
-				]
-			]
-		);
-
-		$this->add_group_control(
-			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'ekit_testimonial_client_image_box_shadow',
-				'label' => esc_html__( 'Box Shadow', 'elementskit-lite' ),
-				'selector' => '{{WRAPPER}} .elementskit-commentor-image > img',
-				'condition' => [
-					'ekit_testimonial_style' => ['style4', 'style5', 'style6']
-				]
-			]
-		);
-		$this->add_control(
-			'ekit_testimonial_client_image_margin_',
-			[
-				'label' => __( 'Margin', 'elementskit-lite' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-commentor-bio .elementskit-commentor-image' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'condition' => [
-					'ekit_testimonial_style!' => ['style4', 'style5']
-				]
-			]
-		);
-		$this->add_responsive_control(
-			'ekit_testimonial_client_image_margin_bottom',
-			[
-				'label' => esc_html__( 'Margin Bottom', 'elementskit-lite' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-						'step' => 1,
+					'condition'	=> [
+						'ekit_testimonial_style'	=> 'style5',
 					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 20,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-commentor-bio .elementskit-commentor-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style4']
 				]
-			]
-		);
+			);
 
-		$this->add_responsive_control(
-			'ekit_testimonial_client_image_margin_right',
-			[
-				'label' => esc_html__( 'Margin Right', 'elementskit-lite' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 100,
-						'step' => 1,
+			$this->add_control(
+				'ekit_testimonial_client_area_alignment',
+				[
+					'label' => esc_html__( 'Alignment', 'elementskit-lite' ),
+					'type' => Controls_Manager::CHOOSE,
+					'options' => [
+						'client_left'    => [
+							'title' => esc_html__( 'Left', 'elementskit-lite' ),
+							'icon' => 'fa fa-align-left',
+						],
+						'client_center' => [
+							'title' => esc_html__( 'Center', 'elementskit-lite' ),
+							'icon' => 'fa fa-align-center',
+						],
+						'client_right' => [
+							'title' => esc_html__( 'Right', 'elementskit-lite' ),
+							'icon' => 'fa fa-align-right',
+						],
 					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => 20,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-commentor-bio .elementskit-commentor-image' => 'margin-right: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style5']
+					'condition' => [
+						'ekit_testimonial_style' => ['style4', 'style5', 'style6']
+					]
 				]
-			]
-		);
+			);
 
-		$this->add_responsive_control(
-            'ekit_testimonial_client_image_size',
-            [
-                'label'   => esc_html__('Image Size', 'elementskit-lite'),
-				'type'    => Controls_Manager::SLIDER,
-				'range' => [
-					'px' => [
-						'min' => 0,
-						'max' => 300,
-						'step' => 1,
+			$this->add_group_control(
+				Group_Control_Border::get_type(),
+				[
+					'name' => 'ekit_testimonial_client_image_border',
+					'label' => esc_html__( 'Border', 'elementskit-lite' ),
+					'selector' => '{{WRAPPER}} .elementskit-commentor-image > img',
+					'condition' => [
+						'ekit_testimonial_style' => ['style4', 'style5', 'style6']
+					]
+				]
+			);
+
+			$this->add_group_control(
+				Group_Control_Box_Shadow::get_type(),
+				[
+					'name' => 'ekit_testimonial_client_image_box_shadow',
+					'label' => esc_html__( 'Box Shadow', 'elementskit-lite' ),
+					'selector' => '{{WRAPPER}} .elementskit-commentor-image > img',
+					'condition' => [
+						'ekit_testimonial_style' => ['style4', 'style5', 'style6']
+					]
+				]
+			);
+
+			$this->add_responsive_control(
+				'ekit_testimonial_client_image_size',
+				[
+					'label'   => esc_html__('Image Size', 'elementskit-lite'),
+					'type'    => Controls_Manager::SLIDER,
+					'range' => [
+						'px' => [
+							'min' => 0,
+							'max' => 300,
+							'step' => 1,
+						],
 					],
-				],
-                'default' => [
-					'unit' => 'px',
-                    'size' => 70,
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style4', 'style5', 'style6']
-				]
-            ]
-		);
-
-		$this->add_responsive_control(
-			'ekit_testimonial_client_author_container_top',
-			[
-				'label' => esc_html__( 'Bottom', 'elementskit-lite' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-				'range' => [
-					'px' => [
-						'min' => -200,
-						'max' => 200,
-						'step' => 1,
+					'default' => [
+						'unit' => 'px',
+						'size' => 70,
 					],
-				],
-				'default' => [
-					'unit' => 'px',
-					'size' => -98,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .elementskit-commentor-bio' => 'bottom: {{SIZE}}{{UNIT}};',
-				],
-				'condition' => [
-					'ekit_testimonial_style' => ['style4']
+					'condition' => [
+						'ekit_testimonial_style' => ['style4', 'style5', 'style6']
+					]
 				]
-			]
-		);
+			);
 
+			$this->add_responsive_control(
+				'ekit_testimonial_client_author_container_top',
+				[
+					'label' => esc_html__( 'Bottom', 'elementskit-lite' ),
+					'type' => Controls_Manager::SLIDER,
+					'size_units' => [ 'px' ],
+					'range' => [
+						'px' => [
+							'min' => -200,
+							'max' => 200,
+							'step' => 1,
+						],
+					],
+					'default' => [
+						'unit' => 'px',
+						'size' => -98,
+					],
+					'selectors' => [
+						'{{WRAPPER}} .elementskit-commentor-bio' => 'bottom: {{SIZE}}{{UNIT}};',
+					],
+					'condition' => [
+						'ekit_testimonial_style' => ['style4']
+					]
+				]
+			);
+
+			$this->add_responsive_control(
+				'ekit_testimonial_client_image_margin_',
+				[
+					'label'			=> __( 'Margin', 'elementskit-lite' ),
+					'type'			=> Controls_Manager::DIMENSIONS,
+					'size_units'	=> [ 'px', '%', 'em' ],
+					'selectors'		=> [
+						'{{WRAPPER}} .ekit-testimonial--avatar' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					],
+					'condition'		=> [
+						'ekit_testimonial_style' => ['style4', 'style5', 'style6'],
+					],
+				]
+			);
 		$this->end_controls_section();
 
 		// dot style
@@ -2251,52 +2191,25 @@ class ElementsKit_Widget_Testimonial extends Widget_Base {
 			'arrows'			=> $ekit_testimonial_show_arrow ? true : false,
 			'dots'				=> $ekit_testimonial_show_dot ? true : false,
 			'pauseOnHover'		=> $ekit_testimonial_pause_on_hover ? true : false,
-			'prevArrow'			=> $prevArrowIcon,
-			'nextArrow'			=> $nextArrowIcon,
 			'autoplay'			=> $ekit_testimonial_autoplay ? true : false,
-			'autoplaySpeed'		=> $ekit_testimonial_speed ? $ekit_testimonial_speed : 1000,
-			'infinite'			=> $ekit_testimonial_autoplay ? true : false,
-			'slidesToShow'		=> (int) $slides_to_show_count,
-			'slidesToScroll'	=> (int) $slides_to_scroll_count,
-			'responsive'		=> [],
+			'speed'				=> $ekit_testimonial_speed ? $ekit_testimonial_speed : 1000,
+			'slidesPerGroup'	=> (int) $slides_to_scroll_count,
+			'slidesPerView'		=> (int) $slides_to_show_count,
+			'breakpoints'		=> [
+                320 => [
+                    'slidesPerView'      => !empty($settings['ekit_testimonial_slidetoshow_mobile']['size']) ? $settings['ekit_testimonial_slidetoshow_mobile']['size'] : 1,
+                    'slidesPerGroup'    => !empty($settings['ekit_testimonial_slidesToScroll_mobile']['size']) ? $settings['ekit_testimonial_slidesToScroll_mobile']['size'] : 1
+                ],
+                768 => [
+                    'slidesPerView'      => !empty($settings['ekit_testimonial_slidetoshow_tablet']['size']) ? $settings['ekit_testimonial_slidetoshow_tablet']['size'] : 2,
+                    'slidesPerGroup'    => !empty($settings['ekit_testimonial_slidesToScroll_tablet']['size']) ? $settings['ekit_testimonial_slidesToScroll_tablet']['size'] : 1,
+                ],
+                1024 => [
+                    'slidesPerView'      =>  $slides_to_show_count,
+                    'slidesPerGroup'    =>  $slides_to_show_count,
+                ]
+            ],
 		];
-
-		// Config->Responsive->Table
-		if ( $ekit_testimonial_slidetoshow_tablet || $ekit_testimonial_slidesToScroll_tablet ) {
-			$config_tablet_settings = [];
-
-			if ( $ekit_testimonial_slidetoshow_tablet ) {
-				$config_tablet_settings['slidesToShow'] = (int) $ekit_testimonial_slidetoshow_tablet;
-			}
-
-			if ( $ekit_testimonial_slidesToScroll_tablet ) {
-				$config_tablet_settings['slidesToScroll'] = (int) $ekit_testimonial_slidesToScroll_tablet;
-			}
-
-			array_push($config['responsive'], [
-				'breakpoint'	=> 1024,
-				'settings'		=> $config_tablet_settings,
-			]);
-		}
-
-		// Config->Responsive->Mobile
-		if ( $ekit_testimonial_slidetoshow_mobile || $ekit_testimonial_slidesToScroll_mobile ) {
-			$config_mobile_settings = [];
-
-			if ( $ekit_testimonial_slidetoshow_mobile ) {
-				$config_mobile_settings['slidesToShow'] = (int) $ekit_testimonial_slidetoshow_mobile;
-			}
-
-			if ( $ekit_testimonial_slidesToScroll_mobile ) {
-				$config_mobile_settings['slidesToScroll'] = (int) $ekit_testimonial_slidesToScroll_mobile;
-			}
-
-			array_push($config['responsive'], [
-				'breakpoint'	=> 480,
-				'settings'		=> $config_mobile_settings,
-				'arrows'		=> false
-			]);
-		}
 
 		// HTML Attribute
 		$this->add_render_attribute(

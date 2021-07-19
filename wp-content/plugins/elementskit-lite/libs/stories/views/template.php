@@ -137,11 +137,11 @@ endforeach;
             <?php echo esc_html__('Need Help?', 'elementskit-lite'); ?> 
             <span aria-hidden="true" class="dashicons dashicons-external"></span>
         </a>
-        <a href="https://wpmet.com/blog/?utm_source=wpmet_announcements&utm_medium=inplugin_campaign&utm_campaign=blog" target="_blank">
+        <a href="https://wpmet.com/blog/" target="_blank">
         <?php echo esc_html__('Blog', 'elementskit-lite') ;?> 
             <span aria-hidden="true" class="dashicons dashicons-external"></span>
         </a>
-        <a href="https://go.wpmet.com/facebook-group" target="_blank" style="color: #27ae60;">
+        <a href="https://wpmet.com/fb-group" target="_blank" style="color: #27ae60;">
             <?php echo esc_html__('Facebook Community', 'elementskit-lite'); ?> 
             <span aria-hidden="true" class="dashicons dashicons-external"></span>
         </a>

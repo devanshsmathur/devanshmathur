@@ -35,7 +35,7 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
         return str_replace('ekit', 'col', $str);
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         // Layout
         $this->start_controls_section(
@@ -72,6 +72,26 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
            ]
        );
        
+        $this->add_control(
+            'ekit_blog_posts_layout_style_thumb',
+            [
+                'label'     => esc_html__( 'Image Position', 'elementskit-lite' ),
+                'type'      => Controls_Manager::SELECT,
+                'options'   => [
+                    'block' => esc_html__( 'Top', 'elementskit-lite' ),
+                    'flex' => esc_html__( 'Left', 'elementskit-lite' ),
+                ],
+                'default'   => 'block',
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-post-image-card' => 'display: {{VALUE}}'
+                ],
+                'condition' => [
+                    'ekit_blog_posts_layout_style' => 'elementskit-post-image-card',
+                    'ekit_blog_posts_feature_img'  => 'yes',
+                ],
+            ]
+        );
+
         /**
         * Control: Featured Image Size
         */
@@ -348,6 +368,21 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                 ],
             ]
         );
+
+		$this->add_control(
+            'ekit_blog_posts_floating_category',
+            [
+                'label'     => esc_html__( 'Show Floating Category', 'elementskit-lite' ),
+                'type'      => Controls_Manager::SWITCHER,
+                'label_on'  => esc_html__( 'Yes', 'elementskit-lite' ),
+                'label_off' => esc_html__( 'No', 'elementskit-lite' ),
+                'default'   => 'no',
+                'condition' => [
+                    'ekit_blog_posts_layout_style' => 'elementskit-post-image-card',
+                ],
+            ]
+        );
+
         $this->add_control(
             'ekit_blog_posts_meta',
             [
@@ -595,6 +630,17 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
            ]
        );
 
+        $this->start_controls_tabs(
+            'ekit_blog_posts_tabs'
+        );
+
+        $this->start_controls_tab(
+            'ekit_blog_posts_tab_normal',
+            [
+                'label' =>esc_html__( 'Normal', 'elementskit-lite' ),
+            ]
+        );
+
        $this->add_group_control(
            Group_Control_Background::get_type(),
            [
@@ -611,6 +657,44 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                'selector' => '{{WRAPPER}} .elementskit-blog-block-post, {{WRAPPER}} .elementskit-post-image-card, {{WRAPPER}} .elementskit-post-card',
            ]
        );
+       $this->end_controls_tab();
+
+       $this->start_controls_tab(
+           'ekit_blog_posts_tab_hover',
+           [
+               'label' =>esc_html__( 'Hover', 'elementskit-lite' ),
+           ]
+       );
+       $this->add_group_control(
+          Group_Control_Background::get_type(),
+          [
+              'name'     => 'ekit_blog_posts_background_hover',
+              'label'    => esc_html__( 'Background', 'elementskit-lite' ),
+              'types'    => [ 'classic', 'gradient' ],
+              'selector' => '{{WRAPPER}} .elementskit-blog-block-post:hover, {{WRAPPER}} .elementskit-post-image-card:hover, {{WRAPPER}} .elementskit-post-card:hover',
+              'fields_options'  => [
+                  'background' => [
+                    'prefix_class' => 'ekit-blog-posts--bg-hover bg-hover-',
+                  ],
+              ],
+          ]
+       );
+
+      $this->add_group_control(
+          Group_Control_Box_Shadow::get_type(), [
+              'name'     => 'ekit_blog_posts_shadow_hover',
+              'selector' => '{{WRAPPER}} .elementskit-blog-block-post:hover, {{WRAPPER}} .elementskit-post-image-card:hover, {{WRAPPER}} .elementskit-post-card:hover',
+          ]
+      );
+       $this->end_controls_tab();
+       $this->end_controls_tabs();
+
+		$this->add_control(
+			'ekit_blog_posts_hr',
+			[
+				'type' => \Elementor\Controls_Manager::DIVIDER,
+			]
+		);
 
        $this->add_control(
            'ekit_blog_posts_vertical_alignment',
@@ -737,6 +821,27 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
            ]
        );
 
+        $this->add_control(
+            'ekit_blog_posts_content_background',
+            [
+                'label' => esc_html_x( 'Container Background Color', 'elementskit', 'elementskit-lite' ),
+                'type' => Controls_Manager::COLOR,
+                'default' => '',
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-post-body' => 'background-color: {{VALUE}};',
+                ],
+            ]
+        );
+        
+        $this->add_group_control(
+            Group_Control_Box_Shadow::get_type(),
+            [
+                'name' => 'ekit_blog_posts_content_box_shadow',
+                'label' => esc_html__( 'Box Shadow', 'elementskit-lite' ),
+                'selector' => '{{WRAPPER}} .elementskit-post-body',
+            ]
+        );
+
        $this->add_control(
            'ekit_blog_posts_content_border_style',
            [
@@ -831,6 +936,27 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                'condition' => [
                    'ekit_blog_posts_layout_style!' => 'elementskit-post-card',
                    'ekit_blog_posts_feature_img'    => 'yes'
+               ],
+           ]
+       );
+
+       $this->add_responsive_control(
+           'ekit_blog_posts_feature_img_size',
+           [
+               'label' => esc_html__( 'Image Width', 'elementskit-lite' ),
+               'type' => Controls_Manager::SLIDER,
+               'range' => [
+                   'px' => [
+                       'min' => 1,
+                       'max' => 500,
+                   ],
+               ],
+               'selectors' => [
+                   '{{WRAPPER}} .elementskit-entry-thumb' => 'width: {{SIZE}}{{UNIT}}; min-width: {{SIZE}}{{UNIT}}',
+               ],
+               'condition' => [
+                    'ekit_blog_posts_layout_style' => 'elementskit-post-image-card',
+                    'ekit_blog_posts_layout_style_thumb' => 'flex',
                ],
            ]
        );
@@ -1023,6 +1149,18 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'ekit_blog_posts_meta_color_icon_normal',
+            [
+                'label'      => esc_html__( 'Icon Color', 'elementskit-lite' ),
+                'type'       => Controls_Manager::COLOR,
+                'selectors'  => [
+                    '{{WRAPPER}} .post-meta-list > span > i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .post-meta-list > span > svg path' => 'stroke: {{VALUE}}; fill: {{VALUE}};'
+                ],
+            ]
+        );
+
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
@@ -1089,7 +1227,25 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                 'type'       => Controls_Manager::COLOR,
                 'selectors'  => [
                     '{{WRAPPER}} .post-meta-list > span:hover' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .post-meta-list > span:hover > svg path' => 'strock: {{VALUE}}; fill: {{VALUE}};'
+                    '{{WRAPPER}} .post-meta-list > span:hover > svg path' => 'strock: {{VALUE}}; fill: {{VALUE}};',
+
+                    '{{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span > svg path' => 'strock: {{VALUE}}; fill: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ekit_blog_posts_meta_color_icon_hover',
+            [
+                'label'      => esc_html__( 'Icon Color', 'elementskit-lite' ),
+                'type'       => Controls_Manager::COLOR,
+                'selectors'  => [
+                    '{{WRAPPER}} .post-meta-list > span:hover > i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .post-meta-list > span:hover > svg path' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
+
+                    '{{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span:hover > i' => 'color: {{VALUE}};',
+                    '{{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span > svg path' => 'strock: {{VALUE}}; fill: {{VALUE}};',
                 ],
             ]
         );
@@ -1100,7 +1256,7 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
 				'name' => 'ekit_blog_posts_meta_background_hover',
 				'label' => esc_html__( 'Background', 'elementskit-lite' ),
 				'types' => [ 'classic', 'gradient', ],
-                'selector' => '{{WRAPPER}} .post-meta-list > span:hover',
+                'selector' => '{{WRAPPER}} .post-meta-list > span:hover, {{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span',
                 'exclude' => [
                     'image'
                 ]
@@ -1112,7 +1268,7 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
 			[
 				'name' => 'ekit_blog_posts_meta_border_hover',
 				'label' => esc_html__( 'Border', 'elementskit-lite' ),
-				'selector' => '{{WRAPPER}} .post-meta-list > span:hover',
+				'selector' => '{{WRAPPER}} .post-meta-list > span:hover, {{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span',
 			]
 		);
 
@@ -1123,7 +1279,7 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .post-meta-list > span:hover' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .post-meta-list > span:hover, {{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -1133,14 +1289,14 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
 			[
 				'name' => 'ekit_blog_posts_meta_box_shadow_hover',
 				'label' => esc_html__( 'Box Shadow', 'elementskit-lite' ),
-				'selector' => '{{WRAPPER}} .post-meta-list > span:hover',
+				'selector' => '{{WRAPPER}} .post-meta-list > span:hover, {{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span',
 			]
         );
 
         $this->add_group_control(
             Group_Control_Text_Shadow::get_type(), [
                 'name'       => 'ekit_blog_posts_meta_shadow_hover',
-                'selector'   => '{{WRAPPER}} .post-meta-list > span:hover',
+                'selector'   => '{{WRAPPER}} .post-meta-list > span:hover, {{WRAPPER}}.ekit-blog-posts--bg-hover .elementskit-post-image-card:hover .post-meta-list > span',
             ]
         );
 
@@ -1578,6 +1734,159 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
        );
        $this->end_controls_section();
 
+        // Floating Category Styles
+        $this->start_controls_section(
+            'ekit_blog_posts_floating_category_style',
+            [
+                'label'     => esc_html__( 'Floating Category', 'elementskit-lite' ),
+                'tab'       => Controls_Manager::TAB_STYLE,
+                'condition' => [
+                    'ekit_blog_posts_floating_category' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'ekit_blog_posts_floating_category_top_pos', [
+                'label'			 =>esc_html__( 'Top', 'elementskit-lite' ),
+                'type'			 => Controls_Manager::SLIDER,
+                'default'		 => [
+                    'size' => '',
+                ],
+                'size_units' => [ 'px', '%' ],
+                'range'		 => [
+                    'px' => [
+                        'min'	 => -100,
+                        'max'	 => 1000,
+                        'step'	 => 1,
+                    ],
+                    '%'	 => [
+                        'min'	 => 0,
+                        'max'	 => 100,
+                        'step'	 => 1,
+                    ],
+                ],
+                'selectors'		 => [
+                    '{{WRAPPER}} .elementskit-meta-categories'	=> 'top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'ekit_blog_posts_floating_category_left_pos', [
+                'label'			 =>esc_html__( 'Left', 'elementskit-lite' ),
+                'type'			 => Controls_Manager::SLIDER,
+                'default'		 => [
+                    'size' => '',
+                ],
+                'size_units' => [ 'px', '%' ],
+                'range'		 => [
+                    'px' => [
+                        'min'	 => -100,
+                        'max'	 => 1000,
+                        'step'	 => 1,
+                    ],
+                    '%'	 => [
+                        'min'	 => 0,
+                        'max'	 => 100,
+                        'step'	 => 1,
+                    ],
+                ],
+                'selectors'		 => [
+                    '{{WRAPPER}} .elementskit-meta-categories'	=> 'left: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            Group_Control_Typography::get_type(), [
+                'name'       => 'ekit_blog_posts_floating_category_typography',
+                'selector'   => '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span a',
+            ]
+        );
+
+        $this->add_control(
+            'ekit_blog_posts_floating_category_color',
+            [
+                'label'      => esc_html__( 'Color', 'elementskit-lite' ),
+                'type'       => Controls_Manager::COLOR,
+                'selectors'  => [
+                    '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span a' => 'color: {{VALUE}};'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'ekit_blog_posts_floating_category_bg_color',
+            [
+                'label'      => esc_html__( 'Background Color', 'elementskit-lite' ),
+                'type'       => Controls_Manager::COLOR,
+                'selectors'  => [
+                    '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span' => 'background-color: {{VALUE}};'
+                ],
+            ]
+        );
+
+        
+        $this->add_responsive_control(
+            'ekit_blog_posts_floating_category_padding',
+            [
+                'label'      => esc_html__( 'Padding', 'elementskit-lite' ),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'default'    => [
+                    'unit'      => 'px',
+                    'top'       => '4',
+                    'right'     => '8',
+                    'bottom'    => '4',
+                    'left'      => '8',
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'ekit_blog_posts_floating_category_padding_radius',
+            [
+                'label'     => esc_html__( 'Border Radius', 'elementskit-lite' ),
+                'type'      => Controls_Manager::DIMENSIONS,
+                'size_units'=> [ 'px', '%', 'em' ],
+                'separator' => 'after',
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+        
+        $this->add_responsive_control(
+            'ekit_blog_posts_floating_category_margin_right', [
+                'label'			 =>esc_html__( 'Space Between Categories', 'elementskit-lite' ),
+                'type'			 => Controls_Manager::SLIDER,
+                'default'		 => [
+                    'size' => '',
+                ],
+                'size_units' => [ 'px', '%' ],
+                'range'		 => [
+                    'px' => [
+                        'min'	 => -100,
+                        'max'	 => 1000,
+                        'step'	 => 1,
+                    ],
+                    '%'	 => [
+                        'min'	 => 0,
+                        'max'	 => 100,
+                        'step'	 => 1,
+                    ],
+                ],
+                'selectors'		 => [
+                    '{{WRAPPER}} .elementskit-meta-categories .elementskit-meta-wraper span:not(:last-child)'	=> 'margin-right: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        
+        $this->end_controls_section();
 
        // Title Styles
        $this->start_controls_section(
@@ -1847,6 +2156,22 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                'selectors'  => [
                    '{{WRAPPER}} .elementskit-post-footer > p' => 'color: {{VALUE}};',
                    '{{WRAPPER}} .elementskit-post-body > p'   => 'color: {{VALUE}};',
+               ],
+           ]
+       );
+
+       $this->add_control(
+           'ekit_blog_posts_content_color_hover',
+           [
+               'label'      => esc_html__( 'Hover Color', 'elementskit-lite' ),
+               'type'       => Controls_Manager::COLOR,
+               'selectors'  => [
+                   '{{WRAPPER}} .elementskit-blog-block-post:hover .elementskit-post-footer > p' => 'color: {{VALUE}};',
+                   '{{WRAPPER}} .elementskit-post-image-card:hover .elementskit-post-footer > p' => 'color: {{VALUE}};',
+                   '{{WRAPPER}} .elementskit-post-card:hover .elementskit-post-footer > p' => 'color: {{VALUE}};',
+                   '{{WRAPPER}} .elementskit-blog-block-post:hover .elementskit-post-body > p' => 'color: {{VALUE}};',
+                   '{{WRAPPER}} .elementskit-post-image-card:hover .elementskit-post-body > p' => 'color: {{VALUE}};',
+                   '{{WRAPPER}} .elementskit-post-card:hover .elementskit-post-body > p' => 'color: {{VALUE}};',
                ],
            ]
        );
@@ -2717,6 +3042,14 @@ class ElementsKit_Widget_Blog_Posts extends Widget_Base {
                                     </div>
                                 <?php endif; ?>
                                 <?php endif; ?>
+                            <?php endif; ?>
+
+                            <?php if('yes' == $settings['ekit_blog_posts_floating_category']) : ?>
+                                <div class="elementskit-meta-categories">
+                                    <span class="elementskit-meta-wraper">
+                                        <span><?php echo get_the_category_list( '</span><span>' ); ?></span>
+                                    </span>
+                                </div>
                             <?php endif; ?>
 
                             <?php if ( 'elementskit-post-card' == $ekit_blog_posts_layout_style):

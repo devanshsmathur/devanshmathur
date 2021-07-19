@@ -36,7 +36,7 @@ class ElementsKit_Widget_Video extends Widget_Base {
         return '';
     }
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'ekit_video_popup_content_section',
@@ -282,7 +282,7 @@ class ElementsKit_Widget_Video extends Widget_Base {
         $this->start_controls_section(
 			'ekit_video_popup_style_section',
 			[
-				'label' => esc_html__( 'Style', 'elementskit-lite' ),
+				'label' => esc_html__( 'Wrapper Style', 'elementskit-lite' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -317,6 +317,38 @@ class ElementsKit_Widget_Video extends Widget_Base {
 			]
 		);
 
+		$this->add_responsive_control(
+            'ekit_video_wrap_padding',
+            [
+                'label' => esc_html__( 'Padding', 'elementskit-lite' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px' ],
+                'selectors' => [
+                    '{{WRAPPER}} .video-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+		$this->add_group_control(
+            Group_Control_Border::get_type(),
+            [
+                'name' => 'ekit_video_wrap_border',
+                'label' => esc_html__( 'Border', 'elementskit-lite' ),
+                'selector' => '{{WRAPPER}} .video-content',
+            ]
+        );
+
+        $this->add_control(
+            'ekit_video_wrap_border_radius',
+            [
+                'label' => esc_html__( 'Border Radius', 'elementskit-lite' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .video-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 	 //
 
 	 //

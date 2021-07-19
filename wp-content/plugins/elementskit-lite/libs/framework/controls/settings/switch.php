@@ -6,7 +6,15 @@
     $no_demo = [
         'sticky-content',
         'nav-menu',
-        'header-info'
+        'header-info',
+        'elementskit-icon-pack',
+        'back-to-top',
+        'image-swap',
+        'facebook-messenger',
+        'advanced-tooltip',
+        'fluent-forms',
+        'zoom',
+        'trustpilot'
     ];
 ?>
     <div class="ekit-admin-input-switch ekit-admin-card-shadow attr-card-body">
@@ -39,6 +47,6 @@
             $value = 'effects';
         }
     ?>
-        <a target="_blank" href="https://wpmet.com/plugin/<?php echo esc_attr($slug) . esc_attr($value); ?>/?utm_source=elementskit_lite&utm_medium=inplugin_campaign&utm_campaign=widgets_modules_demo_link" class="ekit-admin-demo-tooltip"><i class="fa fa-laptop"></i><?php esc_html_e('View Demo', 'elementskit-lite'); ?></a>
+        <a target="_blank" href="https://wpmet.com/plugin/<?php echo esc_attr($slug) . esc_attr($value); ?>/" class="ekit-admin-demo-tooltip"><i class="fa fa-laptop"></i><?php esc_html_e('View Demo', 'elementskit-lite'); ?></a>
     <?php endif; ?>
 </div>

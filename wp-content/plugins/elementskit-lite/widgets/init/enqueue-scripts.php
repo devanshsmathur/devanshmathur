@@ -16,15 +16,25 @@ class Enqueue_Scripts{
 
         add_action( 'elementor/preview/enqueue_styles', [ $this, 'enqueue_3rd_party_style' ] );
     }
-
+    
     public function elementor_js() {
         // Register Scripts
-        wp_register_script( 'ekit-slick', \ElementsKit_Lite::widget_url() . 'init/assets/js/slick.min.js', [], \ElementsKit_Lite::version(), true );
+        // size : 814 biyets ** used for back to top button circle progress bar
+        wp_register_script( 'animate-circle', \ElementsKit_Lite::widget_url() . 'init/assets/js/animate-circle.js', [], \ElementsKit_Lite::version(), true );
 
         // Enqueue Scripts
-        wp_enqueue_script( 'ekit-popover', 'https://unpkg.com/popper.js@1', [], \ElementsKit_Lite::version(), true );
-        wp_enqueue_script( 'ekit-typpy', 'https://unpkg.com/tippy.js@5', [], \ElementsKit_Lite::version(), true );
-        wp_enqueue_script( 'elementskit-elementor', \ElementsKit_Lite::widget_url() . 'init/assets/js/elementor.js', ['jquery', 'elementor-frontend', 'ekit-slick'], \ElementsKit_Lite::version(), true );
+        wp_enqueue_script( 'elementskit-elementor', \ElementsKit_Lite::widget_url() . 'init/assets/js/elementor.js', ['jquery', 'elementor-frontend', 'animate-circle'], \ElementsKit_Lite::version(), true );
+
+        // added swiper js - elementor remove it when "Improved Asset Loading" is active
+        if(defined('ELEMENTOR_ASSETS_URL')) {
+            wp_enqueue_script(
+                'swiper',
+                ELEMENTOR_ASSETS_URL . 'lib/swiper/swiper.min.js',
+                [],
+                \ElementsKit_Lite::version(), true
+            );
+        }
+        
 
         // added fluent form styles on the editor
         if (in_array('fluentform/fluentform.php', apply_filters('active_plugins', get_option('active_plugins')))) {

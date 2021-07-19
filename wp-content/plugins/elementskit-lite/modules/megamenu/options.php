@@ -68,7 +68,7 @@ class Options{
     }
     
 	public static function get_icons() {
-        return include \ElementsKit_Lite::module_dir() . 'controls/icon-list.php';
+        return include \ElementsKit_Lite::module_dir() . 'elementskit-icon-pack/icon-list.php';
     }    
 
     function options_menu_item() {

@@ -32,7 +32,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'ekit_icon_box',
@@ -120,6 +120,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
                 'dynamic' => [
                     'active' => true,
@@ -1469,6 +1470,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
                 ],
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
                 'condition' => [
                     'ekit_icon_box_show_image_overlay' => 'yes',
@@ -1734,7 +1736,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
             $this->add_render_attribute( 'image', 'src', $settings['ekit_icon_box_show_image']['url'] );
             $this->add_render_attribute( 'image', 'alt', Control_Media::get_image_alt( $settings['ekit_icon_box_show_image'] ) );
 
-            $image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'ekit_icon_box_show_image' );
+            $image_html = \Elementskit_Lite\Utils::get_attachment_image_html($settings, 'ekit_icon_box_show_image');
 
 
             $image = '<figure class="image-hover">' . $image_html . '</figure>';
@@ -1776,7 +1778,7 @@ class ElementsKit_Widget_Icon_Box extends Widget_Base {
         <?php if(! empty($settings['ekit_icon_box_header_image']) && $settings['ekit_icon_box_enable_header_icon'] == 'image' ) : ?>
             <div class="elementskit-box-header">
                 <div class="elementskit-info-box-icon <?php echo \ElementsKit_Lite\Utils::render($settings['ekit_icon_box_icon_position'] != 'top' ? 'text-center' : ''); ?>">
-                    <img src="<?php echo esc_url($settings['ekit_icon_box_header_image']['url'])?>" alt="<?php echo  esc_attr($settings['ekit_icon_box_title_text']); ?>">
+                    <?php echo \Elementskit_Lite\Utils::get_attachment_image_html($settings, 'ekit_icon_box_header_image'); ?>
                 </div>
           </div>
         <?php endif;?>

@@ -31,7 +31,7 @@ class ElementsKit_Widget_TablePress extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'ekit_tablepress_section_content_table',
             [
@@ -712,7 +712,11 @@ class ElementsKit_Widget_TablePress extends Widget_Base {
 
 	public function render() {
 		$settings = $this->get_settings();
-        echo do_shortcode( $this->get_shortcode() );
+		
+		 if( class_exists('TablePress') ) {
+			echo do_shortcode( $this->get_shortcode() );
+		 }
+        
         
 		if ( \Elementor\Plugin::instance()->editor->is_edit_mode() ) { ?>
 			<script src="<?php echo plugins_url(); ?>/tablepress/js/jquery.datatables.min.js"></script>

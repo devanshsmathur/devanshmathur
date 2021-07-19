@@ -1,10 +1,11 @@
 <?php
-$modules_all = \ElementsKit_Lite\Config\Module_List::instance()->get_list();
-$modules_active = $this->utils->get_option('module_list', $modules_all);
-
-$modules_active = (!isset($modules_active[0]) ? array_keys($modules_active) : $modules_active);
+$modules_all = \ElementsKit_Lite\Config\Module_List::instance()->get_list('optional');
+$modules_active = \ElementsKit_Lite\Config\Module_List::instance()->get_list('active');
 ?>
-
+<pre>
+<?php $x = \ElementsKit_Lite\Libs\Framework\Attr::instance()->utils->get_option('module_list', []);
+// print_r($modules_active) ;?>
+</pre>
 <!-- this blank input is for empty form submission -->
 <input checked="checked" type="checkbox" value="_null" style="display:none" name="module_list[]" >
 
@@ -19,7 +20,7 @@ $modules_active = (!isset($modules_active[0]) ? array_keys($modules_active) : $m
             <li><a href="edit.php?post_type=elementskit_widget"><?php esc_html_e('Widget Builder', 'elementskit-lite'); ?></a></li>
         </div>
         <div class="attr-row">
-            <?php foreach($modules_all as $module => $module_config): if(isset($module_config['package'])): ?>
+            <?php foreach($modules_all as $module => $module_config): ?>
             <div class="attr-col-md-6 attr-col-lg-4" <?php echo ($module_config['package'] != 'pro-disabled' ? '' : 'data-attr-toggle="modal" data-target="#elementskit_go_pro_modal"'); ?>>
             <?php
                 $this->utils->input([
@@ -30,12 +31,12 @@ $modules_active = (!isset($modules_active[0]) ? array_keys($modules_active) : $m
                     'attr' => ($module_config['package'] != 'pro-disabled' ? [] : ['disabled' => 'disabled' ]),
                     'label' => $module_config['title'],
                     'options' => [
-                        'checked' => (in_array($module, $modules_active) && $module_config['package'] != 'pro-disabled' ? true : false),
+                        'checked' => (isset($modules_active[$module]) ? true : false),
                     ]
                 ]);
             ?>
             </div>
-            <?php endif; endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

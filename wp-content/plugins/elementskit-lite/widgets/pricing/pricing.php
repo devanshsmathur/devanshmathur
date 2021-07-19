@@ -31,7 +31,7 @@ class ElementsKit_Widget_Pricing extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'ekit_pricing_pricing_plan',
@@ -140,6 +140,7 @@ class ElementsKit_Widget_Pricing extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
                 ],
                 'condition' => [
                     'ekit_pricing_icon_type' => 'image',

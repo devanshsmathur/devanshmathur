@@ -32,7 +32,7 @@ class ElementsKit_Widget_FAQ extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'ekit_faq_section_tab', [
                 'label' =>esc_html__( 'FAQ', 'elementskit-lite' ),

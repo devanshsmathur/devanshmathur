@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
  * Description: The most advanced addons for Elementor with tons of widgets, Header builder, Footer builder, Mega menu builder, layout pack and powerful custom controls.
  * Plugin URI: https://products.wpmet.com/elementskit
  * Author: Wpmet
- * Version: 2.2.2
+ * Version: 2.3.3
  * Author URI: https://wpmet.com/
  *
  * Text Domain: elementskit-lite
@@ -28,7 +28,7 @@ final class ElementsKit_Lite{
 	 * @var string The plugin version.
 	 */
 	static function version(){
-		return '2.2.2';
+		return '2.3.3';
 	}
 
 	/**
@@ -40,6 +40,41 @@ final class ElementsKit_Lite{
 	static function package_type(){
 		return apply_filters( 'elementskit/core/package_type', 'free' );
 	}
+
+
+	/**
+	 * Package type
+	 *
+	 * @since 1.1.0
+	 * @var string The plugin purchase type [pro/ free].
+	 */
+	static function license_status(){
+		if(!class_exists('ElementsKit\Libs\Framework\Classes\License')){
+			return 'invalid';
+		}
+		if(ElementsKit\Libs\Framework\Classes\License::instance()->status() != 'valid'){
+			return 'invalid';
+		}
+
+		return 'valid';
+	}
+
+	public static function license_data(){
+		if(!class_exists('\ElementsKit_Lite\Libs\Framework\Classes\Utils')){
+			return [
+				'key' => '',
+				'checksum' => '',
+				'plugin_package' => \ElementsKit_Lite::package_type()
+			];
+		}
+
+		return [
+			'key' => \ElementsKit_Lite\Libs\Framework\Classes\Utils::instance()->get_option('license_key'),
+			'checksum' => get_option('__validate_oppai__'),
+			'plugin_package' => \ElementsKit_Lite::package_type()
+		];
+	}
+
 
 	/**
 	 * Product ID
@@ -78,7 +113,7 @@ final class ElementsKit_Lite{
 	 * @var string Minimum Elementor version required to run the plugin.
 	 */
 	static function min_el_version(){
-		return '2.8.0';
+		return '3.0.0';
 	}
 
 	/**
@@ -249,7 +284,7 @@ final class ElementsKit_Lite{
 	 * @access public
 	 */
 	public function init() {
-		
+
 		// init notice class
 		\Oxaim\Libs\Notice::init();
 
@@ -277,14 +312,14 @@ final class ElementsKit_Lite{
 				return;
 			}
 
-			// adding backward classes and mathods for older 14 number themes.
+			// adding backward classes and methods for older 14 number themes.
 			require_once self::plugin_dir() . 'compatibility/backward/plugin-class-backward-compatibility.php';
 			require_once self::plugin_dir() . 'compatibility/backward/utils-backward-compablity.php';
 
 			// Load the Plugin class, it's the core class of ElementsKit_Lite.
 			require_once self::plugin_dir() . 'plugin.php';
 
-			// adding backward classes and mathods for older 14 number themes.
+			// adding backward classes and methods for older 14 number themes.
 			require_once self::plugin_dir() . 'compatibility/backward/module-list.php';
 			require_once self::plugin_dir() . 'compatibility/backward/widget-list.php';
 		});
@@ -347,13 +382,8 @@ final class ElementsKit_Lite{
      * @since 1.0.7
      * @access public
      */
-	public static function flush_rewrites(){
-
-		require_once self::module_dir() . 'dynamic-content/cpt.php';
-
-		new ElementsKit_Lite\Modules\Dynamic_Content\Cpt();
-
-		flush_rewrite_rules();
+	public static function install_activation_key(){
+		add_option('elementskit-lite__plugin_activated', self::plugin_file());
 	}
     /**
      * Add category.
@@ -385,4 +415,4 @@ final class ElementsKit_Lite{
 
 new ElementsKit_Lite();
 
-register_activation_hook( __FILE__, 'ElementsKit_Lite::flush_rewrites' );
+register_activation_hook( __FILE__, 'ElementsKit_Lite::install_activation_key' );

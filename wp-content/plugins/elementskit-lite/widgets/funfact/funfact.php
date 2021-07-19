@@ -44,7 +44,7 @@ class ElementsKit_Widget_Funfact extends Widget_Base {
         return '';
     }
 
-	protected function _register_controls() {
+	protected function register_controls() {
 
 		$this->start_controls_section(
 			'ekit_funfact_section_icon',
@@ -134,6 +134,7 @@ class ElementsKit_Widget_Funfact extends Widget_Base {
 				'type'      => Controls_Manager::MEDIA,
 				'default'   => [
 					'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
 				],
 				'condition' => [
 					'ekit_funfact_icon_type' => 'image_icon',

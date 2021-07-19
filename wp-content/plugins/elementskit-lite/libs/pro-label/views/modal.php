@@ -5,7 +5,7 @@
             <div class="attr-modal-body attr-text-center">
                 <i class="icon icon-information"></i>
                 <h2>Go Premium</h2>
-                <p>Purchase our <a href="https://go.wpmet.com/ekitpro">pro version</a> to unlock these premium features!</p>
+                <p>Purchase our <a target="_blank" href="https://wpmet.com/elementskit-pricing">pro version</a> to unlock these premium features!</p>
             </div>
         </div>
 	</div>

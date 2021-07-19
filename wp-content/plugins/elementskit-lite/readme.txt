@@ -3,7 +3,7 @@ Contributors: Ataurr, wpmet, emranio, easin55474, enamulhoquemohon
 Tags: elementor addons, mega menu, header footer builder, elements, elementor extensions, elementor modules, page builder addons, elementor addon, elementor widget, addons
 Requires at least: 5.0
 Tested up to: 5.7
-Stable tag: 2.2.2
+Stable tag: 2.3.3
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -23,7 +23,7 @@ ElementsKit is an ultimate All in one addons for Elementor Page Builder. It incl
 
 
 ###USEFUL LINKS###
-> **[ElementsKit Landing Page](http://go.wpmet.com/ekitpro)** |  **[Need Support?](http://wpmet.com/support-help/)** | **[Documentation](https://help.wpmet.com/docs-cat/elements-kit/)** | **[Video Tutorials](https://www.youtube.com/watch?v=VhBl3dHT5SY&list=PL3t2OjZ6gY8MVnyA4OLB6qXb77-roJOuY&ab_channel=Wpmet)** |
+> **[ElementsKit Landing Page](http://go.wpmet.com/ekitpro)** |  **[Need Support?](http://wpmet.com/support-help/)** | **[Documentation](https://help.wpmet.com/docs-cat/elements-kit/)** | **[Video Tutorials](https://www.youtube.com/watch?v=VhBl3dHT5SY&list=PL3t2OjZ6gY8MVnyA4OLB6qXb77-roJOuY&ab_channel=Wpmet)** | **[Request a Feature](https://wpmet.com/plugin/elementskit/roadmaps#ideas)**
 
 
 
@@ -347,6 +347,55 @@ Our Hotspot Widget for Elementor page builder offers lots of styles including: H
 - Widgets area
 
 == Changelog ==
+Version: 2.3.1 (15-07-2021)
+Fix: In swiperJS slider not working issue.
+
+Version: 2.3.2 (14-07-2021)
+Fix: Multiple placeholder image upload issues when importing widget.
+Tweak: Converted widgets slideshow from slick to swiper.
+Tweak: Optimized Images.
+Tweak: Improved CSS and JS.
+
+Version: 2.3.1.1 (23-06-2021)
+Fix: Email field was required for Onboarding Wizard, changed it to optional.
+
+Version: 2.3.1 (22-06-2021)
+New: Onboarding User Guide to easily start using ElementsKit.
+New: Group Templates count for Layout Library.
+Fix: Arabic text issue for Megamenu Badge.
+Fix: Minor css issue for Layout Library Modal Button.
+
+Version: 2.3.0 (08-06-2021)
+New: Hover trigger option for Tab Widget.
+Tweak: Caret placement issue for Tab Widget.
+Tweak: Getting access token made easy for Dribbble Widget.
+Fix: Icon Search option for Megamenu Popup.
+Fix: Image Width when Hover on Social style for Team Widget.
+Fix: Duration control for Progressbar Widget.
+Fix: Minor design issue for Clients Logo Widget.
+
+Version: 2.2.4 (10-05-2021)
+New: Back To Top Widget.
+New: Hover Trigger on Tab Widget.
+New: Back to Top Widget.
+New: Clear Cache button added for Facebook Feed Settings.
+Tweak: Dashboard UI Improvement.
+Fix: Duration control for Progressbar Widget.
+
+Version: 2.2.3 (05-05-2021)
+New: Blog Posts Widget Floating Category.
+New: Blog Posts Widget Various Missing Controls.
+New: Client Image Position control for Testimonial Widget.
+New: Background Hover Effect control for Testimonial Widget.
+New: Rating Hover Color control for Testimonial Widget.
+Tweak: Replaced deprecated Elementor PHP Methods for Widgets.
+Tweak: Animating Pie Chart when in view.
+Tweak: Improvements to the Testimonial Widget.
+Fix: Border and Padding issues fixed on 'Video' Widget.
+Fix: TablePress fatal error after deactivation.
+Fix: Submenu icon render issue.
+Fix: Minor css fix for Sticky On Scroll Up.
+Fix: Minor js error with OnePageScroll Module.
 
 Version: 2.2.2 (14-04-2021)
 New: 'Text' option for 'Header Offcanvas' widget menu.

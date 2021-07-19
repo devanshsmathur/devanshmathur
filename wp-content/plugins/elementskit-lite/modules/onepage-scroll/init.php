@@ -25,7 +25,10 @@ class Init{
 
 		// calling the sticky controls
 		new \Elementor\ElementsKit_Extend_Onepage_Scroll();
-		new \Elementor\ElementsKit_Pro_Extend_Onepage_Scroll();
+
+		if ( \ElementsKit_Lite::package_type() === 'pro' ):
+			new \Elementor\ElementsKit_Pro_Extend_Onepage_Scroll();
+		endif;
 	}
 	
 	public function include_files(){

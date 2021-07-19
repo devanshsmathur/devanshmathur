@@ -7,7 +7,7 @@ if(!class_exists('\Wpmet\Libs\Banner')):
 
 class Banner {
 
-    protected $script_version = '2.0.0';
+    protected $script_version = '2.1.0';
 
     protected $key = 'wpmet_banner';
     protected $data;
@@ -31,11 +31,11 @@ class Banner {
     }
 
 	public function call(){
-        add_action( 'admin_head', [$this, 'show_banner'] );
+        add_action( 'admin_head', [$this, 'display_content'] );
     }
     
-    public function show_banner(){
-        $this->get_banner();
+    public function display_content(){
+        $this->get_data();
 
 		if(!empty($this->data->error)) {
 			return;
@@ -45,39 +45,66 @@ class Banner {
 			return;
         }
         
-        foreach($this->data as $banner) {
+        foreach($this->data as $content) {
             
-            if($banner->type != 'banner') {
-                continue;
-            }
-            
-			if(!empty($this->filter_array) && $this->in_blacklist($banner, $this->filter_array)) {
+			if(!empty($this->filter_array) && $this->in_blacklist($content, $this->filter_array)) {
                 continue;
 			}
 
-            if($banner->start <= time() && time() <= $banner->end) {
+            if($content->start <= time() && time() <= $content->end) {
                 $screen = get_current_screen();
-                if($this->is_correct_screen_to_show($banner->screen, $screen->id) && class_exists('\Oxaim\Libs\Notice')) {
+                if($this->is_correct_screen_to_show($content->screen, $screen->id) && class_exists('\Oxaim\Libs\Notice')) {
         
                     $inline_css = '';
-                    $banner_unique_id = ((isset($banner->data->unique_key) && $banner->data->unique_key != '') ? $banner->data->unique_key : $banner->id );
+                    $banner_unique_id = ((isset($content->data->unique_key) && $content->data->unique_key != '') ? $content->data->unique_key : $content->id );
         
-                    if(!empty($banner->data->style_css)) {
-                        $inline_css =' style="'.$banner->data->style_css.'"';
+                    if(!empty($content->data->style_css)) {
+                        $inline_css =' style="'.$content->data->style_css.'"';
                     }
-        
-                    $contents = '<a target="_blank" '.$inline_css.' class="wpmet-jhanda-href" href="'.$banner->data->banner_link.'"><img style="display: block;margin: 0 auto;" src="'.$banner->data->banner_image.'" /></a>';
-        
-                    \Oxaim\Libs\Notice::instance('wpmet-jhanda', $banner_unique_id)
-                    ->set_dismiss('global', (3600 * 24 * 15))
-                    ->set_gutter(false)
-                    ->set_html($contents)
-                    ->call();
+
+                    $instance = \Oxaim\Libs\Notice::instance('wpmet-jhanda', $banner_unique_id)
+                    ->set_dismiss('global', (3600 * 24 * 15));
+                    
+                    if($content->type == 'banner'){
+                        $this->init_banner($content, $instance, $inline_css);
+                    }
+
+                    if($content->type == 'notice'){
+                        $this->init_notice($content, $instance, $inline_css);
+                    }
                 }
             }
 		}
     }
 
+    
+    private function init_notice($content, $instance, $inline_css){
+        
+        $instance->set_message($content->data->notice_body);
+
+        if($content->data->notice_image != ''){
+            $instance->set_logo($content->data->notice_image);
+        }
+        if($content->data->button_text != ''){
+            $instance->set_button([
+                'default_class' => 'button',
+                'class' => 'button-secondary button-small', // button-primary button-secondary button-small button-large button-link
+                'text' => $content->data->button_text,
+                'url' => $content->data->button_link,
+            ]);
+        }
+        $instance->call();
+    }    
+
+    private function init_banner($content, $instance, $inline_css){
+        
+        $html = '<a target="_blank" '.$inline_css.' class="wpmet-jhanda-href" href="'.$content->data->banner_link.'"><img style="display: block;margin: 0 auto;" src="'.$content->data->banner_image.'" /></a>';
+        
+        $instance->set_gutter(false)
+        ->set_html($html)
+        ->call();
+    }
+    
 
 	private function in_whitelist($conf, $list) {
 
@@ -168,7 +195,7 @@ class Banner {
     }
 
 
-    private function get_banner() {
+    private function get_data() {
         $this->data = get_option($this->text_domain . '__banner_data');
         $this->data = $this->data == '' ? [] : $this->data;
 

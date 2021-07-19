@@ -145,7 +145,7 @@
                 <div class="clearfix ekit-modal-controls">
                     <div class="left-content">
                         <button class="btn-modal-close" type="button" data-dismiss="modal">
-                            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="https://www.w3.org/2000/svg">
                                 <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
                                 <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
                             </svg>
@@ -168,7 +168,7 @@
         <div class="attr-modal-content">
             <div class="attr-modal-body">
                 <button class="ekit_close" type="button" data-dismiss="modal"><svg width="20" height="20"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        viewBox="0 0 20 20" xmlns="https://www.w3.org/2000/svg">
                         <line fill="none" stroke="#fff" stroke-width="1.4" x1="1" y1="1" x2="19" y2="19"></line>
                         <line fill="none" stroke="#fff" stroke-width="1.4" x1="19" y1="1" x2="1" y2="19"></line>
                     </svg></button>

@@ -269,7 +269,7 @@ class Widget_Writer {
 
 	private function write_register_control_method($conf = []) {
 
-		$ret = "\n\t" . 'protected function _register_controls() {' . PHP_EOL;
+		$ret = "\n\t" . 'protected function register_controls() {' . PHP_EOL;
 
 		if(!empty($conf->content)) {
 

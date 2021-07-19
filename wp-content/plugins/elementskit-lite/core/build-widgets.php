@@ -13,25 +13,18 @@ class Build_Widgets{
 	 * @since 1.0.0
 	 * @access private
 	 */
-    private $active_widgets;
-    private $all_widgets;
+    private $widgets;
 
     use \ElementsKit_Lite\Traits\Singleton;
 
     public function __construct() {
 
         new \ElementsKit_Lite\Widgets\Init\Enqueue_Scripts;
-
-        $this->all_widgets = \ElementsKit_Lite\Config\Widget_List::instance()->get_list();
-        $this->active_widgets = Attr::instance()->utils->get_option('widget_list', array_keys($this->all_widgets));
+        $this->widgets = \ElementsKit_Lite\Config\Widget_List::instance()->get_list('active');
 
         // check if the widget is exists
-        foreach($this->active_widgets as $widget_slug){
-            if(array_key_exists($widget_slug, $this->all_widgets)){
-                if($this->all_widgets[$widget_slug]['package'] != 'pro-disabled'){
-                    $this->add_widget($this->all_widgets[$widget_slug]);
-                }
-            }
+        foreach($this->widgets as $widget){
+            $this->add_widget($widget);
         }
 
         add_action( 'elementor/widgets/widgets_registered', [$this, 'register_widget']);
@@ -89,12 +82,10 @@ class Build_Widgets{
 
 
     public function register_widget($widgets_manager){
-        foreach($this->active_widgets as $widget_slug){
-            if(array_key_exists($widget_slug, $this->all_widgets)){
-                $class_name = '\Elementor\ElementsKit_Widget_' . \ElementsKit_Lite\Utils::make_classname($widget_slug);
-                if(class_exists($class_name)){
-                    $widgets_manager->register_widget_type(new $class_name());
-                }
+        foreach($this->widgets as $widget_slug => $widget){
+            $class_name = '\Elementor\ElementsKit_Widget_' . \ElementsKit_Lite\Utils::make_classname($widget_slug);
+            if(class_exists($class_name)){
+                $widgets_manager->register_widget_type(new $class_name());
             }
         }
     }

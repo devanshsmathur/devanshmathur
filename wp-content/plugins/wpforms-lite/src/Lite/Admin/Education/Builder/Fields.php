@@ -59,9 +59,9 @@ class Fields extends Education\Builder\Fields {
 		}
 		?>
 
-		<div class="wpforms-field-option-group">
-			<a href="#" class="wpforms-field-option-group-toggle education-modal" data-name="<?php esc_attr_e( 'Conditional Logic', 'wpforms-lite' ); ?>">
-				<?php esc_html_e( 'Conditionals', 'wpforms-lite' ); ?> <i class="fa fa-angle-right"></i>
+		<div class="wpforms-field-option-group wpforms-field-option-group-conditionals">
+			<a href="#" class="wpforms-field-option-group-toggle education-modal" data-name="<?php esc_attr_e( 'Smart Conditional Logic', 'wpforms-lite' ); ?>">
+				<?php esc_html_e( 'Smart Logic', 'wpforms-lite' ); ?>
 			</a>
 		</div>
 		<?php

@@ -31,7 +31,7 @@ class ElementsKit_Widget_Tab extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'section_tab', [
                 'label' =>esc_html__( 'Tab', 'elementskit-lite' ),
@@ -328,6 +328,20 @@ class ElementsKit_Widget_Tab extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'ekit_tab_trigger_type',
+            [
+                'label' => esc_html__( 'Toggle Type', 'elementskit-lite' ),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'click',
+                'options' => [
+                    'click' => esc_html__( 'Click', 'elementskit-lite' ),
+                    'mouseenter' => esc_html__( 'Hover', 'elementskit-lite' ),
+                ],
+
+            ]
+        );
+
         $repeater = new Repeater();
         $repeater->add_control(
             'ekit_tab_title', [
@@ -393,6 +407,7 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+                    'id'    => -1
                 ],
                 'condition' => [
                     'ekit_tab_title_icon_type' => 'image'
@@ -1758,7 +1773,7 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                 ],
                 'default' => [
                     'unit' => '%',
-                    'size' => 110,
+                    'size' => 100,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .elementkit-tab-nav.elementskit_ribbon_style .elementkit-nav-item .elementkit-nav-link::before' => 'width: {{SIZE}}{{UNIT}};',
@@ -1936,7 +1951,7 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                     'size' => 100,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .elementkit-tab-nav.elementskit_ribbon_style .elementkit-nav-item .elementkit-nav-link::after' => 'left: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementkit-tab-nav.elementskit_ribbon_style .elementkit-nav-item .elementkit-nav-link::after' => 'transform:translateX(-100%);left: {{SIZE}}{{UNIT}};',
                 ],
                 'condition' => [
                     'ekit_tab_caret_style' => ['elementskit_ribbon_style']
@@ -2090,14 +2105,17 @@ class ElementsKit_Widget_Tab extends Widget_Base {
                    
 
                     $img_html = isset($tab['ekit_tab_title_icon_type']) && ($tab['ekit_tab_title_icon_type'] == 'image' && ! empty( $tab['ekit_tab_title_image']['url'] )) ?
-                        '<div class="ekit-icon-image"><img src="'.$tab['ekit_tab_title_image']['url'].'" alt="'.Control_Media::get_image_alt( $tab['ekit_tab_title_image'] ).'" draggable="false"></div>' : '';
+                        '<div class="ekit-icon-image">'. \Elementskit_Lite\Utils::get_attachment_image_html($tab, 'ekit_tab_title_image', 'full', [
+                            'draggable' => 'false'
+                        ]) .'</div>' : '';
                     
                     // URL Hash id
                     $handler_id = (($tab['ekit_tab_title']) != '' ? strtolower(preg_replace("![^a-z0-9]+!i", "-", $tab['ekit_tab_title'])) : ('tab-'.$tab['_id']));
                     ?>
                     <li class="elementkit-nav-item elementor-repeater-item-<?php echo esc_attr( $tab[ '_id' ] ); ?>">
                         <a class="elementkit-nav-link <?php echo esc_attr($is_active);?> <?php echo esc_attr($ekit_tab_header_icon_pos_style); ?>" id="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>-tab" data-ekit-handler-id="<?php echo esc_html( $handler_id ); ?>" data-ekit-toggle="tab" href="#content-<?php echo esc_attr($tab['_id'].$tab_id); ?>"
-                           role="tab" aria-controls="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>" aria-selected="true">
+                            data-ekit-toggle-trigger="<?php echo esc_attr( $ekit_tab_trigger_type ); ?>"
+                            role="tab" aria-controls="content-<?php echo esc_attr($tab['_id'].$tab_id); ?>" aria-selected="true">
                             <?php echo \ElementsKit_Lite\Utils::kses($icon_html.$img_html); ?>
                             <span class="elementskit-tab-title"><?php echo esc_html($tab['ekit_tab_title']); ?></span>
                         </a>

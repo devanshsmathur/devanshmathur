@@ -36,7 +36,7 @@ class ElementsKit_Widget_We_Forms extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'ekit_weform_section_tab', [
                 'label' =>esc_html__( 'weForm', 'elementskit-lite' ),

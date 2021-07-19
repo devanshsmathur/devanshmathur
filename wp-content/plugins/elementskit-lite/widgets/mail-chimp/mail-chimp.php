@@ -60,7 +60,7 @@ class ElementsKit_Widget_Mail_Chimp extends Widget_Base {
 		return  $options;
 	}
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         //start content Mail form design
         $this->start_controls_section(

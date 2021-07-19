@@ -1,7 +1,7 @@
 <div class="attr-modal attr-fade" id="elementskit_headerfooter_modal" tabindex="-1" role="dialog"
 	aria-labelledby="elementskit_headerfooter_modalLabel">
 	<div class="attr-modal-dialog attr-modal-dialog-centered" role="document">
-	<form action="" mathod="get" id="elementskit-template-modalinput-form" data-open-editor="0"
+	<form action="" method="get" id="elementskit-template-modalinput-form" data-open-editor="0"
 			data-editor-url="<?php echo get_admin_url(); ?>" data-nonce="<?php echo wp_create_nonce('wp_rest');?>">
 			<!-- <input type="hidden" name="post_author" value ="<?php echo get_current_user_id(); ?>"> -->
 			<div class="attr-modal-content">

@@ -1,4 +1,4 @@
-/* global wpforms_settings, grecaptcha, hcaptcha, wpformsRecaptchaCallback, wpforms_validate, wpforms_datepicker, wpforms_timepicker, Mailcheck, Choices */
+/* global wpforms_settings, grecaptcha, hcaptcha, wpformsRecaptchaCallback, wpforms_validate, wpforms_datepicker, wpforms_timepicker, Mailcheck, Choices, WPFormsPasswordField */
 
 'use strict';
 
@@ -289,6 +289,12 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 					}
 					return this.optional( element ) || value.replace( /[^\d]/g, '' ).length > 0;
 				}, wpforms_settings.val_phone );
+
+				// Validate password strength.
+				$.validator.addMethod( 'password-strength', function( value, element ) {
+
+					return WPFormsPasswordField.passwordStrength( value, element ) >= Number( $( element ).data( 'password-strength-level' ) );
+				}, wpforms_settings.val_password_strength );
 
 				// Finally load jQuery Validation library for our forms.
 				$( '.wpforms-validate' ).each( function() {
@@ -823,7 +829,7 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 		loadChoicesJS: function() {
 
 			// Loads if function exists.
-			if ( ! $.isFunction( window.Choices ) ) {
+			if ( typeof window.Choices !== 'function' ) {
 
 				return;
 			}
@@ -1179,7 +1185,7 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 
 			app.animateScrollTop( offset.top - 75, 750 ).done( function() {
 				var $error = $field.find( '.wpforms-error' ).first();
-				if ( app.isFunction( $error.focus ) ) {
+				if ( typeof $error.focus === 'function' ) {
 					$error.focus();
 				}
 			} );
@@ -1338,12 +1344,13 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 
 			var $form             = $( '#om-' + optinId ).find( '.wpforms-form' ),
 				$captchaContainer = $form.find( '.wpforms-recaptcha-container' ),
-				$captcha          = $form.find( '.g-recaptcha' ),
-				captchaSiteKey    = $captcha.attr( 'data-sitekey' ),
-				captchaID         = 'recaptcha-' + Date.now(),
-				apiVar            = $captchaContainer.hasClass( 'wpforms-is-hcaptcha' ) ? hcaptcha : grecaptcha;
+				$captcha          = $form.find( '.g-recaptcha' );
 
 			if ( $form.length && $captcha.length ) {
+
+				var captchaSiteKey = $captcha.attr( 'data-sitekey' ),
+					captchaID      = 'recaptcha-' + Date.now(),
+					apiVar         = $captchaContainer.hasClass( 'wpforms-is-hcaptcha' ) ? hcaptcha : grecaptcha;
 
 				$captcha.remove();
 				$captchaContainer.prepend( '<div class="g-recaptcha" id="' + captchaID + '" data-sitekey="' + captchaSiteKey + '"></div>' );
@@ -1365,7 +1372,7 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 		//--------------------------------------------------------------------//
 
 		/**
-		 * Payments: Calculate total.
+		 * Payments: Run amount calculation and update the Total field value.
 		 *
 		 * @since 1.2.3
 		 * @since 1.5.1 Added support for payment-checkbox field.
@@ -1377,32 +1384,11 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 
 			validate = validate || false;
 
-			var $form = $( el ).closest( '.wpforms-form' ),
-				total = 0,
+			var $form    = $( el ).closest( '.wpforms-form' ),
+				currency = app.getCurrency(),
+				total    = app.amountTotalCalc( $form ),
 				totalFormatted,
-				totalFormattedSymbol,
-				currency = app.getCurrency();
-
-			$( '.wpforms-payment-price', $form ).each( function( index, el ) {
-
-				var amount = 0,
-					$this = $( this );
-
-				if ( $this.closest( '.wpforms-field-payment-single' ).hasClass( 'wpforms-conditional-hide' ) ) {
-					return;
-				}
-				if ( 'text' === $this.attr( 'type' ) || 'hidden' === $this.attr( 'type' ) ) {
-					amount = $this.val();
-				} else if ( ( 'radio' === $this.attr( 'type' ) || 'checkbox' === $this.attr( 'type' ) ) && $this.is( ':checked' ) ) {
-					amount = $this.data( 'amount' );
-				} else if ( $this.is( 'select' ) && $this.find( 'option:selected' ).length > 0 ) {
-					amount = $this.find( 'option:selected' ).data( 'amount' );
-				}
-				if ( ! app.empty( amount ) ) {
-					amount = app.amountSanitize( amount );
-					total = Number( total ) + Number( amount );
-				}
-			} );
+				totalFormattedSymbol;
 
 			totalFormatted = app.amountFormat( total );
 
@@ -1422,6 +1408,46 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 					$( this ).text( totalFormattedSymbol );
 				}
 			} );
+		},
+
+		/**
+		 * Payments: Calculate a total amount without formatting.
+		 *
+		 * @since 1.6.7.1
+		 *
+		 * @param {jQuery} $form Form element.
+		 *
+		 * @returns {number} Total amount.
+		 */
+		amountTotalCalc: function( $form ) {
+
+			var total = 0;
+
+			$( '.wpforms-payment-price', $form ).each( function() {
+
+				var amount = 0,
+					$this  = $( this ),
+					type   = $this.attr( 'type' );
+
+				if ( $this.closest( '.wpforms-field-payment-single' ).hasClass( 'wpforms-conditional-hide' ) ) {
+					return;
+				}
+
+				if ( type === 'text' || type === 'hidden' ) {
+					amount = $this.val();
+				} else if ( ( type === 'radio' || type === 'checkbox' ) && $this.is( ':checked' ) ) {
+					amount = $this.data( 'amount' );
+				} else if ( $this.is( 'select' ) && $this.find( 'option:selected' ).length > 0 ) {
+					amount = $this.find( 'option:selected' ).data( 'amount' );
+				}
+
+				if ( ! app.empty( amount ) ) {
+					amount = app.amountSanitize( amount );
+					total  = Number( total ) + Number( amount );
+				}
+			} );
+
+			return total;
 		},
 
 		/**
@@ -1457,7 +1483,7 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 		 *
 		 * @since 1.2.6
 		 *
-		 * @param {string} amount Amount to format.
+		 * @param {string|number} amount Amount to format.
 		 *
 		 * @returns {string} Formatted amount.
 		 */
@@ -1788,6 +1814,11 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 		 */
 		formSubmit: function( $form ) {
 
+			// Form element was passed from vanilla JavaScript.
+			if ( ! ( $form instanceof jQuery ) ) {
+				$form = $( $form );
+			}
+
 			$form.trigger( 'wpformsBeforeFormSubmit' );
 
 			if ( $form.hasClass( 'wpforms-ajax-form' ) && typeof FormData !== 'undefined' ) {
@@ -2110,12 +2141,14 @@ var wpforms = window.wpforms || ( function( document, window, $ ) {
 		animateScrollTop: function( position, duration, complete ) {
 
 			duration = duration || 1000;
-			complete = app.isFunction( complete ) ? complete : function() {};
+			complete = typeof complete === 'function' ? complete : function() {};
 			return $( 'html, body' ).animate( { scrollTop: parseInt( position, 10 ) }, { duration: duration, complete: complete } ).promise();
 		},
 
 		/**
 		 * Check if object is a function.
+		 *
+		 * @deprecated 1.6.7
 		 *
 		 * @since 1.5.8
 		 *

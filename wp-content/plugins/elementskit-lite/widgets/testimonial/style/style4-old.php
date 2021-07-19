@@ -30,10 +30,9 @@
 
 				<?php
 					if (isset($testimonial['client_logo']) && sizeof($testimonial['client_logo']) > 0) {
-					$clientLogo = isset($testimonial['client_logo']['url']) ? $testimonial['client_logo']['url'] : '';
 				?>
 					<div class="elementskit-commentor-image">
-						<img src="<?php echo esc_url($clientLogo); ?>" alt="<?php esc_attr_e("Client Logo", "elementskit-lite");?>">
+						<?php echo \Elementskit_Lite\Utils::get_attachment_image_html($testimonial, 'client_logo', 'full' ); ?>
 					</div>
 				<?php
 					}

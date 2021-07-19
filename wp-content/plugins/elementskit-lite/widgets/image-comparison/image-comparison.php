@@ -40,7 +40,7 @@ class ElementsKit_Widget_Image_Comparison extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 
         $this->start_controls_section(
             'ekit_img_comparison_section_items',
@@ -77,6 +77,7 @@ class ElementsKit_Widget_Image_Comparison extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
                 ],
             ]
         );
@@ -103,6 +104,7 @@ class ElementsKit_Widget_Image_Comparison extends Widget_Base {
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
                     'url' => Utils::get_placeholder_image_src(),
+					'id'    => -1
                 ],
             ]
         );

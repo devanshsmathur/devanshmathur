@@ -16,7 +16,7 @@ class Megamenu_Api extends Core\Handler_Api {
             return;
         }
         $menu_item_id = $this->request['settings']['menu_id'];
-        $menu_item_settings = json_encode($this->request['settings']);
+        $menu_item_settings = json_encode($this->request['settings'], JSON_UNESCAPED_UNICODE);
         update_post_meta( $menu_item_id, Init::$menuitem_settings_key, $menu_item_settings );
 
         return [

@@ -253,10 +253,10 @@ class Element_Section extends Element_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'content_width',
 			[
-				'label' => __( 'Content Width', 'elementor' ),
+				'label' => __( 'Width', 'elementor' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -270,7 +270,6 @@ class Element_Section extends Element_Base {
 				'condition' => [
 					'layout' => [ 'boxed' ],
 				],
-				'show_label' => false,
 				'separator' => 'none',
 			]
 		);
@@ -383,6 +382,7 @@ class Element_Section extends Element_Base {
 				'default' => 'default',
 				'options' => [
 					'default' => __( 'Default', 'elementor' ),
+					'full' => __( 'Fit To Screen', 'elementor' ),
 					'min-height' => __( 'Min Height', 'elementor' ),
 				],
 				'prefix_class' => 'elementor-section-height-',
@@ -410,6 +410,7 @@ class Element_Section extends Element_Base {
 				'condition' => [
 					'height_inner' => [ 'min-height' ],
 				],
+				'size_units' => [ 'px', 'vh', 'vw' ],
 				'hide_in_top' => true,
 			]
 		);

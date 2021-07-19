@@ -35,7 +35,7 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
         return '';
     }
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_icon',
 			[
@@ -83,12 +83,19 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 			[
 				'label' => esc_html__( 'Icon', 'elementskit-lite' ),
 				'type' => Controls_Manager::ICONS,
-				'fa4compatibility' => 'icon',
                 'default' => [
                     'value' => 'fas fa-check',
                     'library' => 'fa-solid',
                 ],
 				'label_block' => true,
+			]
+		);
+
+		$repeater->add_control(
+			'list_bg_color',
+			[
+				'label' => esc_html__( 'Background Color', 'elementskit-lite' ),
+				'type' => Controls_Manager::COLOR,
 			]
 		);
 
@@ -175,7 +182,8 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'label_off' => esc_html__( 'Off', 'elementskit-lite' ),
 				'label_on' => esc_html__( 'On', 'elementskit-lite' ),
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-item:not(:last-child):after' => 'content: ""',
+					'{{WRAPPER}} .elementor-icon-list-item:not(:last-child):after' => 'content: "";',
+					'{{WRAPPER}} .elementor-inline-items .elementor-icon-list-item:not(:last-child):after' => 'bottom: unset;',
 				],
 				'separator' => 'before',
 			]
@@ -285,6 +293,42 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-item:not(:last-child):after' => 'border-color: {{VALUE}}',
 				],
+			]
+		);
+
+        $this->add_responsive_control(
+			'list_padding',
+			[
+				'label' => esc_html__('Padding (px)', 'elementskit-lite'),
+				'type' 	=> Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px' ],
+				'selectors'	=> [
+					'{{WRAPPER}} .elementor-icon-list-item a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+				'separator' => 'before',
+			]
+		);
+
+        $this->add_responsive_control(
+			'list_border_radius',
+			[
+				'label' => esc_html__('Border Radius', 'elementskit-lite'),
+                'type' 	=> Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+				'selectors' => [
+					'{{WRAPPER}} .elementor-icon-list-item a' => 'border-radius: {{SIZE}}{{UNIT}};',
+				],
+				'separator' => 'before',
 			]
 		);
 
@@ -429,27 +473,17 @@ class ElementsKit_Widget_Category_List extends Widget_Base {
 			foreach ( $settings['icon_list'] as $index => $item ) :
                 $post = !empty( $item['link'] ) ? get_category($item['link']) : 0;
                 $text = empty($item['text']) ? !empty($post) ? $post->name : '' : $item['text'];
+				if(!empty($item['list_bg_color'])) {
+					$this->add_render_attribute('list_bg_' . $index, 'style', 'background: ' . esc_attr($item['list_bg_color']) . ';');
+				}
 
                 if($post != null):
 				?>
 				<li class="elementor-icon-list-item">
-					<a href="<?php echo esc_url(get_category_link($post->term_id)); ?>">
-                        <?php if ( ! empty( $item['icons'] ) ) : ?>
+					<a href="<?php echo esc_url(get_category_link($post->term_id)); ?>" <?php echo $this->get_render_attribute_string('list_bg_' . $index); ?>>
+                        <?php if (!empty($item['icons']['value'])) : ?>
                             <span class="elementor-icon-list-icon">
-								<?php
-                                    // new icon
-                                    $migrated = isset( $item['__fa4_migrated']['icons'] );
-                                    // Check if its a new widget without previously selected icon using the old Icon control
-                                    $is_new = empty( $item['icon'] );
-                                    if ( $is_new || $migrated ) {
-                                        // new icon
-                                        Icons_Manager::render_icon( $item['icons'], [ 'aria-hidden' => 'true' ] );
-                                    } else {
-                                        ?>
-                                        <i class="<?php echo esc_attr($item['icon']); ?>" aria-hidden="true"></i>
-                                        <?php
-                                    }
-                                ?>
+								<?php Icons_Manager::render_icon( $item['icons'], [ 'aria-hidden' => 'true' ] ); ?>
                             </span>
                         <?php endif; ?>
                         <span class="elementor-icon-list-text"><?php echo esc_html($text); ?></span>

@@ -21,15 +21,21 @@ class Utils{
         return (isset($data_all[$key]) && $data_all[$key] != '') ? $data_all[$key] : $default;
     }
 
+    public function save_option($key, $value = ''){
+        $data_all = get_option(self::$key);
+        $data_all[$key] = $value;
+        update_option('elementskit_options', $data_all);
+    }
+
     public function get_settings($key, $default = ''){
         $data_all = $this->get_option('settings', []);
         return (isset($data_all[$key]) && $data_all[$key] != '') ? $data_all[$key] : $default;
     }
 
-    public function save_option($key, $value = ''){
-        $data_all = get_option(self::$key);
-        $data_all[$key] = $value;
-        update_option('elementskit_options', $data_all);
+    public function save_settings($new_data = ''){
+        $data_old = $this->get_option('settings', []);
+        $data = array_merge($data_old, $new_data);
+        $this->save_option('settings', $data);
     }
 
     /*

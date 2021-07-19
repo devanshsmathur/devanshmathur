@@ -137,6 +137,7 @@ if(!class_exists('\Wpmet\Libs\Pro_Awareness')) :
 
 			$this->pro_link_conf[] = [
 				'url'        => $url,
+				'target'        => '_blank',
 				'anchor'     => empty($conf['anchor']) ? '<span style="color: #FCB214;" class="pro_aware pro">Upgrade To Premium</span>' : $conf['anchor'],
 				'permission' => empty($conf['permission']) ? 'manage_options' : $conf['permission'],
 			];
@@ -242,7 +243,9 @@ if(!class_exists('\Wpmet\Libs\Pro_Awareness')) :
 		public static function enqueue_scripts() {
 			echo "
 			<script>
-
+			jQuery(document).ready( function($) {   
+				$('.pro_aware').parent().attr('target','_blank');  
+			});
             </script>
 
             <style>

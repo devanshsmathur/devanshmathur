@@ -37,7 +37,7 @@ class ElementsKit_Widget_Countdown_Timer extends Widget_Base {
         return '';
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
         $this->start_controls_section(
             'section_tab', [
                 'label' =>esc_html__( 'Presets', 'elementskit-lite' ),

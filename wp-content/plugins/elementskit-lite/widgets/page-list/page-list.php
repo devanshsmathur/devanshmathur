@@ -35,7 +35,7 @@ class ElementsKit_Widget_Page_List extends Widget_Base {
         return '';
     }
 
-	protected function _register_controls() {
+	protected function register_controls() {
 		$this->start_controls_section(
 			'section_icon',
 			[

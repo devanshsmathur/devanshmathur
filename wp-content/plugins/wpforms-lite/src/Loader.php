@@ -38,10 +38,12 @@ class Loader {
 	protected function populate_classes() {
 
 		$this->populate_admin();
+		$this->populate_builder();
 		$this->populate_migrations();
 		$this->populate_capabilities();
 		$this->populate_tasks();
 		$this->populate_forms();
+		$this->populate_smart_tags();
 		$this->populate_logger();
 		$this->populate_education();
 	}
@@ -74,6 +76,14 @@ class Loader {
 		array_push(
 			$this->classes,
 			[
+				'name' => 'Admin\Notice',
+				'id'   => 'notice',
+			],
+			[
+				'name' => 'Admin\Addons\AddonsCache',
+				'id'   => 'addons_cache',
+			],
+			[
 				'name' => 'Admin\Addons\Addons',
 				'id'   => 'addons',
 			],
@@ -105,16 +115,44 @@ class Loader {
 				'name' => 'Admin\SiteHealth',
 			],
 			[
-				'name' => 'Admin\Builder\Help',
-				'id'   => 'builder_help',
-			],
-			[
 				'name' => 'Admin\Settings\Captcha',
 				'hook' => 'admin_init',
 			],
 			[
 				'name' => 'Admin\Tools\Tools',
 				'hook' => 'admin_init',
+			],
+			[
+				'name' => 'Admin\Pages\Addons',
+				'id'   => 'addons_page',
+			]
+		);
+	}
+
+	/**
+	 * Populate Form Builder related classes.
+	 *
+	 * @since 1.6.8
+	 */
+	private function populate_builder() {
+
+		array_push(
+			$this->classes,
+			[
+				'name' => 'Admin\Builder\Help',
+				'id'   => 'builder_help',
+			],
+			[
+				'name' => 'Admin\Builder\TemplatesCache',
+				'id'   => 'builder_templates_cache',
+			],
+			[
+				'name' => 'Admin\Builder\TemplateSingleCache',
+				'id'   => 'builder_template_single',
+			],
+			[
+				'name' => 'Admin\Builder\Templates',
+				'id'   => 'builder_templates',
 			]
 		);
 	}
@@ -180,6 +218,23 @@ class Loader {
 	}
 
 	/**
+	 * Populate smart tags loaded classes.
+	 *
+	 * @since 1.6.7
+	 */
+	private function populate_smart_tags() {
+
+		array_push(
+			$this->classes,
+			[
+				'name' => 'SmartTags\SmartTags',
+				'id'   => 'smart_tags',
+				'run'  => 'hooks',
+			]
+		);
+	}
+
+	/**
 	 * Populate logger loaded classes.
 	 *
 	 * @since 1.6.3
@@ -229,7 +284,6 @@ class Loader {
 			'Builder\Settings',
 			'Builder\Providers',
 			'Builder\Payments',
-			'Builder\FormTemplates',
 			'Builder\DidYouKnow',
 			'Builder\Geolocation',
 			'Admin\DidYouKnow',

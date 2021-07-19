@@ -410,7 +410,7 @@ class WPForms_About {
 				$plugin_data['plugin_src']   = esc_attr( $plugin );
 			} else {
 				// Status text/status.
-				$plugin_data['status_class'] = 'status-inactive';
+				$plugin_data['status_class'] = 'status-installed';
 				$plugin_data['status_text']  = esc_html__( 'Inactive', 'wpforms-lite' );
 				// Button text/status.
 				$plugin_data['action_class'] = $plugin_data['status_class'] . ' button button-secondary';
@@ -420,7 +420,8 @@ class WPForms_About {
 		} else {
 			// Doesn't exist, install.
 			// Status text/status.
-			$plugin_data['status_class'] = 'status-download';
+			$plugin_data['status_class'] = 'status-missing';
+
 			if ( isset( $details['act'] ) && 'go-to-url' === $details['act'] ) {
 				$plugin_data['status_class'] = 'status-go-to-url';
 			}
