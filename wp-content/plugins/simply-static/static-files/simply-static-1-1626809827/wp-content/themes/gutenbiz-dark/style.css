@@ -1,0 +1,434 @@
+/*	
+	Theme Name:		Gutenbiz Dark
+	Theme URI:		https://risethemes.com/downloads/gutenbiz-Dark/
+	Description:	Gutenbiz Dark, a clean dark-style child theme of Gutenbiz. It is fully compatible with Gutenberg WordPress Blocks.  With Rise Blocks page builder, you are able to create unique and beautiful designs for your corporate websites. To create a clean and elegant layout, you can easily modify the sections like Featured Slider, Banner, About, Services, Icons Boxes, Counter, Portfolio, Team, Testimonials, Mega Menu, etc. It supports the most popular plugins like Jetpack, Yoast SEO, contact form 7, Rise Blocks. You can change your own color and the font of each and every text, link in the theme customizer. You can check this real demo: https://preview.risethemes.com/sites/gutenbiz-dark/ Watch Video for site instructions: https://youtu.be/Hwljubang2M Compatible Gutenberg Plugin: https://wordpress.org/plugins/rise-blocks
+	Author:			Rise Themes
+	Author URI: 	http://risethemes.com/
+    Template:		gutenbiz
+	Version:		1.0.1
+    Tested up to:   5.7
+    Requires PHP:   5.6
+	License:		GNU General Public License v2 or later
+	License URI:	http://www.gnu.org/licenses/gpl-2.0.html
+	Tags:			left-sidebar, right-sidebar, wide-blocks, block-styles, grid-layout, two-columns, flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, threaded-comments, translation-ready, news, education, entertainment
+	Text Domain:	gutenbiz-dark
+*/
+
+.gutenbiz-dark-sticky-header header#masthead {
+    z-index: 999 !important;
+    background: #000;
+}
+
+.gutenbiz-dark-mode #secondary .widget-title,
+.gutenbiz-dark-mode #secondary .widget a #secondary .widget ul li a, 
+.gutenbiz-dark-mode #secondary .widget, 
+.gutenbiz-dark-mode #secondary .widget a, 
+.gutenbiz-dark-mode #secondary .widget ul li a, 
+.gutenbiz-dark-mode .edit-link .post-edit-link, 
+.gutenbiz-dark-mode .post-edit-link:visited:hover, 
+.gutenbiz-dark-mode .entry-meta .author-info .posted-on a, 
+.gutenbiz-dark-mode .entry-meta .author-info, 
+.gutenbiz-dark-mode .entry-meta .url, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul li a .gutenbiz-main-menu div > ul li a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu div > ul li a, 
+.gutenbiz-dark-mode .comments-area .comments-title, 
+.gutenbiz-dark-mode .comments-area .comment-list .comment-body .comment-meta *, 
+.gutenbiz-dark-mode .comments-area .comment-list .comment-body p, 
+.gutenbiz-dark-mode .comment-respond .comment-reply-title, 
+.gutenbiz-dark-mode .comment-respond .comment-reply-title a .comment-respond .logged-in-as a, 
+.gutenbiz-dark-mode .comment-respond .logged-in-as a, 
+.gutenbiz-dark-mode .comment-respond .comment-form label, 
+.gutenbiz-dark-mode .post .post-categories li a, 
+.gutenbiz-dark-mode .gutenbiz-post .post-title a, 
+.gutenbiz-dark-mode .post-content-wrap p > a, 
+.gutenbiz-dark-mode .comment-respond .comment-form textarea, 
+.gutenbiz-dark-mode .gutenbiz-search-icons:visited:hover, 
+.gutenbiz-dark-mode .post-categories li a, 
+.gutenbiz-dark-mode .gutenbiz-post .gutenbiz-comments a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > ul > li a, 
+.gutenbiz-dark-mode .post-navigation .nav-links > div a .nav-title, 
+.gutenbiz-dark-mode .gutenbiz-dark-mode .post-content-wrap p > a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul li > ul, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > ul li a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu div > ul > li > ul li a, 
+.gutenbiz-dark-mode .footer-widget, .gutenbiz-dark-mode .footer-widget p, 
+.gutenbiz-dark-mode .footer-widget span, 
+.gutenbiz-dark-mode .footer-widget ul li a, 
+.gutenbiz-dark-mode #secondary, .gutenbiz-dark-mode #secondary li, 
+.gutenbiz-dark-mode #secondary li a, .gutenbiz-dark-mode #secondary p, 
+.gutenbiz-dark-mode .post-navigation .nav-links > div a .screen-reader-text, 
+.gutenbiz-dark-mode .comments-area .comment-list .comment-body .comment-author cite a, 
+.gutenbiz-dark-mode .gutenbiz-dark-mode .mr-mobile-menu ul > li > a, 
+.gutenbiz-dark-mode .mr-mobile-menu ul > li > a, 
+.gutenbiz-dark-mode .gutenbiz-dark-mode .gutenbiz-main-menu > ul li > ul a, 
+.gutenbiz-dark-mode .mr-mobile-menu ul.menu > li ul li a, 
+.gutenbiz-dark-mode .gutenbiz-dark-mode .mr-mobile-menu ul > li:nth-child(2), 
+.gutenbiz-dark-mode .woocommerce-info, 
+.gutenbiz-dark-mode .woocommerce-info a:hover, 
+.gutenbiz-dark-mode .entry-content h3, 
+.gutenbiz-dark-mode h2, 
+.gutenbiz-dark-mode .woocommerce-message, 
+.gutenbiz-dark-mode .page-title, 
+.gutenbiz-dark-mode .select2-container--default .select2-selection--single .select2-selection__rendered, 
+.gutenbiz-dark-mode input[type="text"], 
+.gutenbiz-dark-mode .woocommerce form .form-row input.input-text, 
+.gutenbiz-dark-mode .woocommerce form .form-row textarea, 
+.gutenbiz-dark-mode .woocommerce-error li, 
+.gutenbiz-dark-mode .woocommerce button.button, 
+.gutenbiz-dark-mode .product-name a, 
+.gutenbiz-dark-mode .woocommerce-cart .woocommerce .cart-collaterals .cart_totals a.checkout-button.button.alt.wc-forward, 
+.gutenbiz-dark-mode.single-product .product .entry-summary .product_title, 
+.gutenbiz-dark-mode.single-product .product .entry-summary .price, 
+.gutenbiz-dark-mode.single-product .product .entry-summary .product_meta > span, 
+.gutenbiz-dark-mode.woocommerce ul.products li.product a.woocommerce-LoopProduct-link .woocommerce-loop-product__title, 
+.gutenbiz-dark-mode.woocommerce ul.products li.product, 
+.gutenbiz-dark-mode.woocommerce ul.products li.product a.woocommerce-LoopProduct-link .woocommerce-Price-amount.amount, 
+.gutenbiz-dark-mode.woocommerce #review_form #respond .form-submit input, 
+.gutenbiz-dark-mode.woocommerce-page .woocommerce-message .button, 
+.gutenbiz-dark-mode .gutenbiz-search-opened .gutenbiz-header-search .close, 
+.gutenbiz-dark-mode .close.gutenbiz-toggle-search,
+.gutenbiz-dark-mode .cart-icon i,
+.gutenbiz-dark-mode .entry-meta.single .author-info .posted-on a, 
+.gutenbiz-dark-mode .entry-meta.single .url, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > a,
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > ul li > a,
+.gutenbiz-dark-mode .footer-widget ul li a,
+.gutenbiz-dark-mode .post-content,
+.gutenbiz-dark-mode .post-content p{ 
+    color: #fff;
+}
+
+.post-content a{
+    text-decoration: underline;
+}
+
+.gutenbiz-dark-mode .post-content-wrap p > a {
+    color: #fff !important;
+}
+
+.gutenbiz-dark-mode a:visited:hover, 
+.gutenbiz-dark-mode .search-submit i, 
+.gutenbiz-dark-mode a.cart-icon span { 
+    color: #000; 
+}
+
+.gutenbiz-dark-mode, 
+.gutenbiz-dark-mode .post-categories li a, 
+.gutenbiz-dark-mode .gutenbiz-header-search, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul li > ul, 
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > ul li a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu div > ul > li > ul li a, 
+.gutenbiz-dark-mode .gutenbiz-dark-mode .gutenbiz-main-menu > ul li > ul a, 
+.gutenbiz-dark-mode .gutenbiz-main-menu div > ul > li > ul, 
+.gutenbiz-dark-mode form.woocommerce-checkout div#customer_details > div input, 
+.gutenbiz-dark-mode .select2-dropdown, 
+.gutenbiz-dark-mode form.woocommerce-checkout div#customer_details > div span.select2-selection, 
+.gutenbiz-dark-mode .woocommerce form .form-row textarea, 
+.gutenbiz-dark-mode .woocommerce form .form-row input.input-text, 
+.gutenbiz-dark-mode input[type="text"], 
+.gutenbiz-dark-mode .card-subtotal, 
+.gutenbiz-dark-mode.single-product .product .entry-summary .product_title { 
+    background: #000; 
+}
+
+.gutenbiz-dark-mode .menu-toggler, 
+.gutenbiz-dark-mode .mr-close-wrapper .mr-inner-box .mr-inner:after, 
+.gutenbiz-dark-mode .mr-close-wrapper .mr-inner-box .mr-inner:before, 
+.gutenbiz-dark-mode .mr-arrow-box .mr-down-arrow:after, 
+.gutenbiz-dark-mode .mr-arrow-box .mr-down-arrow:before, 
+.gutenbiz-dark-mode a.cart-icon span { 
+    background: #fff; 
+}
+
+.gutenbiz-dark-mode .sidebar-order aside section { 
+    box-shadow: 1px 1px 13px #3636361a; 
+}
+
+.gutenbiz-dark-mode .gutenbiz-post { 
+    box-shadow: 1px 1px 13px #3636361a; 
+}
+
+.gutenbiz-dark-mode .post .post-categories li a,
+.gutenbiz-dark-mode .comment-respond .comment-form textarea,
+.gutenbiz-dark-mode .comments-area .comment-list .comment-body p,
+.gutenbiz-dark-mode .sidebar-order aside section, 
+.gutenbiz-dark-mode .gutenbiz-post, 
+.gutenbiz-dark-mode .comment-respond .comment-form input[type="submit"], 
+.gutenbiz-dark-mode #loader-wrapper,
+.gutenbiz-dark-mode .mr-mobile-menu.mr-menu-open, 
+.gutenbiz-dark-mode .mr-mobile-menu ul.menu > li ul li a
+.gutenbiz-dark-mode .comment-notes, 
+.gutenbiz-dark-mode .comment-respond .comment-form input:not([type="checkbox"]):not([type="submit"]), 
+.gutenbiz-dark-mode .woocommerce-info, .gutenbiz-dark-mode .select2-container--default, 
+.gutenbiz-dark-mode form.woocommerce-checkout, 
+.gutenbiz-dark-mode form.woocommerce-checkout div#order_review, 
+.gutenbiz-dark-mode form.woocommerce-checkout div#order_review #payment, 
+.gutenbiz-dark-mode .woocommerce form.checkout_coupon, 
+.gutenbiz-dark-mode .woocommerce .cart-collaterals .cart_totals,
+.gutenbiz-dark-mode .woocommerce-cart-form,
+.gutenbiz-dark-mode.woocommerce ul.products li.product  { 
+    background: #2b2b2b; 
+}
+
+.gutenbiz-dark-mode .entry-meta.single,
+.gutenbiz-dark-mode .mr-menu-open .mr-arrow-box { 
+    border: none; 
+}
+
+.gutenbiz-dark-mode .entry-meta.single .author-info .posted-on a, 
+.gutenbiz-dark-mode .comment-respond .logged-in-as a { 
+    text-decoration: none; 
+}
+
+.gutenbiz-dark-mode .post-navigation .nav-links > div { 
+    background: #1e1a1a; 
+    border-color: #303030; 
+}
+
+.gutenbiz-dark-mode .gutenbiz-post .post-content-wrap img, 
+.gutenbiz-dark-mode .entry-meta.single .url img { 
+    border-radius: 50%; 
+}
+
+.gutenbiz-dark-mode td { 
+    padding: 6px; 
+}
+
+.gutenbiz-dark-mode .menu-toggler { 
+    margin-top: 0; 
+    margin-left: 1rem; 
+}
+
+.gutenbiz-dark-mode .mr-arrow-box .mr-down-arrow:after, 
+.gutenbiz-dark-mode .mr-arrow-box .mr-down-arrow:before { 
+    border: 0; 
+}
+
+.gutenbiz-dark-mode .select2-search--dropdown .select2-search__field { 
+    background: #1c1c1c; 
+}
+
+.gutenbiz-dark-mode form.woocommerce-checkout div#order_review table, 
+.gutenbiz-dark-mode .woocommerce-error, 
+.gutenbiz-dark-mode .woocommerce-message, 
+.gutenbiz-dark-mode .woocommerce table.shop_table tr.cart-subtotal, 
+.gutenbiz-dark-mode .woocommerce table.shop_table tr.order-total, 
+.gutenbiz-dark-mode .woocommerce-checkout #payment div.payment_box { 
+    background: #555457; 
+}
+
+.gutenbiz-dark-mode .woocommerce button.button, 
+.gutenbiz-dark-mode.single-product .product .entry-summary .price del,
+.gutenbiz-dark-mode.woocommerce #review_form #respond .form-submit input, 
+.gutenbiz-dark-mode.woocommerce-page .woocommerce-message .button,
+.gutenbiz-dark-mode .woocommerce-message  { 
+    background: #e36457; 
+}
+
+.gutenbiz-dark-mode.woocommerce div.product .woocommerce-tabs ul.tabs li.active a { 
+    color: #515151; 
+}
+
+.gutenbiz-dark-mode .menu-toggler:focus,
+.gutenbiz-dark-mode a.custom-logo-link:focus { 
+    outline: 1px solid #fff; 
+}
+
+.gutenbiz-dark-mode .mr-mobile-menu ul.menu > li ul li a { 
+    border-bottom: none; 
+}
+
+.gutenbiz-dark-mode .mr-mobile-menu ul.menu > li ul { 
+    background: transparent; 
+}
+
+.gutenbiz-dark-mode .gutenbiz-main-menu div > ul > li > a:hover,
+.gutenbiz-dark-mode .entry-meta .author-info .posted-on a:hover,
+.gutenbiz-dark-mode .comments-area .comment-list .comment-body p a:hover,
+.gutenbiz-dark-mode .comment-respond .logged-in-as a:hover,
+.gutenbiz-dark-mode .footer-widget ul li a:hover, 
+.gutenbiz-dark-mode .entry-meta.single .url:hover,
+.gutenbiz-dark-mode .gutenbiz-search-icons.gutenbiz-toggle-search:hover,
+.gutenbiz-dark-mode .post .post-title a:hover,
+.gutenbiz-dark-mode .search-icons
+.gutenbiz-dark-mode .site-branding .site-title a:hover, 
+.gutenbiz-dark-mode .post-content-wrap .post-categories li a:hover,
+.gutenbiz-dark-mode .post .gutenbiz-comments a:hover, 
+.gutenbiz-dark-mode .footer-bottom-section .credit-link a:hover,
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > a:hover,
+.gutenbiz-dark-mode .gutenbiz-main-menu > ul > li > ul li > a:hover,
+.gutenbiz-dark-mode .footer-widget ul li a:hover, 
+.gutenbiz-dark-mode .cart-icon i:hover{
+    color: #e36457;
+}
+.gutenbiz-dark-mode a.cart-icon span:hover {
+    background: #e36457;
+}
+
+.gutenbiz-dark-mode .post-navigation .nav-links > div:hover{
+    background: transparent !important; 
+}
+
+/* slider */
+
+
+.gutenbiz-dark-mode .gutenbiz-banner-slider-inner {
+    height: 100vh !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.gutenbiz-dark-mode .banner-slider-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 920px;
+}
+
+.gutenbiz-dark-mode .banner-slider-content > * {
+	flex: 0 0 100%;
+	text-align: center;
+}
+
+.gutenbiz-dark-mode .gutenbiz-arrow {
+	position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 9;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.gutenbiz-dark-mode .gutenbiz-arrow svg {
+	fill: #fff;
+	max-width: 30px;
+}
+
+.gutenbiz-dark-mode .gutenbiz-arrow.gutenbiz-arrow-prev {
+	left: 0;
+}
+
+.gutenbiz-dark-mode .gutenbiz-arrow.gutenbiz-arrow-next {
+	right: 0;
+}
+
+.gutenbiz-dark-mode .gutenbiz-banner-slider-inner:after {
+    content: "";
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: .5;
+}
+
+.gutenbiz-dark-mode .gutenbiz-banner-slider-inner > * {
+	z-index: 99;
+}
+
+/* slick dots */
+
+
+.gutenbiz-dark-mode .slick-dots {
+    display: flex !important;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.gutenbiz-banner-slider-wrapper ul.slick-dots li button {
+    font-size: 0;
+    height: 7px;
+    width: 45px;
+    margin: 0 4px;
+    border-radius: 25px;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+.gutenbiz-banner-slider-wrapper ul.slick-dots li.slick-active button {
+	background: #ff4265;
+}
+
+.gutenbiz-banner-slider-wrapper ul.slick-dots li button:focus,
+.gutenbiz-banner-slider-wrapper .gutenbiz-arrow:focus {
+	outline: thin dotted #fff;
+}
+
+/* slider content */
+
+.banner-slider-content h2{
+    font-size: 48px;
+    color: #fff;
+    letter-spacing: .5px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.5;
+    transition: all 1s ease-in-out 0.5s;
+    opacity: 0;
+}
+
+.banner-slider-content h2 a{
+    color: #fff !important;
+}
+
+.inner-banner-btn {
+	margin-top: 50px;
+	transition: all 1s ease-in-out 0.9s;
+	opacity: 0;
+}
+
+.inner-banner-btn a {
+	background: #ff4265;
+	padding: 14px 30px;
+	color: #fff;
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0 10px;
+	transition: all .3s;
+    font-weight: 700;
+}
+
+.inner-banner-btn a:visited {
+	color: #fff;
+}
+
+.inner-banner-btn a:hover {
+	background: #db4f3d;
+	color: #fff !important;
+}
+
+.feature-news-content {
+    color: #fff;
+    font-size: 18px;
+    margin: 30px 0;
+    line-height: 1.7;
+    transition: all 1s ease-in-out 0.7s;
+    opacity: 0;
+}
+
+.slick-active .banner-slider-content h2,
+.slick-active .banner-slider-content .inner-banner-btn,
+.slick-active .banner-slider-content .feature-news-content  {
+	opacity: 1;
+}
+
+
+.gutenbiz-dark-mode .gutenbiz-header-icons a:focus{
+    color: #fff;
+}
